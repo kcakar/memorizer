@@ -1,0 +1,77 @@
+
+
+section.setup{
+    position: relative;
+    padding-top:50px; 
+}
+
+
+
+section.setup .mdc-fab--mini {
+    position: absolute;
+    top:-20px;
+    right:0;
+    z-index: 2;
+    background-color: #3f51b5;
+}
+
+
+.settings{
+    height: 100%;
+    width:100%;
+    background-color: white;
+}
+
+.settings h2{
+    padding: 20px;
+}
+
+.settings .interests{
+    padding-bottom: 20px;
+}
+
+.settings .interests .mdc-grid-list__tiles{
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+@media only screen and (max-width: 800px) {
+    .settings .interests .mdc-grid-list__tiles .mdc-grid-tile{
+        width:50%;
+    }
+}
+.settings .interests .mdc-grid-list__tiles .mdc-grid-tile{
+    height: 170px;
+    overflow: hidden;
+    margin: 10px 0;
+    cursor: pointer
+}
+
+.settings .interests .mdc-grid-list__tiles .mdc-grid-tile img{
+    height: auto;
+    width: 67%;
+    margin: 15px auto;
+}
+
+.settings .interests .mdc-grid-list__tiles .mdc-grid-tile:hover .mdc-grid-tile__primary{
+    background-color: rgba(64, 82, 181, 0.74)
+}
+
+.settings .interests .mdc-grid-list__tiles .mdc-grid-tile.active .mdc-grid-tile__primary{
+    background-color: rgb(64, 82, 181)
+}
+
+.settings .interests .mdc-grid-list__tiles .mdc-grid-tile.active .mdc-grid-tile__secondary {
+    background-color: transparent;
+    color:white;
+}
+
+.settings .interests .mdc-grid-list__tiles .mdc-grid-tile__primary{
+    background-color: rgb(216, 218, 235);
+}
+
+.settings .interests .mdc-grid-list__tiles .mdc-grid-tile .mdc-grid-tile__secondary {
+    background-color: transparent;
+    color:black;
+}
+

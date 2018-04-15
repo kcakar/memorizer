@@ -1,0 +1,138 @@
+section.manageWords .mdc-fab{
+    position: absolute;
+    z-index: 1;
+    top:-20px;
+    right: 0;
+    background-color: #3f51b5;
+  }
+  
+  section.manageWords .mdc-fab:nth-of-type(2){
+    right: 50px;
+    background-color: #689f38;
+  }
+  
+  section.manageWords .mdc-fab:nth-of-type(3){
+    right: 100px;
+    background-color: #ffca28;
+  }
+  
+  section.manageWords .addWords,section.category .addCategory{
+    background: rgb(255, 255, 255);
+    width:100%;
+    padding:10px;
+    padding-top:0px;
+    padding-bottom:0px;
+    border: 1px solid #e4e4e4;
+    border-top:0px;
+    height: 0; 
+    will-change: height;
+    transition-property: height, padding-bottom;
+    transition-duration: 1s;
+    overflow: hidden;
+  }
+  
+  section.manageWords .addWords.visible,section.category .addCategory.visible{
+    height: 80px;
+  }
+  
+  
+  section.manageWords .addWords form,section.category .addCategory form{
+      max-width:600px;
+      margin:auto;
+      display: flex;
+      justify-content: space-between;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    section.manageWords .addWords.visible{
+      height: 160px;
+    }
+  
+    section.category .addCategory.visible{
+      height: 220px;
+    }
+  
+    section.manageWords .addWords form,section.category .addCategory form{
+      margin:10px;
+      flex-direction: column;
+    }
+    
+    section.manageWords .addWords form *,section.category .addCategory form *{
+      margin:5px;
+      flex-basis: 100%;
+    }
+  }
+  
+  section.manageWords .addWords form .mdc-text-field,section.category .addCategory form .mdc-text-field{
+    margin-top:0;
+    margin-bottom:0;
+  }
+  
+  section.manageWords .addWords form button,section.category .addCategory form button{
+    align-self:flex-end;
+  }
+  
+  section.manageWords .words{
+    height: 100%;
+    width:100%;
+    margin-top:50px; 
+    margin-bottom:30px;
+    position: relative;
+  }
+  
+  section.manageWords .words .mdc-icon-toggle:hover::before {
+    opacity: 0.1;
+  }
+  
+  section.manageWords .words .mdc-fab--mini {
+    position: absolute;
+    top:-20px;
+    right:10px;
+    z-index: 2;
+    background-color: #3f51b5;
+  }
+  
+  section.manageWords .words .mdc-text-field  {
+    margin:0;
+  }
+  
+  section.manageWords .words tr > td .mdc-fab--mini {
+    left:15px;
+    top:13px;
+    width: 25px;
+    height: 25px;
+  }
+  
+  section.manageWords .words tr > td .material-icons  {
+    font-size: 20px;
+  }
+  section.manageWords .words tr > td .mdc-text-field--upgraded:not(.mdc-text-field--fullwidth):not(.mdc-text-field--box):not(.mdc-text-field--textarea){
+    height:35px;
+  }
+  
+  section.manageWords .words tr > td .mdc-text-field {
+    margin-left:35px;
+    width: 70%;
+    min-width: 200px;
+  }
+  
+  section.manageWords .words .right {
+    color:green;
+  }
+  
+  section.manageWords .words .wrong {
+    color:darkred;
+  }
+
+  section.manageWords .gameSettings{
+    width:100%;
+    margin-top:50px; 
+    margin-bottom:30px;
+    position: relative;
+    background-color: white;
+    padding:50px;
+  }
+
+  section.manageWords .gameSettings .setting-group{
+    max-width: 300px;
+  }

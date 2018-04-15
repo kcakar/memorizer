@@ -1,0 +1,172 @@
+section.game{
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: column;
+    flex-flow: column;
+    font-size: 19px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding-bottom: 20px;
+    position: relative;
+    min-height: 500px;
+    min-width: 500px;
+    margin-top:50px;
+  }
+  
+
+  
+  section.game .question{
+      background-color: white;
+      justify-content: center;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      min-width: 500px;
+  }
+  
+  @media only screen and (max-width: 500px) {
+    section.game .question{
+      min-width: initial;
+    }
+  }
+  
+  @media only screen and (max-width: 530px) {
+    section.game{
+      display: initial;
+    }
+    section.game .question{
+      margin-top: 20px;
+      align-self: flex-start;
+      width:100%;
+    }
+
+    section.content .status-bar .mdc-linear-progress{
+      width:90%;
+    }
+  }
+  
+  section.game .question .mdc-card{
+    padding: 20px;
+  }
+  
+  section.game .question .mdc-card__title.mdc-card__title--large{
+    font-weight: bold;
+    padding-bottom: 10px;
+  }
+  
+  section.game .question .mdc-card__subtitle{
+    border-top: 1px dashed darkgray;
+    font-size:20px;
+    padding-top:20px;
+  }
+  
+  section.game .question .the-line{
+    border-top: 3px solid rgb(60, 49, 163);
+    position: relative;
+    margin-top:30px;
+    margin-bottom:20px;
+    width:calc(100% + 80px);
+    left:-40px;
+  }
+  
+  section.game .question.test .answer .mdc-form-field{
+    width: 100%;
+    padding-top: 10px;
+  }
+
+  section.game .question.test .answer{
+    width: 100%;
+  }
+
+  section.game .question .answer{
+    padding-top:5px;
+  }
+  
+  section.game .question .answer .error{
+    border-bottom: 2px solid rgba(212, 3, 3, 0.81);
+  }
+  
+  section.game .question .answer .error .mdc-text-field__bottom-line{
+    display: none;
+  }
+  
+  section.game .question .answer .error .mdc-text-field__input{
+    color: #c30000eb;
+  }
+  
+  section.game .succeed{
+    background-color: #9ff16469;
+  }
+  
+  section.game .failure{
+    background-color: #f1696469;
+  }
+  
+  section.game .mdc-card__media{
+    background: url(../images/right1.jpg) no-repeat;
+    background-size: cover;
+    background-position: center top;
+    width: 300px;
+    height: 255px;
+  }
+  @media only screen and (max-width: 530px) {
+    section.game .succeed,section.game .failure{
+      margin-top:40px;
+    }
+    section.game .mdc-card__media{
+      width:100%;
+    }
+  }
+  
+  section.game .summary{
+    width:100%;
+  
+  }
+  
+  section.game .summary .summary-row{
+    display: flex;
+    align-content: center;
+    vertical-align: middle;
+    height: 200px;
+    width: calc(100% * (1/4));
+    float: left;
+    text-align: center;
+    flex-direction: column;
+    padding: 20px;
+    border:1px solid rgba(0, 0, 0, 0.212);
+  }
+  @media only screen and (max-width: 530px) {
+    section.game .summary .summary-row{
+      width: 100%;
+    }
+  }
+  section.game .summary .summary-row span{
+    flex-basis: 50%;
+  }
+  
+  section.game .summary .summary-row span:nth-of-type(1){
+    text-align: left;
+    border-bottom: 1px solid black;
+  }
+  
+  section.game .summary .summary-row span:nth-of-type(2){
+    text-align: left;
+  }
+  
+  section.game .summary .summary-row span:nth-of-type(3){
+    flex-basis: auto;
+  }
+  
+  section.game .continue-div{
+    width:100%;
+    text-align: center;
+    padding: 10px;
+  }
+
