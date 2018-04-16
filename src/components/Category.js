@@ -8,6 +8,7 @@ import dnaIMG from '../images/dna.png';
 import rocketIMG from '../images/rocket.png';
 import angularIMG from '../images/angular.png';
 import language from '../Language';
+import images from '../images';
 
 class Category extends React.Component{
     constructor(){
@@ -141,13 +142,15 @@ class Category extends React.Component{
                             <Fab className="remove" mini onClick={(e,category)=>this.removeCategory(e,key)}>remove</Fab>
                             <GridTilePrimary>
                                 <GridTilePrimaryContent>
-                                    <div className="background" >
-                                        <img alt="" src={category.imageURL}/>
+                                    <div className="background" style={{backgroundImage: "url(" + category.imageURL + ")"}} >
+                                        {/* <img className="background" alt="" src={category.imageURL}/> */}
                                     </div>
                                 </GridTilePrimaryContent>
                             </GridTilePrimary>
-                            <GridTileSecondary>
+                            <GridTileSecondary >
                                 <GridTileTitle>{key}</GridTileTitle>
+                                <img className="source-language" alt="" src={images.flags[category.sourceLanguage]}/>
+                                <img className="target-language" alt="" src={images.flags[category.targetLanguage]}/>
                                 <div className="description">{category.description}</div>
                             </GridTileSecondary>
                         </GridTile>

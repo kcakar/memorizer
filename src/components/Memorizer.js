@@ -31,7 +31,8 @@ class Memorizer extends React.Component {
             isGame:false,
             activeCategory:"",
             didLogin: false,
-            userLogout:false
+            userLogout:false,
+            isLoading:true
         }
 
         //manage words
@@ -261,6 +262,10 @@ class Memorizer extends React.Component {
         }
     }
 
+    wontLogin(){
+        
+    }
+
     login(user)
     {
         this.setState({user});
@@ -434,7 +439,9 @@ class Memorizer extends React.Component {
     }
 
     render() {
-        if (this.state.didLogin) {
+        // if (this.state.didLogin) {
+        if (false) {
+            
             if(this.state.isSetup)
             {
                 return this.renderSetup();
@@ -453,7 +460,7 @@ class Memorizer extends React.Component {
         } 
         else 
         {
-            return <Login changeLanguage={this.changeLanguage} settings={this.state.settings} login={this.login} didLogin={this.state.didLogin} userLogout={this.state.userLogout} userLoggedOut={this.userLoggedOut}/>;
+            return <Login isLoading={this.state.isLoading} wontLogin={this.wontLogin} changeLanguage={this.changeLanguage} settings={this.state.settings} login={this.login} didLogin={this.state.didLogin} userLogout={this.state.userLogout} userLoggedOut={this.userLoggedOut}/>;
         }
 
     }

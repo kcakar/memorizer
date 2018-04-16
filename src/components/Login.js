@@ -36,6 +36,9 @@ class Login extends React.Component {
             if (user) {
                 component.authHandler(null, { user });
             }
+            else{
+                this.props.wontLogin();
+            }
           });
     }
 
@@ -131,23 +134,31 @@ class Login extends React.Component {
 
     render() {
         const siteLang=this.props.settings.siteLanguage;
-        return (
-            <section className="intro">
-                <Elevation z="7">
-                        <div className="login">
-                            <img alt="memorizer" src={brainIMG}/>
-                            <h2>MEMORIZER!</h2>
-                            <LanguageSwitcher siteLang={siteLang} changeLanguage={this.props.changeLanguage} />
-                            <div className="loginButtons">
-                                <button className="facebook" onClick={() => this.authenticate('google')}>{language.intro[siteLang].login_google}</button>
-                                <button className="facebook" onClick={() => this.authenticate('twitter')}>{language.intro[siteLang].login_twitter}</button>
-                                <button className="facebook" onClick={() => this.authenticate('github')}>{language.intro[siteLang].login_github}</button>
-                                <button className="facebook" onClick={() => this.authenticate('facebook')}>{language.intro[siteLang].login_facebook}</button>
+
+        if(this.props.isLoading)
+        {
+          return(<section className="loading">
+            </section>);
+        }
+        else{
+            return (
+                <section className="intro">
+                    <Elevation z="7">
+                            <div className="login">
+                                <img alt="memorizer" src={brainIMG}/>
+                                <h2>MEMORIZER!</h2>
+                                <LanguageSwitcher siteLang={siteLang} changeLanguage={this.props.changeLanguage} />
+                                <div className="loginButtons">
+                                    <button className="facebook" onClick={() => this.authenticate('google')}>{language.intro[siteLang].login_google}</button>
+                                    <button className="facebook" onClick={() => this.authenticate('twitter')}>{language.intro[siteLang].login_twitter}</button>
+                                    <button className="facebook" onClick={() => this.authenticate('github')}>{language.intro[siteLang].login_github}</button>
+                                    <button className="facebook" onClick={() => this.authenticate('facebook')}>{language.intro[siteLang].login_facebook}</button>
+                                </div>
                             </div>
-                        </div>
-                </Elevation>
-            </section>
-        );
+                    </Elevation>
+                </section>
+            );
+        }
     }
 }
 

@@ -281,14 +281,9 @@ section.category .mdc-grid-tile:hover .mdc-fab{
 
 section.category .mdc-grid-tile .mdc-grid-tile__primary-content{
   background-color: #dcdeef;
-  background-size: contain;
-  background-position: center;
+  background-size: cover;
+  background-position: center center;
   background-repeat: no-repeat;
-}
-
-section.category .mdc-grid-tile .mdc-grid-tile__primary-content img{
-  width: 100%;
-  height: calc(100% - 48px);
 }
 
 section.category .mdc-grid-tile .mdc-grid-tile__primary{
@@ -428,4 +423,22 @@ section.category .new span{
   position: relative;
   top:20px;
   color:rgb(255, 255, 255);
+}
+
+section.category .source-language,section.category .target-language{
+  position: absolute;
+  top:10px;
+  width:30px;
+  height: 30px;
+  border-radius: 25px;
+  z-index: 5;
+}
+
+
+section.category .source-language{
+  right: 45px;
+}
+
+section.category .target-language{
+  right:10px;
 }
