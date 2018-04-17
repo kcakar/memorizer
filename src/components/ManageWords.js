@@ -107,19 +107,22 @@ class ManageWords extends React.Component{
                 <Elevation z={3}>
                     <div className="gameSettings">
                         <div className="setting-group">
-                            <label>{language.managewords[siteLang].txt_question_types}</label>
+                            <span className="setting-title">{language.managewords[siteLang].txt_question_types}:</span>
                             <Checkbox label={language.managewords[siteLang].txt_question_type_test} value="Test" />
                             <Checkbox label={language.managewords[siteLang].txt_question_type_written} value="Test"/>
                         </div>
-                        {/* <div className="setting-group">
-                            <label>Soru sayısı</label>
-                            <Slider 
-                                value={this.state.sliderValue3 === undefined ? Object.keys(this.props.words).length : this.state.sliderValue3} 
-                                onChange={evt => this.setState({sliderValue3: evt.target.value})}
-                                discrete
-                                max={Object.keys(this.props.words).length}
-                            />
-                        </div> */}
+                        <div className="setting-group">
+                            <span className="setting-title">{language.managewords[siteLang].txt_question_amount}:</span>
+                            <div class="slider-container">
+                                <Slider 
+                                    value={this.state.sliderValue3 === undefined ? Object.keys(this.props.words).length : this.state.sliderValue3} 
+                                    onChange={evt => this.setState({sliderValue3: evt.target.value})}
+                                    discrete
+                                    max={Object.keys(this.props.words).length}
+                                    step={5}
+                                />
+                            </div>
+                        </div> 
                     </div>
                 </Elevation>
 

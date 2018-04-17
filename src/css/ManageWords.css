@@ -1,3 +1,5 @@
+/* #--mdc-theme-secondary:#3f51b5; */
+
 section.manageWords .mdc-fab{
     position: absolute;
     z-index: 1;
@@ -133,6 +135,16 @@ section.manageWords .mdc-fab{
     padding:50px;
   }
 
-  section.manageWords .gameSettings .setting-group{
-    /* max-width: 300px; */
+  section.manageWords .gameSettings .setting-group .setting-title{
+    width:100%;
+    display: block;
+  }
+
+  section.manageWords .gameSettings .setting-group .mdc-form-field{
+    position: relative;
+    left: -10px; 
+  }
+
+  section.manageWords .gameSettings .setting-group .slider-container{
+    max-width: 250px;
   }

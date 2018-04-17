@@ -52,6 +52,7 @@ const language = {
             txt_question_types:"Soru Tipleri",
             txt_question_type_test:"Çoktan seçmeli",
             txt_question_type_written:"Yazılı",
+            txt_question_amount:"Soru sayısı"
         },
         en:{
             table_words:"Word",
@@ -63,6 +64,7 @@ const language = {
             txt_question_types:"Question types",
             txt_question_type_test:"Multiple choice",
             txt_question_type_written:"Written",
+            txt_question_amount:"Question amount"
         }
     },
     settings:{
