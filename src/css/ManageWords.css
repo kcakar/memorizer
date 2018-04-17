@@ -134,5 +134,5 @@ section.manageWords .mdc-fab{
   }
 
   section.manageWords .gameSettings .setting-group{
-    max-width: 300px;
+    /* max-width: 300px; */
   }

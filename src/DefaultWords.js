@@ -3,7 +3,7 @@ let spanishWords={
     "hola": {
         "key": 1,
         "language": "İngilizce",
-        "category": "İspanyolca - 01",
+        "category": "Spanish - 01",
         "translationLanguage": "İspanyolca",
         "translation": "hi",
         "rightAnswer": 0,
@@ -12,7 +12,7 @@ let spanishWords={
     "si": {
         "key": 2,
         "language": "İngilizce",
-        "category": "İspanyolca - 01",
+        "category": "Spanish - 01",
         "translationLanguage": "İspanyolca",
         "translation": "yes",
         "rightAnswer": 0,
@@ -21,7 +21,7 @@ let spanishWords={
     "qué pasa": {
         "key": 3,
         "language": "İngilizce",
-        "category": "İspanyolca - 01",
+        "category": "Spanish - 01",
         "translationLanguage": "İspanyolca",
         "translation": "what's up",
         "rightAnswer": 0,
@@ -30,7 +30,7 @@ let spanishWords={
     "vamos": {
         "key": 4,
         "language": "İngilizce",
-        "category": "İspanyolca - 01",
+        "category": "Spanish - 01",
         "translationLanguage": "İspanyolca",
         "translation": "let's go",
         "rightAnswer": 0,
@@ -39,7 +39,7 @@ let spanishWords={
     "salud": {
         "key": 5,
         "language": "İngilizce",
-        "category": "İspanyolca - 01",
+        "category": "Spanish - 01",
         "translationLanguage": "İspanyolca",
         "translation": "cheers bless you!",
         "rightAnswer": 0,
@@ -48,7 +48,7 @@ let spanishWords={
     "no": {
         "key": 6,
         "language": "İngilizce",
-        "category": "İspanyolca - 01",
+        "category": "Spanish - 01",
         "translationLanguage": "İspanyolca",
         "translation": "no",
         "rightAnswer": 0,
@@ -57,7 +57,7 @@ let spanishWords={
     "por favor": {
         "key": 7,
         "language": "İngilizce",
-        "category": "İspanyolca - 01",
+        "category": "Spanish - 01",
         "translationLanguage": "İspanyolca",
         "translation": "please",
         "rightAnswer": 0,
@@ -66,7 +66,7 @@ let spanishWords={
     "lo siento": {
         "key": 8,
         "language": "İngilizce",
-        "category": "İspanyolca - 01",
+        "category": "Spanish - 01",
         "translationLanguage": "İspanyolca",
         "translation": "I'm sorry",
         "rightAnswer": 0,
@@ -75,7 +75,7 @@ let spanishWords={
     "buenos dias": {
         "key": 9,
         "language": "İngilizce",
-        "category": "İspanyolca - 01",
+        "category": "Spanish - 01",
         "translationLanguage": "İspanyolca",
         "translation": "good morning",
         "rightAnswer": 0,
@@ -84,7 +84,7 @@ let spanishWords={
     "buenas noches": {
         "key": 10,
         "language": "İngilizce",
-        "category": "İspanyolca - 01",
+        "category": "Spanish - 01",
         "translationLanguage": "İspanyolca",
         "translation": "good night",
         "rightAnswer": 0,
@@ -93,7 +93,7 @@ let spanishWords={
     "gracias": {
         "key": 11,
         "language": "İngilizce",
-        "category": "İspanyolca - 01",
+        "category": "Spanish - 01",
         "translationLanguage": "İspanyolca",
         "translation": "thank you",
         "rightAnswer": 0,
@@ -102,7 +102,7 @@ let spanishWords={
     "vale": {
         "key": 12,
         "language": "İngilizce",
-        "category": "İspanyolca - 01",
+        "category": "Spanish - 01",
         "translationLanguage": "İspanyolca",
         "translation": "okay",
         "rightAnswer": 0,
@@ -111,7 +111,7 @@ let spanishWords={
     "hasta luego": {
         "key": 13,
         "language": "İngilizce",
-        "category": "İspanyolca - 01",
+        "category": "Spanish - 01",
         "translationLanguage": "İspanyolca",
         "translation": "see you later",
         "rightAnswer": 0,
@@ -120,7 +120,7 @@ let spanishWords={
     "adios": {
         "key": 14,
         "language": "İngilizce",
-        "category": "İspanyolca - 01",
+        "category": "Spanish - 01",
         "translationLanguage": "İspanyolca",
         "translation": "goodbye",
         "rightAnswer": 0,
@@ -129,7 +129,7 @@ let spanishWords={
     "como": {
         "key": 15,
         "language": "İngilizce",
-        "category": "İspanyolca - 02",
+        "category": "Spanish - 02",
         "translationLanguage": "İspanyolca",
         "translation": "how (questions)",
         "rightAnswer": 0,
@@ -138,7 +138,7 @@ let spanishWords={
     "tu": {
         "key": 16,
         "language": "İngilizce",
-        "category": "İspanyolca - 02",
+        "category": "Spanish - 02",
         "translationLanguage": "İspanyolca",
         "translation": "you (singular informal)",
         "rightAnswer": 0,
@@ -147,7 +147,7 @@ let spanishWords={
     "estas": {
         "key": 17,
         "language": "İngilizce",
-        "category": "İspanyolca - 02",
+        "category": "Spanish - 02",
         "translationLanguage": "İspanyolca",
         "translation": "you're (temporarily singular informal)",
         "rightAnswer": 0,
@@ -156,7 +156,7 @@ let spanishWords={
     "eres": {
         "key": 18,
         "language": "İngilizce",
-        "category": "İspanyolca - 02",
+        "category": "Spanish - 02",
         "translationLanguage": "İspanyolca",
         "translation": "you're (permanently singular informal)",
         "rightAnswer": 0,
@@ -165,7 +165,7 @@ let spanishWords={
     "como estas": {
         "key": 19,
         "language": "İngilizce",
-        "category": "İspanyolca - 02",
+        "category": "Spanish - 02",
         "translationLanguage": "İspanyolca",
         "translation": "how are you (singular informal)",
         "rightAnswer": 0,
@@ -174,7 +174,7 @@ let spanishWords={
     "yo": {
         "key": 20,
         "language": "İngilizce",
-        "category": "İspanyolca - 02",
+        "category": "Spanish - 02",
         "translationLanguage": "İspanyolca",
         "translation": "I",
         "rightAnswer": 0,
@@ -183,7 +183,7 @@ let spanishWords={
     "estoy": {
         "key": 21,
         "language": "İngilizce",
-        "category": "İspanyolca - 02",
+        "category": "Spanish - 02",
         "translationLanguage": "İspanyolca",
         "translation": "I'm (temporarily)",
         "rightAnswer": 0,
@@ -192,7 +192,7 @@ let spanishWords={
     "soy": {
         "key": 22,
         "language": "İngilizce",
-        "category": "İspanyolca - 02",
+        "category": "Spanish - 02",
         "translationLanguage": "İspanyolca",
         "translation": "I'm (permanently)",
         "rightAnswer": 0,
@@ -201,7 +201,7 @@ let spanishWords={
     "muy": {
         "key": 23,
         "language": "İngilizce",
-        "category": "İspanyolca - 02",
+        "category": "Spanish - 02",
         "translationLanguage": "İspanyolca",
         "translation": "very",
         "rightAnswer": 0,
@@ -210,7 +210,7 @@ let spanishWords={
     "muy bien": {
         "key": 24,
         "language": "İngilizce",
-        "category": "İspanyolca - 02",
+        "category": "Spanish - 02",
         "translationLanguage": "İspanyolca",
         "translation": "very well",
         "rightAnswer": 0,
@@ -219,7 +219,7 @@ let spanishWords={
     "estoy muy bien": {
         "key": 25,
         "language": "İngilizce",
-        "category": "İspanyolca - 02",
+        "category": "Spanish - 02",
         "translationLanguage": "İspanyolca",
         "translation": "I'm very well",
         "rightAnswer": 0,
@@ -228,7 +228,7 @@ let spanishWords={
     "me": {
         "key": 26,
         "language": "İngilizce",
-        "category": "İspanyolca - 02",
+        "category": "Spanish - 02",
         "translationLanguage": "İspanyolca",
         "translation": "me to me; myself",
         "rightAnswer": 0,
@@ -237,7 +237,7 @@ let spanishWords={
     "te": {
         "key": 27,
         "language": "İngilizce",
-        "category": "İspanyolca - 02",
+        "category": "Spanish - 02",
         "translationLanguage": "İspanyolca",
         "translation": "you to you; yourself",
         "rightAnswer": 0,
@@ -246,7 +246,7 @@ let spanishWords={
     "llamarse": {
         "key": 28,
         "language": "İngilizce",
-        "category": "İspanyolca - 02",
+        "category": "Spanish - 02",
         "translationLanguage": "İspanyolca",
         "translation": "to call (oneself)",
         "rightAnswer": 0,
@@ -255,7 +255,7 @@ let spanishWords={
     "como te llamas": {
         "key": 29,
         "language": "İngilizce",
-        "category": "İspanyolca - 02",
+        "category": "Spanish - 02",
         "translationLanguage": "İspanyolca",
         "translation": "what's your name",
         "rightAnswer": 0,
@@ -264,7 +264,7 @@ let spanishWords={
     "me llamo": {
         "key": 30,
         "language": "İngilizce",
-        "category": "İspanyolca - 02",
+        "category": "Spanish - 02",
         "translationLanguage": "İspanyolca",
         "translation": "my name is",
         "rightAnswer": 0,
@@ -273,7 +273,7 @@ let spanishWords={
     "el genio": {
         "key": 31,
         "language": "İngilizce",
-        "category": "İspanyolca - 02",
+        "category": "Spanish - 02",
         "translationLanguage": "İspanyolca",
         "translation": "the genius",
         "rightAnswer": 0,
@@ -282,7 +282,7 @@ let spanishWords={
     "eres un genio": {
         "key": 32,
         "language": "İngilizce",
-        "category": "İspanyolca - 02",
+        "category": "Spanish - 02",
         "translationLanguage": "İspanyolca",
         "translation": "you're a genius",
         "rightAnswer": 0,
@@ -291,7 +291,7 @@ let spanishWords={
     "contento": {
         "key": 33,
         "language": "İngilizce",
-        "category": "İspanyolca - 03",
+        "category": "Spanish - 03",
         "translationLanguage": "İspanyolca",
         "translation": "happy",
         "rightAnswer": 0,
@@ -300,7 +300,7 @@ let spanishWords={
     "triste": {
         "key": 34,
         "language": "İngilizce",
-        "category": "İspanyolca - 03",
+        "category": "Spanish - 03",
         "translationLanguage": "İspanyolca",
         "translation": "sad",
         "rightAnswer": 0,
@@ -309,7 +309,7 @@ let spanishWords={
     "enfadado": {
         "key": 35,
         "language": "İngilizce",
-        "category": "İspanyolca - 03",
+        "category": "Spanish - 03",
         "translationLanguage": "İspanyolca",
         "translation": "angry",
         "rightAnswer": 0,
@@ -318,7 +318,7 @@ let spanishWords={
     "cansado": {
         "key": 36,
         "language": "İngilizce",
-        "category": "İspanyolca - 03",
+        "category": "Spanish - 03",
         "translationLanguage": "İspanyolca",
         "translation": "tired",
         "rightAnswer": 0,
@@ -327,7 +327,7 @@ let spanishWords={
     "enfermo": {
         "key": 37,
         "language": "İngilizce",
-        "category": "İspanyolca - 03",
+        "category": "Spanish - 03",
         "translationLanguage": "İspanyolca",
         "translation": "sick",
         "rightAnswer": 0,
@@ -336,7 +336,7 @@ let spanishWords={
     "correcto": {
         "key": 38,
         "language": "İngilizce",
-        "category": "İspanyolca - 03",
+        "category": "Spanish - 03",
         "translationLanguage": "İspanyolca",
         "translation": "right (correct)",
         "rightAnswer": 0,
@@ -345,7 +345,7 @@ let spanishWords={
     "equivocado": {
         "key": 39,
         "language": "İngilizce",
-        "category": "İspanyolca - 03",
+        "category": "Spanish - 03",
         "translationLanguage": "İspanyolca",
         "translation": "wrong",
         "rightAnswer": 0,
@@ -354,7 +354,7 @@ let spanishWords={
     "tener": {
         "key": 40,
         "language": "İngilizce",
-        "category": "İspanyolca - 03",
+        "category": "Spanish - 03",
         "translationLanguage": "İspanyolca",
         "translation": "to have",
         "rightAnswer": 0,
@@ -363,7 +363,7 @@ let spanishWords={
     "la razon": {
         "key": 41,
         "language": "İngilizce",
-        "category": "İspanyolca - 03",
+        "category": "Spanish - 03",
         "translationLanguage": "İspanyolca",
         "translation": "the reason",
         "rightAnswer": 0,
@@ -372,7 +372,7 @@ let spanishWords={
     "tener razon": {
         "key": 42,
         "language": "İngilizce",
-        "category": "İspanyolca - 03",
+        "category": "Spanish - 03",
         "translationLanguage": "İspanyolca",
         "translation": "to be right",
         "rightAnswer": 0,
@@ -381,7 +381,7 @@ let spanishWords={
     "tengo": {
         "key": 43,
         "language": "İngilizce",
-        "category": "İspanyolca - 03",
+        "category": "Spanish - 03",
         "translationLanguage": "İspanyolca",
         "translation": "I have",
         "rightAnswer": 0,
@@ -390,7 +390,7 @@ let spanishWords={
     "tienes": {
         "key": 44,
         "language": "İngilizce",
-        "category": "İspanyolca - 03",
+        "category": "Spanish - 03",
         "translationLanguage": "İspanyolca",
         "translation": "you have (singular informal)",
         "rightAnswer": 0,
@@ -399,7 +399,7 @@ let spanishWords={
     "el hambre": {
         "key": 45,
         "language": "İngilizce",
-        "category": "İspanyolca - 03",
+        "category": "Spanish - 03",
         "translationLanguage": "İspanyolca",
         "translation": "the hunger",
         "rightAnswer": 0,
@@ -408,7 +408,7 @@ let spanishWords={
     "la sed": {
         "key": 46,
         "language": "İngilizce",
-        "category": "İspanyolca - 03",
+        "category": "Spanish - 03",
         "translationLanguage": "İspanyolca",
         "translation": "the thirst",
         "rightAnswer": 0,
@@ -417,7 +417,7 @@ let spanishWords={
     "el sueno": {
         "key": 47,
         "language": "İngilizce",
-        "category": "İspanyolca - 03",
+        "category": "Spanish - 03",
         "translationLanguage": "İspanyolca",
         "translation": "the dream the sleep",
         "rightAnswer": 0,
@@ -426,7 +426,7 @@ let spanishWords={
     "estoy enfermo": {
         "key": 48,
         "language": "İngilizce",
-        "category": "İspanyolca - 03",
+        "category": "Spanish - 03",
         "translationLanguage": "İspanyolca",
         "translation": "I'm sick (said by a man)",
         "rightAnswer": 0,
@@ -435,7 +435,7 @@ let spanishWords={
     "estoy enferma": {
         "key": 49,
         "language": "İngilizce",
-        "category": "İspanyolca - 03",
+        "category": "Spanish - 03",
         "translationLanguage": "İspanyolca",
         "translation": "I'm sick (said by a woman)",
         "rightAnswer": 0,
@@ -444,7 +444,7 @@ let spanishWords={
     "estas cansado": {
         "key": 50,
         "language": "İngilizce",
-        "category": "İspanyolca - 03",
+        "category": "Spanish - 03",
         "translationLanguage": "İspanyolca",
         "translation": "are you tired (informal said to a man)",
         "rightAnswer": 0,
@@ -453,7 +453,7 @@ let spanishWords={
     "estoy equivocada": {
         "key": 51,
         "language": "İngilizce",
-        "category": "İspanyolca - 03",
+        "category": "Spanish - 03",
         "translationLanguage": "İspanyolca",
         "translation": "am I wrong (said by a woman)",
         "rightAnswer": 0,
@@ -462,7 +462,7 @@ let spanishWords={
     "tengo sueno": {
         "key": 52,
         "language": "İngilizce",
-        "category": "İspanyolca - 03",
+        "category": "Spanish - 03",
         "translationLanguage": "İspanyolca",
         "translation": "I'm sleepy",
         "rightAnswer": 0,
@@ -471,7 +471,7 @@ let spanishWords={
     "tengo hambre": {
         "key": 53,
         "language": "İngilizce",
-        "category": "İspanyolca - 03",
+        "category": "Spanish - 03",
         "translationLanguage": "İspanyolca",
         "translation": "I'm hungry",
         "rightAnswer": 0,
@@ -480,7 +480,7 @@ let spanishWords={
     "tienes sed": {
         "key": 54,
         "language": "İngilizce",
-        "category": "İspanyolca - 03",
+        "category": "Spanish - 03",
         "translationLanguage": "İspanyolca",
         "translation": "are you thirsty (singular informal)",
         "rightAnswer": 0,
@@ -489,7 +489,7 @@ let spanishWords={
     "la comida": {
         "key": 55,
         "language": "İngilizce",
-        "category": "İspanyolca - 04",
+        "category": "Spanish - 04",
         "translationLanguage": "İspanyolca",
         "translation": "the food",
         "rightAnswer": 0,
@@ -498,7 +498,7 @@ let spanishWords={
     "el pan": {
         "key": 56,
         "language": "İngilizce",
-        "category": "İspanyolca - 04",
+        "category": "Spanish - 04",
         "translationLanguage": "İspanyolca",
         "translation": "the bread",
         "rightAnswer": 0,
@@ -507,7 +507,7 @@ let spanishWords={
     "la pasta": {
         "key": 57,
         "language": "İngilizce",
-        "category": "İspanyolca - 04",
+        "category": "Spanish - 04",
         "translationLanguage": "İspanyolca",
         "translation": "the pasta",
         "rightAnswer": 0,
@@ -516,7 +516,7 @@ let spanishWords={
     "el arroz": {
         "key": 58,
         "language": "İngilizce",
-        "category": "İspanyolca - 04",
+        "category": "Spanish - 04",
         "translationLanguage": "İspanyolca",
         "translation": "the rice",
         "rightAnswer": 0,
@@ -525,7 +525,7 @@ let spanishWords={
     "la patata": {
         "key": 59,
         "language": "İngilizce",
-        "category": "İspanyolca - 04",
+        "category": "Spanish - 04",
         "translationLanguage": "İspanyolca",
         "translation": "the potato",
         "rightAnswer": 0,
@@ -534,7 +534,7 @@ let spanishWords={
     "la verdura": {
         "key": 60,
         "language": "İngilizce",
-        "category": "İspanyolca - 04",
+        "category": "Spanish - 04",
         "translationLanguage": "İspanyolca",
         "translation": "the vegetable",
         "rightAnswer": 0,
@@ -543,7 +543,7 @@ let spanishWords={
     "la fruta": {
         "key": 61,
         "language": "İngilizce",
-        "category": "İspanyolca - 04",
+        "category": "Spanish - 04",
         "translationLanguage": "İspanyolca",
         "translation": "the fruit",
         "rightAnswer": 0,
@@ -552,7 +552,7 @@ let spanishWords={
     "la carne": {
         "key": 62,
         "language": "İngilizce",
-        "category": "İspanyolca - 04",
+        "category": "Spanish - 04",
         "translationLanguage": "İspanyolca",
         "translation": "the meat",
         "rightAnswer": 0,
@@ -561,7 +561,7 @@ let spanishWords={
     "la ensalada": {
         "key": 63,
         "language": "İngilizce",
-        "category": "İspanyolca - 04",
+        "category": "Spanish - 04",
         "translationLanguage": "İspanyolca",
         "translation": "the salad",
         "rightAnswer": 0,
@@ -570,7 +570,7 @@ let spanishWords={
     "la manzana": {
         "key": 64,
         "language": "İngilizce",
-        "category": "İspanyolca - 04",
+        "category": "Spanish - 04",
         "translationLanguage": "İspanyolca",
         "translation": "the apple",
         "rightAnswer": 0,
@@ -579,7 +579,7 @@ let spanishWords={
     "el platano": {
         "key": 65,
         "language": "İngilizce",
-        "category": "İspanyolca - 04",
+        "category": "Spanish - 04",
         "translationLanguage": "İspanyolca",
         "translation": "the banana",
         "rightAnswer": 0,
@@ -588,7 +588,7 @@ let spanishWords={
     "la naranja": {
         "key": 66,
         "language": "İngilizce",
-        "category": "İspanyolca - 04",
+        "category": "Spanish - 04",
         "translationLanguage": "İspanyolca",
         "translation": "the orange",
         "rightAnswer": 0,
@@ -597,7 +597,7 @@ let spanishWords={
     "el limon": {
         "key": 67,
         "language": "İngilizce",
-        "category": "İspanyolca - 04",
+        "category": "Spanish - 04",
         "translationLanguage": "İspanyolca",
         "translation": "the lemon",
         "rightAnswer": 0,
@@ -606,7 +606,7 @@ let spanishWords={
     "la sopa": {
         "key": 68,
         "language": "İngilizce",
-        "category": "İspanyolca - 04",
+        "category": "Spanish - 04",
         "translationLanguage": "İspanyolca",
         "translation": "the soup",
         "rightAnswer": 0,
@@ -615,7 +615,7 @@ let spanishWords={
     "el huevo": {
         "key": 69,
         "language": "İngilizce",
-        "category": "İspanyolca - 04",
+        "category": "Spanish - 04",
         "translationLanguage": "İspanyolca",
         "translation": "the egg",
         "rightAnswer": 0,
@@ -624,7 +624,7 @@ let spanishWords={
     "el queso": {
         "key": 70,
         "language": "İngilizce",
-        "category": "İspanyolca - 04",
+        "category": "Spanish - 04",
         "translationLanguage": "İspanyolca",
         "translation": "the cheese",
         "rightAnswer": 0,
@@ -633,7 +633,7 @@ let spanishWords={
     "el pollo": {
         "key": 71,
         "language": "İngilizce",
-        "category": "İspanyolca - 04",
+        "category": "Spanish - 04",
         "translationLanguage": "İspanyolca",
         "translation": "the chicken",
         "rightAnswer": 0,
@@ -642,7 +642,7 @@ let spanishWords={
     "el cerdo": {
         "key": 72,
         "language": "İngilizce",
-        "category": "İspanyolca - 04",
+        "category": "Spanish - 04",
         "translationLanguage": "İspanyolca",
         "translation": "the pork",
         "rightAnswer": 0,
@@ -651,7 +651,7 @@ let spanishWords={
     "la vaca": {
         "key": 73,
         "language": "İngilizce",
-        "category": "İspanyolca - 04",
+        "category": "Spanish - 04",
         "translationLanguage": "İspanyolca",
         "translation": "the cow",
         "rightAnswer": 0,
@@ -660,7 +660,7 @@ let spanishWords={
     "la carne de vaca": {
         "key": 74,
         "language": "İngilizce",
-        "category": "İspanyolca - 04",
+        "category": "Spanish - 04",
         "translationLanguage": "İspanyolca",
         "translation": "the beef",
         "rightAnswer": 0,
@@ -669,7 +669,7 @@ let spanishWords={
     "el pescado": {
         "key": 75,
         "language": "İngilizce",
-        "category": "İspanyolca - 04",
+        "category": "Spanish - 04",
         "translationLanguage": "İspanyolca",
         "translation": "the fish",
         "rightAnswer": 0,
@@ -678,7 +678,7 @@ let spanishWords={
     "el agua": {
         "key": 76,
         "language": "İngilizce",
-        "category": "İspanyolca - 04",
+        "category": "Spanish - 04",
         "translationLanguage": "İspanyolca",
         "translation": "the water",
         "rightAnswer": 0,
@@ -687,7 +687,7 @@ let spanishWords={
     "el café": {
         "key": 77,
         "language": "İngilizce",
-        "category": "İspanyolca - 04",
+        "category": "Spanish - 04",
         "translationLanguage": "İspanyolca",
         "translation": "the coffee",
         "rightAnswer": 0,
@@ -696,7 +696,7 @@ let spanishWords={
     "el té": {
         "key": 78,
         "language": "İngilizce",
-        "category": "İspanyolca - 04",
+        "category": "Spanish - 04",
         "translationLanguage": "İspanyolca",
         "translation": "the tea",
         "rightAnswer": 0,
@@ -705,7 +705,7 @@ let spanishWords={
     "la cerveza": {
         "key": 79,
         "language": "İngilizce",
-        "category": "İspanyolca - 04",
+        "category": "Spanish - 04",
         "translationLanguage": "İspanyolca",
         "translation": "the beer",
         "rightAnswer": 0,
@@ -714,7 +714,7 @@ let spanishWords={
     "el vino": {
         "key": 80,
         "language": "İngilizce",
-        "category": "İspanyolca - 04",
+        "category": "Spanish - 04",
         "translationLanguage": "İspanyolca",
         "translation": "the wine",
         "rightAnswer": 0,
@@ -723,7 +723,7 @@ let spanishWords={
     "la leche": {
         "key": 81,
         "language": "İngilizce",
-        "category": "İspanyolca - 04",
+        "category": "Spanish - 04",
         "translationLanguage": "İspanyolca",
         "translation": "the milk",
         "rightAnswer": 0,
@@ -732,7 +732,7 @@ let spanishWords={
     "el zumo": {
         "key": 82,
         "language": "İngilizce",
-        "category": "İspanyolca - 04",
+        "category": "Spanish - 04",
         "translationLanguage": "İspanyolca",
         "translation": "the juice",
         "rightAnswer": 0,
@@ -741,7 +741,7 @@ let spanishWords={
     "la salsa": {
         "key": 83,
         "language": "İngilizce",
-        "category": "İspanyolca - 04",
+        "category": "Spanish - 04",
         "translationLanguage": "İspanyolca",
         "translation": "the sauce",
         "rightAnswer": 0,
@@ -750,7 +750,7 @@ let spanishWords={
     "la mantequilla": {
         "key": 84,
         "language": "İngilizce",
-        "category": "İspanyolca - 04",
+        "category": "Spanish - 04",
         "translationLanguage": "İspanyolca",
         "translation": "the butter",
         "rightAnswer": 0,
@@ -759,7 +759,7 @@ let spanishWords={
     "de": {
         "key": 85,
         "language": "İngilizce",
-        "category": "İspanyolca - 05",
+        "category": "Spanish - 05",
         "translationLanguage": "İspanyolca",
         "translation": "of from",
         "rightAnswer": 0,
@@ -768,7 +768,7 @@ let spanishWords={
     "me gusta": {
         "key": 86,
         "language": "İngilizce",
-        "category": "İspanyolca - 05",
+        "category": "Spanish - 05",
         "translationLanguage": "İspanyolca",
         "translation": "I like (one thing)",
         "rightAnswer": 0,
@@ -777,7 +777,7 @@ let spanishWords={
     "te gusta": {
         "key": 87,
         "language": "İngilizce",
-        "category": "İspanyolca - 05",
+        "category": "Spanish - 05",
         "translationLanguage": "İspanyolca",
         "translation": "you like (one thing singular informal)",
         "rightAnswer": 0,
@@ -786,7 +786,7 @@ let spanishWords={
     "me gustan": {
         "key": 88,
         "language": "İngilizce",
-        "category": "İspanyolca - 05",
+        "category": "Spanish - 05",
         "translationLanguage": "İspanyolca",
         "translation": "I like (more than one thing)",
         "rightAnswer": 0,
@@ -795,7 +795,7 @@ let spanishWords={
     "te gustan": {
         "key": 89,
         "language": "İngilizce",
-        "category": "İspanyolca - 05",
+        "category": "Spanish - 05",
         "translationLanguage": "İspanyolca",
         "translation": "you like (more than one thing)",
         "rightAnswer": 0,
@@ -804,7 +804,7 @@ let spanishWords={
     "es": {
         "key": 90,
         "language": "İngilizce",
-        "category": "İspanyolca - 05",
+        "category": "Spanish - 05",
         "translationLanguage": "İspanyolca",
         "translation": "he's she's; it's (permanently)",
         "rightAnswer": 0,
@@ -813,7 +813,7 @@ let spanishWords={
     "esta": {
         "key": 91,
         "language": "İngilizce",
-        "category": "İspanyolca - 05",
+        "category": "Spanish - 05",
         "translationLanguage": "İspanyolca",
         "translation": "he's she's; it's (temporarily)",
         "rightAnswer": 0,
@@ -822,7 +822,7 @@ let spanishWords={
     "delicioso": {
         "key": 92,
         "language": "İngilizce",
-        "category": "İspanyolca - 05",
+        "category": "Spanish - 05",
         "translationLanguage": "İspanyolca",
         "translation": "delicious",
         "rightAnswer": 0,
@@ -831,7 +831,7 @@ let spanishWords={
     "asqueroso": {
         "key": 93,
         "language": "İngilizce",
-        "category": "İspanyolca - 05",
+        "category": "Spanish - 05",
         "translationLanguage": "İspanyolca",
         "translation": "disgusting",
         "rightAnswer": 0,
@@ -840,7 +840,7 @@ let spanishWords={
     "genial": {
         "key": 94,
         "language": "İngilizce",
-        "category": "İspanyolca - 05",
+        "category": "Spanish - 05",
         "translationLanguage": "İspanyolca",
         "translation": "awesome",
         "rightAnswer": 0,
@@ -849,7 +849,7 @@ let spanishWords={
     "hacer": {
         "key": 95,
         "language": "İngilizce",
-        "category": "İspanyolca - 05",
+        "category": "Spanish - 05",
         "translationLanguage": "İspanyolca",
         "translation": "to do to make",
         "rightAnswer": 0,
@@ -858,7 +858,7 @@ let spanishWords={
     "y": {
         "key": 96,
         "language": "İngilizce",
-        "category": "İspanyolca - 05",
+        "category": "Spanish - 05",
         "translationLanguage": "İspanyolca",
         "translation": "and",
         "rightAnswer": 0,
@@ -867,7 +867,7 @@ let spanishWords={
     "me gusta el pan": {
         "key": 97,
         "language": "İngilizce",
-        "category": "İspanyolca - 05",
+        "category": "Spanish - 05",
         "translationLanguage": "İspanyolca",
         "translation": "I like bread",
         "rightAnswer": 0,
@@ -876,7 +876,7 @@ let spanishWords={
     "no me gusta": {
         "key": 98,
         "language": "İngilizce",
-        "category": "İspanyolca - 05",
+        "category": "Spanish - 05",
         "translationLanguage": "İspanyolca",
         "translation": "I don't like",
         "rightAnswer": 0,
@@ -885,7 +885,7 @@ let spanishWords={
     "no me gusta la pasta": {
         "key": 99,
         "language": "İngilizce",
-        "category": "İspanyolca - 05",
+        "category": "Spanish - 05",
         "translationLanguage": "İspanyolca",
         "translation": "I don't like pasta",
         "rightAnswer": 0,
@@ -894,7 +894,7 @@ let spanishWords={
     "me gustan las naranjas": {
         "key": 100,
         "language": "İngilizce",
-        "category": "İspanyolca - 05",
+        "category": "Spanish - 05",
         "translationLanguage": "İspanyolca",
         "translation": "I like oranges",
         "rightAnswer": 0,
@@ -903,7 +903,7 @@ let spanishWords={
     "no me gustan las manzanas": {
         "key": 101,
         "language": "İngilizce",
-        "category": "İspanyolca - 05",
+        "category": "Spanish - 05",
         "translationLanguage": "İspanyolca",
         "translation": "I don't like apples",
         "rightAnswer": 0,
@@ -912,7 +912,7 @@ let spanishWords={
     "esta delicioso": {
         "key": 102,
         "language": "İngilizce",
-        "category": "İspanyolca - 05",
+        "category": "Spanish - 05",
         "translationLanguage": "İspanyolca",
         "translation": "it's delicious",
         "rightAnswer": 0,
@@ -921,7 +921,7 @@ let spanishWords={
     "el café esta delicioso": {
         "key": 103,
         "language": "İngilizce",
-        "category": "İspanyolca - 05",
+        "category": "Spanish - 05",
         "translationLanguage": "İspanyolca",
         "translation": "coffee is delicious",
         "rightAnswer": 0,
@@ -930,7 +930,7 @@ let spanishWords={
     "me gustan el té y el café": {
         "key": 104,
         "language": "İngilizce",
-        "category": "İspanyolca - 05",
+        "category": "Spanish - 05",
         "translationLanguage": "İspanyolca",
         "translation": "I like tea and coffee",
         "rightAnswer": 0,
@@ -939,7 +939,7 @@ let spanishWords={
     "espanol": {
         "key": 105,
         "language": "İngilizce",
-        "category": "İspanyolca - 06",
+        "category": "Spanish - 06",
         "translationLanguage": "İspanyolca",
         "translation": "Spanish",
         "rightAnswer": 0,
@@ -948,7 +948,7 @@ let spanishWords={
     "inglés": {
         "key": 106,
         "language": "İngilizce",
-        "category": "İspanyolca - 06",
+        "category": "Spanish - 06",
         "translationLanguage": "İspanyolca",
         "translation": "English",
         "rightAnswer": 0,
@@ -957,7 +957,7 @@ let spanishWords={
     "britanico": {
         "key": 107,
         "language": "İngilizce",
-        "category": "İspanyolca - 06",
+        "category": "Spanish - 06",
         "translationLanguage": "İspanyolca",
         "translation": "British",
         "rightAnswer": 0,
@@ -966,7 +966,7 @@ let spanishWords={
     "americano": {
         "key": 108,
         "language": "İngilizce",
-        "category": "İspanyolca - 06",
+        "category": "Spanish - 06",
         "translationLanguage": "İspanyolca",
         "translation": "American",
         "rightAnswer": 0,
@@ -975,7 +975,7 @@ let spanishWords={
     "soy inglés": {
         "key": 109,
         "language": "İngilizce",
-        "category": "İspanyolca - 06",
+        "category": "Spanish - 06",
         "translationLanguage": "İspanyolca",
         "translation": "I'm English (said by a man)",
         "rightAnswer": 0,
@@ -984,7 +984,7 @@ let spanishWords={
     "soy inglesa": {
         "key": 110,
         "language": "İngilizce",
-        "category": "İspanyolca - 06",
+        "category": "Spanish - 06",
         "translationLanguage": "İspanyolca",
         "translation": "I'm English (said by a woman)",
         "rightAnswer": 0,
@@ -993,7 +993,7 @@ let spanishWords={
     "y tu": {
         "key": 111,
         "language": "İngilizce",
-        "category": "İspanyolca - 06",
+        "category": "Spanish - 06",
         "translationLanguage": "İspanyolca",
         "translation": "how about you (singular informal)",
         "rightAnswer": 0,
@@ -1002,7 +1002,7 @@ let spanishWords={
     "eres espanola": {
         "key": 112,
         "language": "İngilizce",
-        "category": "İspanyolca - 06",
+        "category": "Spanish - 06",
         "translationLanguage": "İspanyolca",
         "translation": "are you Spanish (said to a woman)",
         "rightAnswer": 0,
@@ -1011,7 +1011,7 @@ let spanishWords={
     "no soy espanola": {
         "key": 113,
         "language": "İngilizce",
-        "category": "İspanyolca - 06",
+        "category": "Spanish - 06",
         "translationLanguage": "İspanyolca",
         "translation": "I'm not Spanish (said by a woman)",
         "rightAnswer": 0,
@@ -1020,7 +1020,7 @@ let spanishWords={
     "el numero": {
         "key": 114,
         "language": "İngilizce",
-        "category": "İspanyolca - 07",
+        "category": "Spanish - 07",
         "translationLanguage": "İspanyolca",
         "translation": "the number",
         "rightAnswer": 0,
@@ -1029,7 +1029,7 @@ let spanishWords={
     "el teléfono": {
         "key": 115,
         "language": "İngilizce",
-        "category": "İspanyolca - 07",
+        "category": "Spanish - 07",
         "translationLanguage": "İspanyolca",
         "translation": "the phone the telephone",
         "rightAnswer": 0,
@@ -1038,7 +1038,7 @@ let spanishWords={
     "el numero de teléfono": {
         "key": 116,
         "language": "İngilizce",
-        "category": "İspanyolca - 07",
+        "category": "Spanish - 07",
         "translationLanguage": "İspanyolca",
         "translation": "the phone number",
         "rightAnswer": 0,
@@ -1047,7 +1047,7 @@ let spanishWords={
     "cual": {
         "key": 117,
         "language": "İngilizce",
-        "category": "İspanyolca - 07",
+        "category": "Spanish - 07",
         "translationLanguage": "İspanyolca",
         "translation": "which (questions)",
         "rightAnswer": 0,
@@ -1056,7 +1056,7 @@ let spanishWords={
     "mi (mis)": {
         "key": 118,
         "language": "İngilizce",
-        "category": "İspanyolca - 07",
+        "category": "Spanish - 07",
         "translationLanguage": "İspanyolca",
         "translation": "my",
         "rightAnswer": 0,
@@ -1065,7 +1065,7 @@ let spanishWords={
     "tu (tus)": {
         "key": 119,
         "language": "İngilizce",
-        "category": "İspanyolca - 07",
+        "category": "Spanish - 07",
         "translationLanguage": "İspanyolca",
         "translation": "your (singular informal)",
         "rightAnswer": 0,
@@ -1074,7 +1074,7 @@ let spanishWords={
     "cero": {
         "key": 120,
         "language": "İngilizce",
-        "category": "İspanyolca - 07",
+        "category": "Spanish - 07",
         "translationLanguage": "İspanyolca",
         "translation": "zero 0",
         "rightAnswer": 0,
@@ -1083,7 +1083,7 @@ let spanishWords={
     "uno": {
         "key": 121,
         "language": "İngilizce",
-        "category": "İspanyolca - 07",
+        "category": "Spanish - 07",
         "translationLanguage": "İspanyolca",
         "translation": "one 1",
         "rightAnswer": 0,
@@ -1092,7 +1092,7 @@ let spanishWords={
     "dos": {
         "key": 122,
         "language": "İngilizce",
-        "category": "İspanyolca - 07",
+        "category": "Spanish - 07",
         "translationLanguage": "İspanyolca",
         "translation": "two 2",
         "rightAnswer": 0,
@@ -1101,7 +1101,7 @@ let spanishWords={
     "tres": {
         "key": 123,
         "language": "İngilizce",
-        "category": "İspanyolca - 07",
+        "category": "Spanish - 07",
         "translationLanguage": "İspanyolca",
         "translation": "three 3",
         "rightAnswer": 0,
@@ -1110,7 +1110,7 @@ let spanishWords={
     "cuatro": {
         "key": 124,
         "language": "İngilizce",
-        "category": "İspanyolca - 07",
+        "category": "Spanish - 07",
         "translationLanguage": "İspanyolca",
         "translation": "four 4",
         "rightAnswer": 0,
@@ -1119,7 +1119,7 @@ let spanishWords={
     "cinco": {
         "key": 125,
         "language": "İngilizce",
-        "category": "İspanyolca - 07",
+        "category": "Spanish - 07",
         "translationLanguage": "İspanyolca",
         "translation": "five 5",
         "rightAnswer": 0,
@@ -1128,7 +1128,7 @@ let spanishWords={
     "seis": {
         "key": 126,
         "language": "İngilizce",
-        "category": "İspanyolca - 07",
+        "category": "Spanish - 07",
         "translationLanguage": "İspanyolca",
         "translation": "six 6",
         "rightAnswer": 0,
@@ -1137,7 +1137,7 @@ let spanishWords={
     "siete": {
         "key": 127,
         "language": "İngilizce",
-        "category": "İspanyolca - 07",
+        "category": "Spanish - 07",
         "translationLanguage": "İspanyolca",
         "translation": "seven 7",
         "rightAnswer": 0,
@@ -1146,7 +1146,7 @@ let spanishWords={
     "ocho": {
         "key": 128,
         "language": "İngilizce",
-        "category": "İspanyolca - 07",
+        "category": "Spanish - 07",
         "translationLanguage": "İspanyolca",
         "translation": "eight 8",
         "rightAnswer": 0,
@@ -1155,7 +1155,7 @@ let spanishWords={
     "nueve": {
         "key": 129,
         "language": "İngilizce",
-        "category": "İspanyolca - 07",
+        "category": "Spanish - 07",
         "translationLanguage": "İspanyolca",
         "translation": "nine 9",
         "rightAnswer": 0,
@@ -1164,7 +1164,7 @@ let spanishWords={
     "diez": {
         "key": 130,
         "language": "İngilizce",
-        "category": "İspanyolca - 07",
+        "category": "Spanish - 07",
         "translationLanguage": "İspanyolca",
         "translation": "ten 10",
         "rightAnswer": 0,
@@ -1173,7 +1173,7 @@ let spanishWords={
     "cual es tu numero de teléfono": {
         "key": 131,
         "language": "İngilizce",
-        "category": "İspanyolca - 07",
+        "category": "Spanish - 07",
         "translationLanguage": "İspanyolca",
         "translation": "what's your phone number",
         "rightAnswer": 0,
@@ -1182,7 +1182,7 @@ let spanishWords={
     "mi numero de teléfono es": {
         "key": 132,
         "language": "İngilizce",
-        "category": "İspanyolca - 07",
+        "category": "Spanish - 07",
         "translationLanguage": "İspanyolca",
         "translation": "my phone number is",
         "rightAnswer": 0,
@@ -1191,7 +1191,7 @@ let spanishWords={
     "el restaurante": {
         "key": 133,
         "language": "İngilizce",
-        "category": "İspanyolca - 08",
+        "category": "Spanish - 08",
         "translationLanguage": "İspanyolca",
         "translation": "the restaurant",
         "rightAnswer": 0,
@@ -1200,7 +1200,7 @@ let spanishWords={
     "la mesa": {
         "key": 134,
         "language": "İngilizce",
-        "category": "İspanyolca - 08",
+        "category": "Spanish - 08",
         "translationLanguage": "İspanyolca",
         "translation": "the table",
         "rightAnswer": 0,
@@ -1209,7 +1209,7 @@ let spanishWords={
     "el menu": {
         "key": 135,
         "language": "İngilizce",
-        "category": "İspanyolca - 08",
+        "category": "Spanish - 08",
         "translationLanguage": "İspanyolca",
         "translation": "the menu",
         "rightAnswer": 0,
@@ -1218,7 +1218,7 @@ let spanishWords={
     "el cuchillo": {
         "key": 136,
         "language": "İngilizce",
-        "category": "İspanyolca - 08",
+        "category": "Spanish - 08",
         "translationLanguage": "İspanyolca",
         "translation": "the knife",
         "rightAnswer": 0,
@@ -1227,7 +1227,7 @@ let spanishWords={
     "el tenedor": {
         "key": 137,
         "language": "İngilizce",
-        "category": "İspanyolca - 08",
+        "category": "Spanish - 08",
         "translationLanguage": "İspanyolca",
         "translation": "the fork",
         "rightAnswer": 0,
@@ -1236,7 +1236,7 @@ let spanishWords={
     "la cuchara": {
         "key": 138,
         "language": "İngilizce",
-        "category": "İspanyolca - 08",
+        "category": "Spanish - 08",
         "translationLanguage": "İspanyolca",
         "translation": "the spoon",
         "rightAnswer": 0,
@@ -1245,7 +1245,7 @@ let spanishWords={
     "los palillos": {
         "key": 139,
         "language": "İngilizce",
-        "category": "İspanyolca - 08",
+        "category": "Spanish - 08",
         "translationLanguage": "İspanyolca",
         "translation": "the chopsticks",
         "rightAnswer": 0,
@@ -1254,7 +1254,7 @@ let spanishWords={
     "poder": {
         "key": 140,
         "language": "İngilizce",
-        "category": "İspanyolca - 08",
+        "category": "Spanish - 08",
         "translationLanguage": "İspanyolca",
         "translation": "can to be able to",
         "rightAnswer": 0,
@@ -1263,7 +1263,7 @@ let spanishWords={
     "puedo": {
         "key": 141,
         "language": "İngilizce",
-        "category": "İspanyolca - 08",
+        "category": "Spanish - 08",
         "translationLanguage": "İspanyolca",
         "translation": "I can",
         "rightAnswer": 0,
@@ -1272,7 +1272,7 @@ let spanishWords={
     "puedes": {
         "key": 142,
         "language": "İngilizce",
-        "category": "İspanyolca - 08",
+        "category": "Spanish - 08",
         "translationLanguage": "İspanyolca",
         "translation": "you can (singular informal)",
         "rightAnswer": 0,
@@ -1281,7 +1281,7 @@ let spanishWords={
     "pedir": {
         "key": 143,
         "language": "İngilizce",
-        "category": "İspanyolca - 08",
+        "category": "Spanish - 08",
         "translationLanguage": "İspanyolca",
         "translation": "to order",
         "rightAnswer": 0,
@@ -1290,7 +1290,7 @@ let spanishWords={
     "comer": {
         "key": 144,
         "language": "İngilizce",
-        "category": "İspanyolca - 08",
+        "category": "Spanish - 08",
         "translationLanguage": "İspanyolca",
         "translation": "to eat",
         "rightAnswer": 0,
@@ -1299,7 +1299,7 @@ let spanishWords={
     "beber": {
         "key": 145,
         "language": "İngilizce",
-        "category": "İspanyolca - 08",
+        "category": "Spanish - 08",
         "translationLanguage": "İspanyolca",
         "translation": "to drink",
         "rightAnswer": 0,
@@ -1308,7 +1308,7 @@ let spanishWords={
     "dar": {
         "key": 146,
         "language": "İngilizce",
-        "category": "İspanyolca - 08",
+        "category": "Spanish - 08",
         "translationLanguage": "İspanyolca",
         "translation": "to give",
         "rightAnswer": 0,
@@ -1317,7 +1317,7 @@ let spanishWords={
     "darnos": {
         "key": 147,
         "language": "İngilizce",
-        "category": "İspanyolca - 08",
+        "category": "Spanish - 08",
         "translationLanguage": "İspanyolca",
         "translation": "to give us",
         "rightAnswer": 0,
@@ -1326,7 +1326,7 @@ let spanishWords={
     "listo": {
         "key": 148,
         "language": "İngilizce",
-        "category": "İspanyolca - 08",
+        "category": "Spanish - 08",
         "translationLanguage": "İspanyolca",
         "translation": "ready",
         "rightAnswer": 0,
@@ -1335,7 +1335,7 @@ let spanishWords={
     "para llevar": {
         "key": 149,
         "language": "İngilizce",
-        "category": "İspanyolca - 08",
+        "category": "Spanish - 08",
         "translationLanguage": "İspanyolca",
         "translation": "for take-away",
         "rightAnswer": 0,
@@ -1344,7 +1344,7 @@ let spanishWords={
     "para mi": {
         "key": 150,
         "language": "İngilizce",
-        "category": "İspanyolca - 08",
+        "category": "Spanish - 08",
         "translationLanguage": "İspanyolca",
         "translation": "for me",
         "rightAnswer": 0,
@@ -1353,7 +1353,7 @@ let spanishWords={
     "para ti": {
         "key": 151,
         "language": "İngilizce",
-        "category": "İspanyolca - 08",
+        "category": "Spanish - 08",
         "translationLanguage": "İspanyolca",
         "translation": "for you (singular informal)",
         "rightAnswer": 0,
@@ -1362,7 +1362,7 @@ let spanishWords={
     "es para ti": {
         "key": 152,
         "language": "İngilizce",
-        "category": "İspanyolca - 08",
+        "category": "Spanish - 08",
         "translationLanguage": "İspanyolca",
         "translation": "it's for you",
         "rightAnswer": 0,
@@ -1371,7 +1371,7 @@ let spanishWords={
     "es para mi": {
         "key": 153,
         "language": "İngilizce",
-        "category": "İspanyolca - 08",
+        "category": "Spanish - 08",
         "translationLanguage": "İspanyolca",
         "translation": "is it for me",
         "rightAnswer": 0,
@@ -1380,7 +1380,7 @@ let spanishWords={
     "una mesa para dos por favor": {
         "key": 154,
         "language": "İngilizce",
-        "category": "İspanyolca - 08",
+        "category": "Spanish - 08",
         "translationLanguage": "İspanyolca",
         "translation": "a table for two please",
         "rightAnswer": 0,
@@ -1389,7 +1389,7 @@ let spanishWords={
     "puede darnos por favor": {
         "key": 155,
         "language": "İngilizce",
-        "category": "İspanyolca - 08",
+        "category": "Spanish - 08",
         "translationLanguage": "İspanyolca",
         "translation": "can you give us please",
         "rightAnswer": 0,
@@ -1398,7 +1398,7 @@ let spanishWords={
     "puede darnos el menu por favor": {
         "key": 156,
         "language": "İngilizce",
-        "category": "İspanyolca - 08",
+        "category": "Spanish - 08",
         "translationLanguage": "İspanyolca",
         "translation": "can you give us the menu please",
         "rightAnswer": 0,
@@ -1407,7 +1407,7 @@ let spanishWords={
     "estan listos": {
         "key": 157,
         "language": "İngilizce",
-        "category": "İspanyolca - 08",
+        "category": "Spanish - 08",
         "translationLanguage": "İspanyolca",
         "translation": "are you ready (plural formal)",
         "rightAnswer": 0,
@@ -1416,7 +1416,7 @@ let spanishWords={
     "estan listos para pedir": {
         "key": 158,
         "language": "İngilizce",
-        "category": "İspanyolca - 08",
+        "category": "Spanish - 08",
         "translationLanguage": "İspanyolca",
         "translation": "are you ready to order",
         "rightAnswer": 0,
@@ -1425,7 +1425,7 @@ let spanishWords={
     "si por favor": {
         "key": 159,
         "language": "İngilizce",
-        "category": "İspanyolca - 08",
+        "category": "Spanish - 08",
         "translationLanguage": "İspanyolca",
         "translation": "yes please",
         "rightAnswer": 0,
@@ -1434,7 +1434,7 @@ let spanishWords={
     "no gracias": {
         "key": 160,
         "language": "İngilizce",
-        "category": "İspanyolca - 08",
+        "category": "Spanish - 08",
         "translationLanguage": "İspanyolca",
         "translation": "no thank you",
         "rightAnswer": 0,
@@ -1443,7 +1443,7 @@ let spanishWords={
     "creer": {
         "key": 161,
         "language": "İngilizce",
-        "category": "İspanyolca - 09",
+        "category": "Spanish - 09",
         "translationLanguage": "İspanyolca",
         "translation": "to think (opinion) to believe",
         "rightAnswer": 0,
@@ -1452,7 +1452,7 @@ let spanishWords={
     "creo": {
         "key": 162,
         "language": "İngilizce",
-        "category": "İspanyolca - 09",
+        "category": "Spanish - 09",
         "translationLanguage": "İspanyolca",
         "translation": "I think I believe",
         "rightAnswer": 0,
@@ -1461,7 +1461,7 @@ let spanishWords={
     "crees": {
         "key": 163,
         "language": "İngilizce",
-        "category": "İspanyolca - 09",
+        "category": "Spanish - 09",
         "translationLanguage": "İspanyolca",
         "translation": "you think you believe",
         "rightAnswer": 0,
@@ -1470,7 +1470,7 @@ let spanishWords={
     "cree": {
         "key": 164,
         "language": "İngilizce",
-        "category": "İspanyolca - 09",
+        "category": "Spanish - 09",
         "translationLanguage": "İspanyolca",
         "translation": "he (she) thinks he (she) believes; you (singular formal) think; you (singular formal) believe",
         "rightAnswer": 0,
@@ -1479,7 +1479,7 @@ let spanishWords={
     "creemos": {
         "key": 165,
         "language": "İngilizce",
-        "category": "İspanyolca - 09",
+        "category": "Spanish - 09",
         "translationLanguage": "İspanyolca",
         "translation": "we think we believe",
         "rightAnswer": 0,
@@ -1488,7 +1488,7 @@ let spanishWords={
     "creéis": {
         "key": 166,
         "language": "İngilizce",
-        "category": "İspanyolca - 09",
+        "category": "Spanish - 09",
         "translationLanguage": "İspanyolca",
         "translation": "you think you believe (plural informal)",
         "rightAnswer": 0,
@@ -1497,7 +1497,7 @@ let spanishWords={
     "creen": {
         "key": 167,
         "language": "İngilizce",
-        "category": "İspanyolca - 09",
+        "category": "Spanish - 09",
         "translationLanguage": "İspanyolca",
         "translation": "they think they believe; you (plural formal) think; you (plural formal) believe",
         "rightAnswer": 0,
@@ -1506,7 +1506,7 @@ let spanishWords={
     "maravilloso": {
         "key": 168,
         "language": "İngilizce",
-        "category": "İspanyolca - 10",
+        "category": "Spanish - 10",
         "translationLanguage": "İspanyolca",
         "translation": "wonderful marvellous",
         "rightAnswer": 0,
@@ -1515,7 +1515,7 @@ let spanishWords={
     "hermoso": {
         "key": 169,
         "language": "İngilizce",
-        "category": "İspanyolca - 10",
+        "category": "Spanish - 10",
         "translationLanguage": "İspanyolca",
         "translation": "beautiful",
         "rightAnswer": 0,
@@ -1524,7 +1524,7 @@ let spanishWords={
     "guapo": {
         "key": 170,
         "language": "İngilizce",
-        "category": "İspanyolca - 10",
+        "category": "Spanish - 10",
         "translationLanguage": "İspanyolca",
         "translation": "good-looking",
         "rightAnswer": 0,
@@ -1533,7 +1533,7 @@ let spanishWords={
     "fuerte": {
         "key": 171,
         "language": "İngilizce",
-        "category": "İspanyolca - 10",
+        "category": "Spanish - 10",
         "translationLanguage": "İspanyolca",
         "translation": "strong",
         "rightAnswer": 0,
@@ -1542,7 +1542,7 @@ let spanishWords={
     "débil": {
         "key": 172,
         "language": "İngilizce",
-        "category": "İspanyolca - 10",
+        "category": "Spanish - 10",
         "translationLanguage": "İspanyolca",
         "translation": "weak",
         "rightAnswer": 0,
@@ -1551,7 +1551,7 @@ let spanishWords={
     "gordo": {
         "key": 173,
         "language": "İngilizce",
-        "category": "İspanyolca - 10",
+        "category": "Spanish - 10",
         "translationLanguage": "İspanyolca",
         "translation": "fat",
         "rightAnswer": 0,
@@ -1560,7 +1560,7 @@ let spanishWords={
     "delgado": {
         "key": 174,
         "language": "İngilizce",
-        "category": "İspanyolca - 10",
+        "category": "Spanish - 10",
         "translationLanguage": "İspanyolca",
         "translation": "thin",
         "rightAnswer": 0,
@@ -1569,7 +1569,7 @@ let spanishWords={
     "agradable": {
         "key": 175,
         "language": "İngilizce",
-        "category": "İspanyolca - 10",
+        "category": "Spanish - 10",
         "translationLanguage": "İspanyolca",
         "translation": "nice",
         "rightAnswer": 0,
@@ -1578,7 +1578,7 @@ let spanishWords={
     "feo": {
         "key": 176,
         "language": "İngilizce",
-        "category": "İspanyolca - 10",
+        "category": "Spanish - 10",
         "translationLanguage": "İspanyolca",
         "translation": "ugly",
         "rightAnswer": 0,
@@ -1587,7 +1587,7 @@ let spanishWords={
     "guay": {
         "key": 177,
         "language": "İngilizce",
-        "category": "İspanyolca - 10",
+        "category": "Spanish - 10",
         "translationLanguage": "İspanyolca",
         "translation": "cool",
         "rightAnswer": 0,
@@ -1596,7 +1596,7 @@ let spanishWords={
     "grande": {
         "key": 178,
         "language": "İngilizce",
-        "category": "İspanyolca - 10",
+        "category": "Spanish - 10",
         "translationLanguage": "İspanyolca",
         "translation": "big large",
         "rightAnswer": 0,
@@ -1605,7 +1605,7 @@ let spanishWords={
     "corto": {
         "key": 179,
         "language": "İngilizce",
-        "category": "İspanyolca - 10",
+        "category": "Spanish - 10",
         "translationLanguage": "İspanyolca",
         "translation": "short",
         "rightAnswer": 0,
@@ -1614,7 +1614,7 @@ let spanishWords={
     "pequeno": {
         "key": 180,
         "language": "İngilizce",
-        "category": "İspanyolca - 10",
+        "category": "Spanish - 10",
         "translationLanguage": "İspanyolca",
         "translation": "small",
         "rightAnswer": 0,
@@ -1623,7 +1623,7 @@ let spanishWords={
     "largo": {
         "key": 181,
         "language": "İngilizce",
-        "category": "İspanyolca - 10",
+        "category": "Spanish - 10",
         "translationLanguage": "İspanyolca",
         "translation": "long",
         "rightAnswer": 0,
@@ -1632,7 +1632,7 @@ let spanishWords={
     "qué": {
         "key": 182,
         "language": "İngilizce",
-        "category": "İspanyolca - 10",
+        "category": "Spanish - 10",
         "translationLanguage": "İspanyolca",
         "translation": "what (questions)",
         "rightAnswer": 0,
@@ -1641,7 +1641,7 @@ let spanishWords={
     "que": {
         "key": 183,
         "language": "İngilizce",
-        "category": "İspanyolca - 10",
+        "category": "Spanish - 10",
         "translationLanguage": "İspanyolca",
         "translation": "than that; who; which (referring to someone or something)",
         "rightAnswer": 0,
@@ -1650,7 +1650,7 @@ let spanishWords={
     "tampoco": {
         "key": 184,
         "language": "İngilizce",
-        "category": "İspanyolca - 10",
+        "category": "Spanish - 10",
         "translationLanguage": "İspanyolca",
         "translation": "neither",
         "rightAnswer": 0,
@@ -1659,7 +1659,7 @@ let spanishWords={
     "también": {
         "key": 185,
         "language": "İngilizce",
-        "category": "İspanyolca - 10",
+        "category": "Spanish - 10",
         "translationLanguage": "İspanyolca",
         "translation": "too also; as well",
         "rightAnswer": 0,
@@ -1668,7 +1668,7 @@ let spanishWords={
     "demasiado (demasiada)": {
         "key": 186,
         "language": "İngilizce",
-        "category": "İspanyolca - 10",
+        "category": "Spanish - 10",
         "translationLanguage": "İspanyolca",
         "translation": "too too much",
         "rightAnswer": 0,
@@ -1677,7 +1677,7 @@ let spanishWords={
     "demasiados (demasiadas)": {
         "key": 187,
         "language": "İngilizce",
-        "category": "İspanyolca - 10",
+        "category": "Spanish - 10",
         "translationLanguage": "İspanyolca",
         "translation": "too many",
         "rightAnswer": 0,
@@ -1686,7 +1686,7 @@ let spanishWords={
     "es maravillosa": {
         "key": 188,
         "language": "İngilizce",
-        "category": "İspanyolca - 11",
+        "category": "Spanish - 11",
         "translationLanguage": "İspanyolca",
         "translation": "she's wonderful",
         "rightAnswer": 0,
@@ -1695,7 +1695,7 @@ let spanishWords={
     "es guapo": {
         "key": 189,
         "language": "İngilizce",
-        "category": "İspanyolca - 11",
+        "category": "Spanish - 11",
         "translationLanguage": "İspanyolca",
         "translation": "he's good-looking",
         "rightAnswer": 0,
@@ -1704,7 +1704,7 @@ let spanishWords={
     "es agradable": {
         "key": 190,
         "language": "İngilizce",
-        "category": "İspanyolca - 11",
+        "category": "Spanish - 11",
         "translationLanguage": "İspanyolca",
         "translation": "it's nice",
         "rightAnswer": 0,
@@ -1713,7 +1713,7 @@ let spanishWords={
     "qué maravilla": {
         "key": 191,
         "language": "İngilizce",
-        "category": "İspanyolca - 11",
+        "category": "Spanish - 11",
         "translationLanguage": "İspanyolca",
         "translation": "how wonderful",
         "rightAnswer": 0,
@@ -1722,7 +1722,7 @@ let spanishWords={
     "tu qué crees": {
         "key": 192,
         "language": "İngilizce",
-        "category": "İspanyolca - 11",
+        "category": "Spanish - 11",
         "translationLanguage": "İspanyolca",
         "translation": "what do you think",
         "rightAnswer": 0,
@@ -1731,7 +1731,7 @@ let spanishWords={
     "creo que": {
         "key": 193,
         "language": "İngilizce",
-        "category": "İspanyolca - 11",
+        "category": "Spanish - 11",
         "translationLanguage": "İspanyolca",
         "translation": "I think that",
         "rightAnswer": 0,
@@ -1740,7 +1740,7 @@ let spanishWords={
     "creo que es guay": {
         "key": 194,
         "language": "İngilizce",
-        "category": "İspanyolca - 11",
+        "category": "Spanish - 11",
         "translationLanguage": "İspanyolca",
         "translation": "I think it's cool",
         "rightAnswer": 0,
@@ -1749,7 +1749,7 @@ let spanishWords={
     "creo que es demasiado grande": {
         "key": 195,
         "language": "İngilizce",
-        "category": "İspanyolca - 11",
+        "category": "Spanish - 11",
         "translationLanguage": "İspanyolca",
         "translation": "I think it's too big",
         "rightAnswer": 0,
@@ -1758,7 +1758,7 @@ let spanishWords={
     "yo también lo creo": {
         "key": 196,
         "language": "İngilizce",
-        "category": "İspanyolca - 11",
+        "category": "Spanish - 11",
         "translationLanguage": "İspanyolca",
         "translation": "I think so too",
         "rightAnswer": 0,
@@ -1767,7 +1767,7 @@ let spanishWords={
     "no creo": {
         "key": 197,
         "language": "İngilizce",
-        "category": "İspanyolca - 11",
+        "category": "Spanish - 11",
         "translationLanguage": "İspanyolca",
         "translation": "I don't think so",
         "rightAnswer": 0,
@@ -1776,7 +1776,7 @@ let spanishWords={
     "necesitar": {
         "key": 198,
         "language": "İngilizce",
-        "category": "İspanyolca - 12",
+        "category": "Spanish - 12",
         "translationLanguage": "İspanyolca",
         "translation": "to need",
         "rightAnswer": 0,
@@ -1785,7 +1785,7 @@ let spanishWords={
     "la ayuda": {
         "key": 199,
         "language": "İngilizce",
-        "category": "İspanyolca - 12",
+        "category": "Spanish - 12",
         "translationLanguage": "İspanyolca",
         "translation": "the help",
         "rightAnswer": 0,
@@ -1794,7 +1794,7 @@ let spanishWords={
     "necesito ayuda": {
         "key": 200,
         "language": "İngilizce",
-        "category": "İspanyolca - 12",
+        "category": "Spanish - 12",
         "translationLanguage": "İspanyolca",
         "translation": "I need help",
         "rightAnswer": 0,
@@ -1803,7 +1803,7 @@ let spanishWords={
     "decir": {
         "key": 201,
         "language": "İngilizce",
-        "category": "İspanyolca - 12",
+        "category": "Spanish - 12",
         "translationLanguage": "İspanyolca",
         "translation": "to say to tell; to claim",
         "rightAnswer": 0,
@@ -1812,7 +1812,7 @@ let spanishWords={
     "se": {
         "key": 202,
         "language": "İngilizce",
-        "category": "İspanyolca - 12",
+        "category": "Spanish - 12",
         "translationLanguage": "İspanyolca",
         "translation": "one you (impersonal) oneself; each other",
         "rightAnswer": 0,
@@ -1821,7 +1821,7 @@ let spanishWords={
     "como se dice en espanol": {
         "key": 203,
         "language": "İngilizce",
-        "category": "İspanyolca - 12",
+        "category": "Spanish - 12",
         "translationLanguage": "İspanyolca",
         "translation": "how do you say in Spanish",
         "rightAnswer": 0,
@@ -1830,7 +1830,7 @@ let spanishWords={
     "saber": {
         "key": 204,
         "language": "İngilizce",
-        "category": "İspanyolca - 12",
+        "category": "Spanish - 12",
         "translationLanguage": "İspanyolca",
         "translation": "to know (a fact)",
         "rightAnswer": 0,
@@ -1839,7 +1839,7 @@ let spanishWords={
     "sé": {
         "key": 205,
         "language": "İngilizce",
-        "category": "İspanyolca - 12",
+        "category": "Spanish - 12",
         "translationLanguage": "İspanyolca",
         "translation": "I know",
         "rightAnswer": 0,
@@ -1848,7 +1848,7 @@ let spanishWords={
     "no sé": {
         "key": 206,
         "language": "İngilizce",
-        "category": "İspanyolca - 12",
+        "category": "Spanish - 12",
         "translationLanguage": "İspanyolca",
         "translation": "I don't know",
         "rightAnswer": 0,
@@ -1857,7 +1857,7 @@ let spanishWords={
     "entender": {
         "key": 207,
         "language": "İngilizce",
-        "category": "İspanyolca - 12",
+        "category": "Spanish - 12",
         "translationLanguage": "İspanyolca",
         "translation": "to understand",
         "rightAnswer": 0,
@@ -1866,7 +1866,7 @@ let spanishWords={
     "no entiendo": {
         "key": 208,
         "language": "İngilizce",
-        "category": "İspanyolca - 12",
+        "category": "Spanish - 12",
         "translationLanguage": "İspanyolca",
         "translation": "I don't understand",
         "rightAnswer": 0,
@@ -1875,7 +1875,7 @@ let spanishWords={
     "entiendes": {
         "key": 209,
         "language": "İngilizce",
-        "category": "İspanyolca - 12",
+        "category": "Spanish - 12",
         "translationLanguage": "İspanyolca",
         "translation": "do you understand",
         "rightAnswer": 0,
@@ -1884,7 +1884,7 @@ let spanishWords={
     "yo también": {
         "key": 210,
         "language": "İngilizce",
-        "category": "İspanyolca - 12",
+        "category": "Spanish - 12",
         "translationLanguage": "İspanyolca",
         "translation": "me too",
         "rightAnswer": 0,
@@ -1893,7 +1893,7 @@ let spanishWords={
     "yo tampoco": {
         "key": 211,
         "language": "İngilizce",
-        "category": "İspanyolca - 12",
+        "category": "Spanish - 12",
         "translationLanguage": "İspanyolca",
         "translation": "me neither",
         "rightAnswer": 0,
@@ -1902,7 +1902,7 @@ let spanishWords={
     "mucho gusto": {
         "key": 212,
         "language": "İngilizce",
-        "category": "İspanyolca - 12",
+        "category": "Spanish - 12",
         "translationLanguage": "İspanyolca",
         "translation": "nice to meet you",
         "rightAnswer": 0,
@@ -1911,7 +1911,7 @@ let spanishWords={
     "estupendo": {
         "key": 213,
         "language": "İngilizce",
-        "category": "İspanyolca - 12",
+        "category": "Spanish - 12",
         "translationLanguage": "İspanyolca",
         "translation": "great",
         "rightAnswer": 0,
@@ -1920,7 +1920,7 @@ let spanishWords={
     "es estupendo": {
         "key": 214,
         "language": "İngilizce",
-        "category": "İspanyolca - 12",
+        "category": "Spanish - 12",
         "translationLanguage": "İspanyolca",
         "translation": "that's great",
         "rightAnswer": 0,
@@ -1929,7 +1929,7 @@ let spanishWords={
     "aqui": {
         "key": 215,
         "language": "İngilizce",
-        "category": "İspanyolca - 12",
+        "category": "Spanish - 12",
         "translationLanguage": "İspanyolca",
         "translation": "here",
         "rightAnswer": 0,
@@ -1938,7 +1938,7 @@ let spanishWords={
     "aqui tienes": {
         "key": 216,
         "language": "İngilizce",
-        "category": "İspanyolca - 12",
+        "category": "Spanish - 12",
         "translationLanguage": "İspanyolca",
         "translation": "here you go",
         "rightAnswer": 0,
@@ -1947,7 +1947,7 @@ let spanishWords={
     "bienvenido": {
         "key": 217,
         "language": "İngilizce",
-        "category": "İspanyolca - 12",
+        "category": "Spanish - 12",
         "translationLanguage": "İspanyolca",
         "translation": "welcome",
         "rightAnswer": 0,
@@ -1956,7 +1956,7 @@ let spanishWords={
     "algo": {
         "key": 218,
         "language": "İngilizce",
-        "category": "İspanyolca - 12",
+        "category": "Spanish - 12",
         "translationLanguage": "İspanyolca",
         "translation": "something anything",
         "rightAnswer": 0,
@@ -1965,7 +1965,7 @@ let spanishWords={
     "nada": {
         "key": 219,
         "language": "İngilizce",
-        "category": "İspanyolca - 12",
+        "category": "Spanish - 12",
         "translationLanguage": "İspanyolca",
         "translation": "nothing anything",
         "rightAnswer": 0,
@@ -1974,7 +1974,7 @@ let spanishWords={
     "de nada": {
         "key": 220,
         "language": "İngilizce",
-        "category": "İspanyolca - 12",
+        "category": "Spanish - 12",
         "translationLanguage": "İspanyolca",
         "translation": "you're welcome",
         "rightAnswer": 0,
@@ -1983,7 +1983,7 @@ let spanishWords={
     "bueno": {
         "key": 221,
         "language": "İngilizce",
-        "category": "İspanyolca - 12",
+        "category": "Spanish - 12",
         "translationLanguage": "İspanyolca",
         "translation": "good",
         "rightAnswer": 0,
@@ -1992,7 +1992,7 @@ let spanishWords={
     "malo": {
         "key": 222,
         "language": "İngilizce",
-        "category": "İspanyolca - 12",
+        "category": "Spanish - 12",
         "translationLanguage": "İspanyolca",
         "translation": "bad",
         "rightAnswer": 0,
@@ -2001,7 +2001,7 @@ let spanishWords={
     "la suerte": {
         "key": 223,
         "language": "İngilizce",
-        "category": "İspanyolca - 12",
+        "category": "Spanish - 12",
         "translationLanguage": "İspanyolca",
         "translation": "the luck",
         "rightAnswer": 0,
@@ -2010,7 +2010,7 @@ let spanishWords={
     "buena suerte": {
         "key": 224,
         "language": "İngilizce",
-        "category": "İspanyolca - 12",
+        "category": "Spanish - 12",
         "translationLanguage": "İspanyolca",
         "translation": "good luck",
         "rightAnswer": 0,
@@ -2019,18 +2019,18 @@ let spanishWords={
 }
 
 let spanishCategories={
-    "İspanyolca - 01":{"targetLanguage":"İngilizce","sourceLanguage":"İspanyolca","key":1,"wordCount":14,"description":"Daily words","imageURL": "https://lh5.googleusercontent.com/proxy/lTlcDTGsbjdFntmmmKR8cT903AQ0CbcC3VAKXLbRN-1zDoFY8ZcT1fy8gDDHyUeb5jxIJ23jCbqGLO1EmWYIqLPxtwddZiTjpdhaEmzLKqh_eRNgkVohqim8W1CFzOYVI8iawt9nsNgECWw=w1064-h400-n-k-no","createdBy":"Keremcan Çakar"},
-    "İspanyolca - 02":{"targetLanguage":"İngilizce","sourceLanguage":"İspanyolca","key":2,"wordCount":18,"description":"","imageURL": "https://lh5.googleusercontent.com/proxy/lTlcDTGsbjdFntmmmKR8cT903AQ0CbcC3VAKXLbRN-1zDoFY8ZcT1fy8gDDHyUeb5jxIJ23jCbqGLO1EmWYIqLPxtwddZiTjpdhaEmzLKqh_eRNgkVohqim8W1CFzOYVI8iawt9nsNgECWw=w1064-h400-n-k-no","createdBy":"Keremcan Çakar"},
-    "İspanyolca - 03":{"targetLanguage":"İngilizce","sourceLanguage":"İspanyolca","key":3,"wordCount":22,"description":"","imageURL": "https://lh5.googleusercontent.com/proxy/lTlcDTGsbjdFntmmmKR8cT903AQ0CbcC3VAKXLbRN-1zDoFY8ZcT1fy8gDDHyUeb5jxIJ23jCbqGLO1EmWYIqLPxtwddZiTjpdhaEmzLKqh_eRNgkVohqim8W1CFzOYVI8iawt9nsNgECWw=w1064-h400-n-k-no","createdBy":"Keremcan Çakar"},
-    "İspanyolca - 04":{"targetLanguage":"İngilizce","sourceLanguage":"İspanyolca","key":4,"wordCount":30,"description":"","imageURL": "https://lh5.googleusercontent.com/proxy/lTlcDTGsbjdFntmmmKR8cT903AQ0CbcC3VAKXLbRN-1zDoFY8ZcT1fy8gDDHyUeb5jxIJ23jCbqGLO1EmWYIqLPxtwddZiTjpdhaEmzLKqh_eRNgkVohqim8W1CFzOYVI8iawt9nsNgECWw=w1064-h400-n-k-no","createdBy":"Keremcan Çakar"},
-    "İspanyolca - 05":{"targetLanguage":"İngilizce","sourceLanguage":"İspanyolca","key":5,"wordCount":20,"description":"","imageURL": "https://lh5.googleusercontent.com/proxy/lTlcDTGsbjdFntmmmKR8cT903AQ0CbcC3VAKXLbRN-1zDoFY8ZcT1fy8gDDHyUeb5jxIJ23jCbqGLO1EmWYIqLPxtwddZiTjpdhaEmzLKqh_eRNgkVohqim8W1CFzOYVI8iawt9nsNgECWw=w1064-h400-n-k-no","createdBy":"Keremcan Çakar"},
-    "İspanyolca - 06":{"targetLanguage":"İngilizce","sourceLanguage":"İspanyolca","key":6,"wordCount":9,"description":"","imageURL":  "https://lh5.googleusercontent.com/proxy/lTlcDTGsbjdFntmmmKR8cT903AQ0CbcC3VAKXLbRN-1zDoFY8ZcT1fy8gDDHyUeb5jxIJ23jCbqGLO1EmWYIqLPxtwddZiTjpdhaEmzLKqh_eRNgkVohqim8W1CFzOYVI8iawt9nsNgECWw=w1064-h400-n-k-no","createdBy":"Keremcan Çakar"},
-    "İspanyolca - 07":{"targetLanguage":"İngilizce","sourceLanguage":"İspanyolca","key":7,"wordCount":19,"description":"","imageURL": "https://lh5.googleusercontent.com/proxy/lTlcDTGsbjdFntmmmKR8cT903AQ0CbcC3VAKXLbRN-1zDoFY8ZcT1fy8gDDHyUeb5jxIJ23jCbqGLO1EmWYIqLPxtwddZiTjpdhaEmzLKqh_eRNgkVohqim8W1CFzOYVI8iawt9nsNgECWw=w1064-h400-n-k-no","createdBy":"Keremcan Çakar"},
-    "İspanyolca - 08":{"targetLanguage":"İngilizce","sourceLanguage":"İspanyolca","key":8,"wordCount":28,"description":"","imageURL": "https://lh5.googleusercontent.com/proxy/lTlcDTGsbjdFntmmmKR8cT903AQ0CbcC3VAKXLbRN-1zDoFY8ZcT1fy8gDDHyUeb5jxIJ23jCbqGLO1EmWYIqLPxtwddZiTjpdhaEmzLKqh_eRNgkVohqim8W1CFzOYVI8iawt9nsNgECWw=w1064-h400-n-k-no","createdBy":"Keremcan Çakar"},
-    "İspanyolca - 09":{"targetLanguage":"İngilizce","sourceLanguage":"İspanyolca","key":9,"wordCount":7,"description":"","imageURL":  "https://lh5.googleusercontent.com/proxy/lTlcDTGsbjdFntmmmKR8cT903AQ0CbcC3VAKXLbRN-1zDoFY8ZcT1fy8gDDHyUeb5jxIJ23jCbqGLO1EmWYIqLPxtwddZiTjpdhaEmzLKqh_eRNgkVohqim8W1CFzOYVI8iawt9nsNgECWw=w1064-h400-n-k-no","createdBy":"Keremcan Çakar"},
-    "İspanyolca - 10":{"targetLanguage":"İngilizce","sourceLanguage":"İspanyolca","key":10,"wordCount":20,"description":"","imageURL":"https://lh5.googleusercontent.com/proxy/lTlcDTGsbjdFntmmmKR8cT903AQ0CbcC3VAKXLbRN-1zDoFY8ZcT1fy8gDDHyUeb5jxIJ23jCbqGLO1EmWYIqLPxtwddZiTjpdhaEmzLKqh_eRNgkVohqim8W1CFzOYVI8iawt9nsNgECWw=w1064-h400-n-k-no","createdBy":"Keremcan Çakar"},
-    "İspanyolca - 11":{"targetLanguage":"İngilizce","sourceLanguage":"İspanyolca","key":11,"wordCount":10,"description":"","imageURL":"https://lh5.googleusercontent.com/proxy/lTlcDTGsbjdFntmmmKR8cT903AQ0CbcC3VAKXLbRN-1zDoFY8ZcT1fy8gDDHyUeb5jxIJ23jCbqGLO1EmWYIqLPxtwddZiTjpdhaEmzLKqh_eRNgkVohqim8W1CFzOYVI8iawt9nsNgECWw=w1064-h400-n-k-no","createdBy":"Keremcan Çakar"},
-    "İspanyolca - 12":{"targetLanguage":"İngilizce","sourceLanguage":"İspanyolca","key":12,"wordCount":27,"description":"","imageURL":"https://lh5.googleusercontent.com/proxy/lTlcDTGsbjdFntmmmKR8cT903AQ0CbcC3VAKXLbRN-1zDoFY8ZcT1fy8gDDHyUeb5jxIJ23jCbqGLO1EmWYIqLPxtwddZiTjpdhaEmzLKqh_eRNgkVohqim8W1CFzOYVI8iawt9nsNgECWw=w1064-h400-n-k-no","createdBy":"Keremcan Çakar"}
+    "Spanish - 01":{"targetLanguage":"İngilizce","sourceLanguage":"İspanyolca","key":1,"wordCount":14,"description":"Daily words","imageURL": "https://lh5.googleusercontent.com/proxy/lTlcDTGsbjdFntmmmKR8cT903AQ0CbcC3VAKXLbRN-1zDoFY8ZcT1fy8gDDHyUeb5jxIJ23jCbqGLO1EmWYIqLPxtwddZiTjpdhaEmzLKqh_eRNgkVohqim8W1CFzOYVI8iawt9nsNgECWw=w1064-h400-n-k-no","createdBy":"Keremcan Çakar"},
+    "Spanish - 02":{"targetLanguage":"İngilizce","sourceLanguage":"İspanyolca","key":2,"wordCount":18,"description":"","imageURL": "https://lh5.googleusercontent.com/proxy/lTlcDTGsbjdFntmmmKR8cT903AQ0CbcC3VAKXLbRN-1zDoFY8ZcT1fy8gDDHyUeb5jxIJ23jCbqGLO1EmWYIqLPxtwddZiTjpdhaEmzLKqh_eRNgkVohqim8W1CFzOYVI8iawt9nsNgECWw=w1064-h400-n-k-no","createdBy":"Keremcan Çakar"},
+    "Spanish - 03":{"targetLanguage":"İngilizce","sourceLanguage":"İspanyolca","key":3,"wordCount":22,"description":"","imageURL": "https://lh5.googleusercontent.com/proxy/lTlcDTGsbjdFntmmmKR8cT903AQ0CbcC3VAKXLbRN-1zDoFY8ZcT1fy8gDDHyUeb5jxIJ23jCbqGLO1EmWYIqLPxtwddZiTjpdhaEmzLKqh_eRNgkVohqim8W1CFzOYVI8iawt9nsNgECWw=w1064-h400-n-k-no","createdBy":"Keremcan Çakar"},
+    "Spanish - 04":{"targetLanguage":"İngilizce","sourceLanguage":"İspanyolca","key":4,"wordCount":30,"description":"","imageURL": "https://lh5.googleusercontent.com/proxy/lTlcDTGsbjdFntmmmKR8cT903AQ0CbcC3VAKXLbRN-1zDoFY8ZcT1fy8gDDHyUeb5jxIJ23jCbqGLO1EmWYIqLPxtwddZiTjpdhaEmzLKqh_eRNgkVohqim8W1CFzOYVI8iawt9nsNgECWw=w1064-h400-n-k-no","createdBy":"Keremcan Çakar"},
+    "Spanish - 05":{"targetLanguage":"İngilizce","sourceLanguage":"İspanyolca","key":5,"wordCount":20,"description":"","imageURL": "https://lh5.googleusercontent.com/proxy/lTlcDTGsbjdFntmmmKR8cT903AQ0CbcC3VAKXLbRN-1zDoFY8ZcT1fy8gDDHyUeb5jxIJ23jCbqGLO1EmWYIqLPxtwddZiTjpdhaEmzLKqh_eRNgkVohqim8W1CFzOYVI8iawt9nsNgECWw=w1064-h400-n-k-no","createdBy":"Keremcan Çakar"},
+    "Spanish - 06":{"targetLanguage":"İngilizce","sourceLanguage":"İspanyolca","key":6,"wordCount":9,"description":"","imageURL":  "https://lh5.googleusercontent.com/proxy/lTlcDTGsbjdFntmmmKR8cT903AQ0CbcC3VAKXLbRN-1zDoFY8ZcT1fy8gDDHyUeb5jxIJ23jCbqGLO1EmWYIqLPxtwddZiTjpdhaEmzLKqh_eRNgkVohqim8W1CFzOYVI8iawt9nsNgECWw=w1064-h400-n-k-no","createdBy":"Keremcan Çakar"},
+    "Spanish - 07":{"targetLanguage":"İngilizce","sourceLanguage":"İspanyolca","key":7,"wordCount":19,"description":"","imageURL": "https://lh5.googleusercontent.com/proxy/lTlcDTGsbjdFntmmmKR8cT903AQ0CbcC3VAKXLbRN-1zDoFY8ZcT1fy8gDDHyUeb5jxIJ23jCbqGLO1EmWYIqLPxtwddZiTjpdhaEmzLKqh_eRNgkVohqim8W1CFzOYVI8iawt9nsNgECWw=w1064-h400-n-k-no","createdBy":"Keremcan Çakar"},
+    "Spanish - 08":{"targetLanguage":"İngilizce","sourceLanguage":"İspanyolca","key":8,"wordCount":28,"description":"","imageURL": "https://lh5.googleusercontent.com/proxy/lTlcDTGsbjdFntmmmKR8cT903AQ0CbcC3VAKXLbRN-1zDoFY8ZcT1fy8gDDHyUeb5jxIJ23jCbqGLO1EmWYIqLPxtwddZiTjpdhaEmzLKqh_eRNgkVohqim8W1CFzOYVI8iawt9nsNgECWw=w1064-h400-n-k-no","createdBy":"Keremcan Çakar"},
+    "Spanish - 09":{"targetLanguage":"İngilizce","sourceLanguage":"İspanyolca","key":9,"wordCount":7,"description":"","imageURL":  "https://lh5.googleusercontent.com/proxy/lTlcDTGsbjdFntmmmKR8cT903AQ0CbcC3VAKXLbRN-1zDoFY8ZcT1fy8gDDHyUeb5jxIJ23jCbqGLO1EmWYIqLPxtwddZiTjpdhaEmzLKqh_eRNgkVohqim8W1CFzOYVI8iawt9nsNgECWw=w1064-h400-n-k-no","createdBy":"Keremcan Çakar"},
+    "Spanish - 10":{"targetLanguage":"İngilizce","sourceLanguage":"İspanyolca","key":10,"wordCount":20,"description":"","imageURL":"https://lh5.googleusercontent.com/proxy/lTlcDTGsbjdFntmmmKR8cT903AQ0CbcC3VAKXLbRN-1zDoFY8ZcT1fy8gDDHyUeb5jxIJ23jCbqGLO1EmWYIqLPxtwddZiTjpdhaEmzLKqh_eRNgkVohqim8W1CFzOYVI8iawt9nsNgECWw=w1064-h400-n-k-no","createdBy":"Keremcan Çakar"},
+    "Spanish - 11":{"targetLanguage":"İngilizce","sourceLanguage":"İspanyolca","key":11,"wordCount":10,"description":"","imageURL":"https://lh5.googleusercontent.com/proxy/lTlcDTGsbjdFntmmmKR8cT903AQ0CbcC3VAKXLbRN-1zDoFY8ZcT1fy8gDDHyUeb5jxIJ23jCbqGLO1EmWYIqLPxtwddZiTjpdhaEmzLKqh_eRNgkVohqim8W1CFzOYVI8iawt9nsNgECWw=w1064-h400-n-k-no","createdBy":"Keremcan Çakar"},
+    "Spanish - 12":{"targetLanguage":"İngilizce","sourceLanguage":"İspanyolca","key":12,"wordCount":27,"description":"","imageURL":"https://lh5.googleusercontent.com/proxy/lTlcDTGsbjdFntmmmKR8cT903AQ0CbcC3VAKXLbRN-1zDoFY8ZcT1fy8gDDHyUeb5jxIJ23jCbqGLO1EmWYIqLPxtwddZiTjpdhaEmzLKqh_eRNgkVohqim8W1CFzOYVI8iawt9nsNgECWw=w1064-h400-n-k-no","createdBy":"Keremcan Çakar"}
 };
 
 module.exports = {

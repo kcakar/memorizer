@@ -107,9 +107,9 @@ class ManageWords extends React.Component{
                 <Elevation z={3}>
                     <div className="gameSettings">
                         <div className="setting-group">
-                            <label>Soru tipleri</label>
-                            <Checkbox label="Test" value="Test" />
-                            <Checkbox label="Yazılı" value="Test"/>
+                            <label>{language.managewords[siteLang].txt_question_types}</label>
+                            <Checkbox label={language.managewords[siteLang].txt_question_type_test} value="Test" />
+                            <Checkbox label={language.managewords[siteLang].txt_question_type_written} value="Test"/>
                         </div>
                         {/* <div className="setting-group">
                             <label>Soru sayısı</label>

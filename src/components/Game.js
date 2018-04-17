@@ -300,7 +300,6 @@ class Game extends React.Component{
     renderQuestion(){
         const siteLang=this.props.settings.siteLanguage;
         
-        
         if(this.state.currentQuestion.type === questionTypes.written)
         {
             return this.renderWrittenQuestion(siteLang);
@@ -315,6 +314,7 @@ class Game extends React.Component{
     {
         return(
             <div className="question">
+                <Button className="btn-quit-game" onClick={this.props.quitGame}>{language.game[siteLang].btn_quit_game}</Button>
                 <Card>
                     <CardPrimary>
                         <CardTitle large="true" >{language.game[siteLang].written_question}</CardTitle>
@@ -347,6 +347,7 @@ class Game extends React.Component{
     {
         return (
             <div className="question test">
+                <Button className="btn-quit-game" onClick={this.props.quitGame}>{language.game[siteLang].btn_quit_game}</Button>
                 <Card>
                     <CardPrimary>
                         <CardTitle large="true" >{language.game[siteLang].test_question}</CardTitle>

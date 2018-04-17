@@ -452,12 +452,11 @@ section.loading{
 }
 
 .spinner {
-  width: 40px;
-  height: 40px;
+  width: 90vw;
+  height: 90vh;
   position: absolute;
-  top:calc(50% -20px);
-  left:calc(50% -20px);
-  margin: 100px auto;
+  top:calc(50% - 45vh);
+  left:calc(50% - 45vw);
 }
 
 .double-bounce1, .double-bounce2 {
@@ -467,9 +466,7 @@ section.loading{
   background-color: #333;
   opacity: 0.6;
   position: absolute;
-  top: 50%;
   left: 0;
-  
   -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
   animation: sk-bounce 2.0s infinite ease-in-out;
 }

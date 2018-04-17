@@ -48,7 +48,10 @@ const language = {
             table_performance:"Performans",
             txt_add_word:"Kelime",
             txt_add_meaning:"Anlamı",
-            btn_add:"Ekle"
+            btn_add:"Ekle",
+            txt_question_types:"Soru Tipleri",
+            txt_question_type_test:"Çoktan seçmeli",
+            txt_question_type_written:"Yazılı",
         },
         en:{
             table_words:"Word",
@@ -57,6 +60,9 @@ const language = {
             txt_add_word:"Word",
             txt_add_meaning:"Meaning",
             btn_add:"Add",
+            txt_question_types:"Question types",
+            txt_question_type_test:"Multiple choice",
+            txt_question_type_written:"Written",
         }
     },
     settings:{
@@ -79,7 +85,8 @@ const language = {
             failure:"Bilemediniz!",
             success:"Doğru cevap!",
             summary_skip:"DEVAM!",
-            end_screen_continue:"ÖĞRENMEYE DEVAM ET"
+            end_screen_continue:"ÖĞRENMEYE DEVAM ET",
+            btn_quit_game:"Oyundan çıkış"
         },
         en:{
             test_question:"Choose the right translation!",
@@ -90,7 +97,8 @@ const language = {
             failure:"Try again!",
             success:"Correct!",
             summary_skip:"CONTINUE!",
-            end_screen_continue:"CONTINUE TO LEARN"
+            end_screen_continue:"CONTINUE TO LEARN",
+            btn_quit_game:"Quit current session"
         }
     }
 }

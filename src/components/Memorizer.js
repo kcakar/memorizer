@@ -19,21 +19,21 @@ class Memorizer extends React.Component {
 
     constructor() {
         super();
-        this.state = {
-            settings: {
-                interests:[],
-                siteLanguage:"en"
-            },
-            words: {},
-            user:{},
-            categories:{},
-            isSetup: false,
-            isGame:false,
-            activeCategory:"",
-            didLogin: false,
-            userLogout:false,
-            isLoading:true
-        }
+        // this.state = {
+        //     settings: {
+        //         interests:[],
+        //         siteLanguage:"en"
+        //     },
+        //     words: {},
+        //     user:{},
+        //     categories:{},
+        //     isSetup: false,
+        //     isGame:false,
+        //     activeCategory:"",
+        //     didLogin: false,
+        //     userLogout:false,
+        //     isLoading:true
+        // }
 
         //manage words
         // this.state = {
@@ -46,27 +46,29 @@ class Memorizer extends React.Component {
         //     categories:{},
         //     isSetup: false,
         //     isGame:false,
-        //     activeCategory:"İspanyolca - 01",
+        //     activeCategory:"Spanish - 01",
         //     didLogin: false,
-        //     userLogout:false
+        //     userLogout:false,
+        //     isLoading:true
         // }
 
 
         //game screen
-        // this.state = {
-        //     settings: {
-        //         interests:[],
-        //         siteLanguage:"en"
-        //     },
-        //     words: {},
-        //     user:{},
-        //     categories:{},
-        //     isSetup: true,
-        //     isGame:true,
-        //     activeCategory:"İspanyolca - 01",
-        //     didLogin: false,
-        //     userLogout:false
-        // }
+        this.state = {
+            settings: {
+                interests:[],
+                siteLanguage:"en"
+            },
+            words: {},
+            user:{},
+            categories:{},
+            isSetup: false,
+            isGame:false,
+            activeCategory:"Spanish - 01",
+            didLogin: false,
+            userLogout:false,
+            isLoading:true
+        }
         this.saveSettings = this.saveSettings.bind(this);
         this.login = this.login.bind(this);
         this.logout = this.logout.bind(this);
@@ -91,6 +93,8 @@ class Memorizer extends React.Component {
         this.addFromFile = this.addFromFile.bind(this);
         this.fillDefaultCategories=this.fillDefaultCategories.bind(this);
         this.changeLanguage=this.changeLanguage.bind(this);
+        this.cancelLoading=this.cancelLoading.bind(this);
+        this.quitGame=this.quitGame.bind(this);
     }
 
 
@@ -201,6 +205,10 @@ class Memorizer extends React.Component {
         this.setState({isGame:true});
     }
 
+    quitGame(){
+        this.setState({isGame:false});
+    }
+
     showManageWords(key){
         if(key && key!==undefined && typeof(key)==="string")
         {
@@ -262,8 +270,8 @@ class Memorizer extends React.Component {
         }
     }
 
-    wontLogin(){
-        
+    cancelLoading(){
+        this.setState({isLoading:false});
     }
 
     login(user)
@@ -271,6 +279,7 @@ class Memorizer extends React.Component {
         this.setState({user});
         this.setState({didLogin:true});
         this.getSettings();
+        this.cancelLoading();
         console.log("didLogin")
     }
 
@@ -417,7 +426,7 @@ class Memorizer extends React.Component {
             <div>
                 {this.renderHeader()}
                 <section className="content">
-                    <Game settings={this.state.settings} updateStatistics={this.updateStatistics} words={this.state.words} user={this.state.user}/>
+                    <Game quitGame={this.quitGame} settings={this.state.settings} updateStatistics={this.updateStatistics} words={this.state.words} user={this.state.user}/>
                 </section>
             </div>
         );
@@ -439,9 +448,7 @@ class Memorizer extends React.Component {
     }
 
     render() {
-        // if (this.state.didLogin) {
-        if (false) {
-            
+        if (this.state.didLogin) {
             if(this.state.isSetup)
             {
                 return this.renderSetup();
@@ -460,7 +467,7 @@ class Memorizer extends React.Component {
         } 
         else 
         {
-            return <Login isLoading={this.state.isLoading} wontLogin={this.wontLogin} changeLanguage={this.changeLanguage} settings={this.state.settings} login={this.login} didLogin={this.state.didLogin} userLogout={this.state.userLogout} userLoggedOut={this.userLoggedOut}/>;
+            return <Login isLoading={this.state.isLoading} cancelLoading={this.cancelLoading} changeLanguage={this.changeLanguage} settings={this.state.settings} login={this.login} didLogin={this.state.didLogin} userLogout={this.state.userLogout} userLoggedOut={this.userLoggedOut}/>;
         }
 
     }
