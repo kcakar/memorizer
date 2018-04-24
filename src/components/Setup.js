@@ -10,12 +10,6 @@ import LanguageSwitcher from './LanguageSwitcher';
 
 
 class Setup extends React.Component {
-    constructor(){
-        super();
-
-        // this.hasInterest=this.hasInterest.bind(this);
-    }
-    
     saveSettings(){
         // let interests=[];
         

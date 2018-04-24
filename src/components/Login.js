@@ -34,7 +34,6 @@ class Login extends React.Component {
         let component=this;
         firebase.auth().onAuthStateChanged(function(user, error) {
             if (user) {
-                console.log("user")
                 component.authHandler(null, { user });
             }
             else{

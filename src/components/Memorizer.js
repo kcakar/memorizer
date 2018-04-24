@@ -67,7 +67,10 @@ class Memorizer extends React.Component {
             activeCategory:"Spanish - 01",
             didLogin: false,
             userLogout:false,
-            isLoading:true
+            isLoading:true,
+            gameSettings:{
+                questionTypes:[],
+            }
         }
         this.saveSettings = this.saveSettings.bind(this);
         this.login = this.login.bind(this);
@@ -95,6 +98,7 @@ class Memorizer extends React.Component {
         this.changeLanguage=this.changeLanguage.bind(this);
         this.cancelLoading=this.cancelLoading.bind(this);
         this.quitGame=this.quitGame.bind(this);
+        this.setGameSettings=this.setGameSettings.bind(this);
     }
 
 
@@ -280,7 +284,6 @@ class Memorizer extends React.Component {
         this.setState({didLogin:true});
         this.getSettings();
         this.cancelLoading();
-        console.log("didLogin")
     }
 
     userLoggedOut(){
@@ -361,9 +364,15 @@ class Memorizer extends React.Component {
             {
                 filteredWords[key]=this.state.words[key];
             }
+            return 0;
         });
 
         return filteredWords;
+    }
+
+    setGameSettings(settings)
+    {
+        this.setState({gameSettings:settings});
     }
 
     renderHeader(){
@@ -406,6 +415,8 @@ class Memorizer extends React.Component {
                 </section>
                 <section className="content">
                     <ManageWords 
+                        setGameSettings={this.setGameSettings} 
+                        gameSettings={this.state.gameSettings} 
                         startGame={this.startGame} 
                         settings={this.state.settings} 
                         user={this.state.user} 
@@ -426,7 +437,14 @@ class Memorizer extends React.Component {
             <div>
                 {this.renderHeader()}
                 <section className="content">
-                    <Game quitGame={this.quitGame} settings={this.state.settings} updateStatistics={this.updateStatistics} words={this.state.words} user={this.state.user}/>
+                    <Game 
+                        gameSettings={this.state.gameSettings} 
+                        quitGame={this.quitGame} 
+                        settings={this.state.settings} 
+                        updateStatistics={this.updateStatistics} 
+                        words={this.filterWordsByCategory()} 
+                        user={this.state.user}
+                        />
                 </section>
             </div>
         );

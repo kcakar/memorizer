@@ -9,10 +9,10 @@ import language from '../Language';
 import '../css/Game.css';
 
 
-const questionTypes={
-    "written":0,
-    "test":1,       
-}
+// const questionTypes={
+//     "written":0,
+//     "test":1,       
+// }
 
 const questionDirection={
     straight:0,
@@ -20,15 +20,11 @@ const questionDirection={
 }
 
 class Game extends React.Component{
-
-    
-
     constructor(){
         super();
 
         this.state={
             gameProgress:0,
-            totalQuestionCount:20,
             isError:false,
             questions:[],
             currentQuestion:{},
@@ -37,7 +33,9 @@ class Game extends React.Component{
             wrongImage:1,
             testOptionCount:4,
             snackbarIsOpen:false,
-            snackbarMessage:""
+            snackbarMessage:"",
+            totalQuestionCount:0,
+            questionTypes:{}
         }
         
         this.randomlyPickWords=this.randomlyPickWords.bind(this);
@@ -55,6 +53,7 @@ class Game extends React.Component{
         this.renderStatusBar=this.renderStatusBar.bind(this);
         this.renderWrittenQuestion=this.renderWrittenQuestion.bind(this);
         this.renderSnackbar=this.renderSnackbar.bind(this);
+        this.createQuestion=this.createQuestion.bind(this);
     }
     
     componentWillMount(){
@@ -63,9 +62,35 @@ class Game extends React.Component{
 
     startGame(){
         const gameWords = this.randomlyPickWords();
+
+        let questionTypes={};
+
+        if(this.props.gameSettings.questionTypes.length===0)
+        {
+            questionTypes["test"]=0;
+        }
+        else{
+            for(let i=0;i<this.props.gameSettings.questionTypes.length;i++)
+            {
+                questionTypes[this.props.gameSettings.questionTypes[i]]=i;
+            }
+        }
+
+
+        let state=this.state;
+        state.questionTypes=questionTypes;
+        this.setState(
+            {
+                state:state,
+            });
+
         const questions=this.generateQuestions(gameWords);
-        
-        this.setState({currentQuestion:questions[0],questions:questions});
+        this.setState(
+            {
+                currentQuestion:questions[0],
+                questions:questions,
+                totalQuestionCount:this.props.words.length
+            });
     }
 
     restart(){
@@ -82,7 +107,7 @@ class Game extends React.Component{
 
     randomlyPickWords(){
         let wordPool = this.objectToArray(this.props.words);
-        let size=this.state.totalQuestionCount;
+        let size=wordPool.length;
         let gameWords=[];
 
         if(size > wordPool.length)
@@ -102,7 +127,7 @@ class Game extends React.Component{
     }
 
     getRandomQuestionType(){
-        return Math.floor(Math.random()* Object.keys(questionTypes).length)
+        return Math.floor(Math.random()* Object.keys(this.state.questionTypes).length)
     }
 
     objectToArray(obj){
@@ -132,11 +157,8 @@ class Game extends React.Component{
     getChoices(gameWords,question,gameWord){
         let choices=[];
         
-        console.log(question)
         let words=[...gameWords];
-        console.log(words)
         words.splice(words.indexOf(gameWord),1);
-        console.log(words)
         //fill the options
         for(let i=0;i<this.state.testOptionCount;i++)
         {
@@ -153,7 +175,6 @@ class Game extends React.Component{
         }
 
         //add the right answer
-        console.log(question)
         const answerIndex=this.getRandomIndex(Array(choices.length+1).fill());
         choices.splice(answerIndex, 0, question.questionAnswer);
         return choices;
@@ -181,7 +202,7 @@ class Game extends React.Component{
             question.index=gameWord.word;
         }
         
-        if(question.type === questionTypes.test)
+        if(question.type === this.state.questionTypes.test)
         {
             question.choices = this.getChoices(gameWords,question,gameWord);
         }
@@ -207,15 +228,13 @@ class Game extends React.Component{
         return questions;
     }
 
-
-
     handleAnswer(input){
         const answer=input.value;
         if(answer.toLowerCase() === this.state.currentQuestion.questionAnswer.toLowerCase())
         {
             this.rightAnswer(input);
         }
-        else if(this.state.currentQuestion.type===questionTypes.test)
+        else if(this.state.currentQuestion.type===this.state.questionTypes.test)
         {
             this.wrongAnswer(input);
         }
@@ -297,14 +316,15 @@ class Game extends React.Component{
             </div>
         )
     }
+
     renderQuestion(){
         const siteLang=this.props.settings.siteLanguage;
         
-        if(this.state.currentQuestion.type === questionTypes.written)
+        if(this.state.currentQuestion.type === this.state.questionTypes.written)
         {
             return this.renderWrittenQuestion(siteLang);
         }
-        else if(this.state.currentQuestion.type === questionTypes.test)
+        else if(this.state.currentQuestion.type === this.state.questionTypes.test)
         {
             return this.renderTestQuestion(siteLang);
         }

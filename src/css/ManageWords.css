@@ -1,5 +1,6 @@
 /* #--mdc-theme-secondary:#3f51b5; */
 
+
 section.manageWords .mdc-fab{
     position: absolute;
     z-index: 1;
@@ -148,3 +149,10 @@ section.manageWords .mdc-fab{
   section.manageWords .gameSettings .setting-group .slider-container{
     max-width: 250px;
   }
+
+
+  section.manageWords .gameSettings h2{
+    margin-bottom: 20px;
+  }
+
+// $mdc-theme-secondary:#404cff; 

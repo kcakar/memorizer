@@ -1,3 +1,9 @@
+:root {
+  --mdc-theme-secondary: #1c2387!important;
+  --mdc-theme-secondary-light: #1c2387!important;
+  --mdc-theme-secondary-dark: #1c2387!important;
+}
+
 * {
   box-sizing: border-box;
 }

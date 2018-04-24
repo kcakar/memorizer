@@ -21,6 +21,7 @@ class ManageWords extends React.Component{
         this.removeWord=this.removeWord.bind(this);
         this.showAddWords=this.showAddWords.bind(this);
         this.filterWordsByCategory=this.filterWordsByCategory.bind(this);
+        this.setGameSettings=this.setGameSettings.bind(this);
     }
 
     showAddWords(){
@@ -49,6 +50,45 @@ class ManageWords extends React.Component{
         let words=this.props.words;
         delete words[word];
         this.props.removeWord(words);
+    }
+
+    setGameSettings(evt,key)
+    {
+        let settings = this.props.gameSettings;
+        switch (key) {
+            case "test":
+                if(evt.target.checked)
+                {
+                    let i = settings.questionTypes.indexOf("test");
+                    if(i===-1)
+                    {
+                        settings.questionTypes.push("test");
+                    }
+                }
+                else{
+                    let i = settings.questionTypes.indexOf("test");
+                    settings.questionTypes.splice(i, 1);
+                }
+                break;
+
+            case "written":
+                if(evt.target.checked)
+                {
+                    let i = settings.questionTypes.indexOf("written");
+                    if(i===-1)
+                    {
+                        settings.questionTypes.push("written");
+                    }
+                }
+                else{
+                    let i = settings.questionTypes.indexOf("written");
+                    settings.questionTypes.splice(i, 1);
+                }
+                break;
+            default:
+                break;
+        }
+        this.props.setGameSettings(settings);
     }
 
     handleWordChange(e,key){
@@ -106,23 +146,20 @@ class ManageWords extends React.Component{
 
                 <Elevation z={3}>
                     <div className="gameSettings">
+                        <h2>Game Setting</h2>
                         <div className="setting-group">
                             <span className="setting-title">{language.managewords[siteLang].txt_question_types}:</span>
-                            <Checkbox label={language.managewords[siteLang].txt_question_type_test} value="Test" />
-                            <Checkbox label={language.managewords[siteLang].txt_question_type_written} value="Test"/>
+                            <Checkbox 
+                                label={language.managewords[siteLang].txt_question_type_test} 
+                                value="Test" 
+                                onChange={(evt) => {this.setGameSettings(evt,"test")}}
+                            />
+                            <Checkbox 
+                                label={language.managewords[siteLang].txt_question_type_written} 
+                                value="Written" ref={(c) => this.chckWritten = c} 
+                                onChange={evt => this.setGameSettings(evt,"written")}
+                            />
                         </div>
-                        <div className="setting-group">
-                            <span className="setting-title">{language.managewords[siteLang].txt_question_amount}:</span>
-                            <div class="slider-container">
-                                <Slider 
-                                    value={this.state.sliderValue3 === undefined ? Object.keys(this.props.words).length : this.state.sliderValue3} 
-                                    onChange={evt => this.setState({sliderValue3: evt.target.value})}
-                                    discrete
-                                    max={Object.keys(this.props.words).length}
-                                    step={5}
-                                />
-                            </div>
-                        </div> 
                     </div>
                 </Elevation>
 
