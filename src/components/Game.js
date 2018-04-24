@@ -2,7 +2,7 @@
 import React from 'react';
 import {render} from 'react-dom';
 
-import {Snackbar,LinearProgress,Elevation,Radio,Theme,TextField,Button,Card,CardMedia,CardPrimary,CardTitle,CardSubtitle,CardSupportingText,CardActions,CardAction} from 'rmwc';
+import {Snackbar,LinearProgress,Fab,Elevation,Radio,Theme,TextField,Button,Card,CardMedia,CardPrimary,CardTitle,CardSubtitle,CardSupportingText,CardActions,CardAction} from 'rmwc';
 import colors from '../colors';
 import images from '../images';
 import language from '../Language';
@@ -52,8 +52,10 @@ class Game extends React.Component{
         this.renderSummary=this.renderSummary.bind(this);
         this.renderStatusBar=this.renderStatusBar.bind(this);
         this.renderWrittenQuestion=this.renderWrittenQuestion.bind(this);
+        this.renderListeningQuestion=this.renderListeningQuestion.bind(this);
         this.renderSnackbar=this.renderSnackbar.bind(this);
         this.createQuestion=this.createQuestion.bind(this);
+        this.getSynthSpeech=this.getSynthSpeech.bind(this);
     }
     
     componentWillMount(){
@@ -67,7 +69,8 @@ class Game extends React.Component{
 
         if(this.props.gameSettings.questionTypes.length===0)
         {
-            questionTypes["test"]=0;
+            questionTypes["listening"]=0;
+            // questionTypes["test"]=0;
         }
         else{
             for(let i=0;i<this.props.gameSettings.questionTypes.length;i++)
@@ -184,12 +187,25 @@ class Game extends React.Component{
         let question = {};
         question.type=this.getRandomQuestionType();
 
-        if (Math.random() > 0.5)//decide question direction Enlgish -> turkish vs turkish -> english
+        let direction=1; //straight direction
+        if(question.type !== this.state.questionTypes.listening) //listening is always straight!
+        {
+            direction=Math.random();
+        }
+
+        if (direction)//decide question direction Enlgish -> turkish vs turkish -> english
         {
             question.direction=questionDirection.straight;
             question.questionLanguage = gameWord.translationLanguage;
             question.questionWord = gameWord.word;
-            question.questionAnswer = gameWord.translation;
+
+            if(question.type === this.state.questionTypes.listening)
+            {
+                question.questionAnswer = gameWord.word;
+            }
+            else{
+                question.questionAnswer = gameWord.translation;
+            }
             question.questionRate = gameWord.rate;
             question.index = gameWord.word;
         }
@@ -320,14 +336,45 @@ class Game extends React.Component{
     renderQuestion(){
         const siteLang=this.props.settings.siteLanguage;
         
-        if(this.state.currentQuestion.type === this.state.questionTypes.written)
+        // if(this.state.currentQuestion.type === this.state.questionTypes.written)
+        // {
+        //     return this.renderWrittenQuestion(siteLang);
+        // }
+        // else if(this.state.currentQuestion.type === this.state.questionTypes.test)
+        // {
+        //     return this.renderTestQuestion(siteLang);
+        // }
+        // else if(this.state.currentQuestion.type === this.state.questionTypes.listening)
+        // {
+        //     return this.renderListeningQuestion(siteLang);
+        // }
+        return this.renderListeningQuestion(siteLang);
+    }
+
+    getSynthSpeech()
+    {
+        let language="en-US";
+        if(this.state.currentQuestion.questionLanguage=="İspanyolca")
         {
-            return this.renderWrittenQuestion(siteLang);
+            language="es-ES";
         }
-        else if(this.state.currentQuestion.type === this.state.questionTypes.test)
-        {
-            return this.renderTestQuestion(siteLang);
-        }
+
+        let synth = window.speechSynthesis;
+        let voices = synth.getVoices();
+        let wantedVoices=[];
+        voices.forEach(voice=>{
+            if(voice.lang===language)
+            {
+                wantedVoices.push(voices.indexOf(voice));
+            }
+        });
+        
+        let randomVoiceIndex=Math.floor(Math.random()* wantedVoices.length);
+        
+        synth.lang=language;
+        let utterThis = new SpeechSynthesisUtterance(this.state.currentQuestion.questionWord);
+        utterThis.voice = voices[randomVoiceIndex];
+        synth.speak(utterThis);
     }
 
     renderWrittenQuestion(siteLang)
@@ -391,6 +438,36 @@ class Game extends React.Component{
                     </CardPrimary>
                     <CardSupportingText>
                     </CardSupportingText>
+                </Card>
+            </div>
+        )
+    }
+
+    renderListeningQuestion(siteLang){
+        return(
+            <div className="question">
+                <Button className="btn-quit-game" onClick={this.props.quitGame}>{language.game[siteLang].btn_quit_game}</Button>
+                <Card>
+                    <CardPrimary>
+                        <CardTitle large="true" >Write what you hear!</CardTitle>
+                        <Fab className="btn-hearing" mini onClick={this.getSynthSpeech}>hearing</Fab>
+                        <div className="the-line"></div>
+                        <div className="answer">
+                            <TextField 
+                                className={this.state.isError?"error" :""}
+                                label={language.game[siteLang].txt_answer} 
+                                fullwidth 
+                                inputRef={input => this.answerInput=input} 
+                                onChange={(e)=>this.handleAnswer(e.target)}
+                            />
+                        </div>
+                    </CardPrimary>
+                    <CardSupportingText>
+                    </CardSupportingText>
+                    <CardActions>
+                        <CardAction onClick={this.checkAnswer}>{language.game[siteLang].btn_check}</CardAction>
+                        <CardAction onClick={this.wrongAnswer}>{language.game[siteLang].btn_skip}</CardAction>
+                    </CardActions>
                 </Card>
             </div>
         )
