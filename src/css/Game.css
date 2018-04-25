@@ -176,3 +176,16 @@ section.game{
     right: 0;
   }
 
+  section.game .btn-hearing {
+    animation: colorchange 1s;
+  }
+
+
+@keyframes colorchange {
+  0% {
+    background: green;
+  }
+  100% {
+    background: #1c2387;
+  }
+}

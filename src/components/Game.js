@@ -92,7 +92,7 @@ class Game extends React.Component{
             {
                 currentQuestion:questions[0],
                 questions:questions,
-                totalQuestionCount:this.props.words.length
+                totalQuestionCount:questions.length
             });
     }
 
@@ -354,7 +354,7 @@ class Game extends React.Component{
     getSynthSpeech()
     {
         let language="en-US";
-        if(this.state.currentQuestion.questionLanguage=="İspanyolca")
+        if(this.state.currentQuestion.questionLanguage==="İspanyolca")
         {
             language="es-ES";
         }

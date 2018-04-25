@@ -156,8 +156,13 @@ class ManageWords extends React.Component{
                             />
                             <Checkbox 
                                 label={language.managewords[siteLang].txt_question_type_written} 
-                                value="Written" ref={(c) => this.chckWritten = c} 
+                                value="Written"
                                 onChange={evt => this.setGameSettings(evt,"written")}
+                            />
+                            <Checkbox 
+                                label={language.managewords[siteLang].txt_question_type_listening} 
+                                value="Listening"
+                                onChange={evt => this.setGameSettings(evt,"listening")}
                             />
                         </div>
                     </div>
