@@ -35,7 +35,9 @@ class Game extends React.Component{
             snackbarIsOpen:false,
             snackbarMessage:"",
             totalQuestionCount:0,
-            questionTypes:{}
+            questionTypes:{},
+            isHighlight:false,
+            utterance:null
         }
         
         this.randomlyPickWords=this.randomlyPickWords.bind(this);
@@ -56,6 +58,8 @@ class Game extends React.Component{
         this.renderSnackbar=this.renderSnackbar.bind(this);
         this.createQuestion=this.createQuestion.bind(this);
         this.getSynthSpeech=this.getSynthSpeech.bind(this);
+
+
     }
     
     componentWillMount(){
@@ -89,11 +93,15 @@ class Game extends React.Component{
 
         const questions=this.generateQuestions(gameWords);
         this.setState(
-            {
-                currentQuestion:questions[0],
-                questions:questions,
-                totalQuestionCount:questions.length
-            });
+        {
+            gameProgress:0,
+            isError:false,
+            currentQuestion:questions[0],
+            questions:questions,
+            totalQuestionCount:questions.length
+        });
+
+        this.getSynthSpeech(questions[0]);   
     }
 
     restart(){
@@ -309,13 +317,17 @@ class Game extends React.Component{
                 gameProgress:progress,
                 currentQuestion:this.state.questions[progress],
             });
-        }
 
+            this.getSynthSpeech(this.state.currentQuestion);
+        }
     }
 
     cleanInputs(input){
-        input.value="";
-        input.checked=false;
+        if(input)
+        {
+            input.value="";
+            input.checked=false;
+        }
     }
 
 
@@ -336,45 +348,55 @@ class Game extends React.Component{
     renderQuestion(){
         const siteLang=this.props.settings.siteLanguage;
         
-        // if(this.state.currentQuestion.type === this.state.questionTypes.written)
-        // {
-        //     return this.renderWrittenQuestion(siteLang);
-        // }
-        // else if(this.state.currentQuestion.type === this.state.questionTypes.test)
-        // {
-        //     return this.renderTestQuestion(siteLang);
-        // }
-        // else if(this.state.currentQuestion.type === this.state.questionTypes.listening)
-        // {
-        //     return this.renderListeningQuestion(siteLang);
-        // }
-        return this.renderListeningQuestion(siteLang);
+        if(this.state.currentQuestion.type === this.state.questionTypes.written)
+        {
+            return this.renderWrittenQuestion(siteLang);
+        }
+        else if(this.state.currentQuestion.type === this.state.questionTypes.listening)
+        {
+            return this.renderListeningQuestion(siteLang);
+        }
+        else(this.state.currentQuestion.type === this.state.questionTypes.test)
+        {
+            return this.renderTestQuestion(siteLang);
+        }
     }
 
-    getSynthSpeech()
+    getSynthSpeech(question)
     {
-        let language="en-US";
-        if(this.state.currentQuestion.questionLanguage==="İspanyolca")
+        if(question.type!==this.state.questionTypes.listening)
         {
-            language="es-ES";
+            return;
         }
+        window.speechSynthesis.cancel();
+        let language=question.questionLanguage;
 
-        let synth = window.speechSynthesis;
-        let voices = synth.getVoices();
+        let voices = window.speechSynthesis.getVoices();
         let wantedVoices=[];
         voices.forEach(voice=>{
-            if(voice.lang===language)
+            if(voice.lang===question.questionLanguage)
             {
                 wantedVoices.push(voices.indexOf(voice));
             }
         });
+        if(wantedVoices.length==0)
+        {
+            wantedVoices.push(voices[0]);
+        }
         
         let randomVoiceIndex=Math.floor(Math.random()* wantedVoices.length);
-        
-        synth.lang=language;
-        let utterThis = new SpeechSynthesisUtterance(this.state.currentQuestion.questionWord);
-        utterThis.voice = voices[randomVoiceIndex];
-        synth.speak(utterThis);
+        window.speechSynthesis.lang=question.questionLanguage;
+
+     
+        this.state.utterance = new SpeechSynthesisUtterance(question.questionWord);
+        this.state.utterance.onstart= (e=>{
+            this.setState({isHighlight:true});
+        });
+        this.state.utterance.onend= (e=>{
+            this.setState({isHighlight:false});
+        });
+        this.state.utterance.voice = voices[randomVoiceIndex];
+        window.speechSynthesis.speak(this.state.utterance);
     }
 
     renderWrittenQuestion(siteLang)
@@ -402,8 +424,8 @@ class Game extends React.Component{
                     <CardSupportingText>
                     </CardSupportingText>
                     <CardActions>
-                        <CardAction onClick={this.checkAnswer}>{language.game[siteLang].btn_check}</CardAction>
-                        <CardAction onClick={this.wrongAnswer}>{language.game[siteLang].btn_skip}</CardAction>
+                        <CardAction onClick={()=>this.checkAnswer()}>{language.game[siteLang].btn_check}</CardAction>
+                        <CardAction onClick={()=>this.wrongAnswer()}>{language.game[siteLang].btn_skip}</CardAction>
                     </CardActions>
                 </Card>
             </div>
@@ -444,13 +466,19 @@ class Game extends React.Component{
     }
 
     renderListeningQuestion(siteLang){
+        let classList=["btn-hearing"];
+        if(this.state.isHighlight)
+        {
+            classList.push("highlight");
+        }
+
         return(
             <div className="question">
-                <Button className="btn-quit-game" onClick={this.props.quitGame}>{language.game[siteLang].btn_quit_game}</Button>
+                <Button onClick={this.props.quitGame}>{language.game[siteLang].btn_quit_game}</Button>
                 <Card>
                     <CardPrimary>
                         <CardTitle large="true" >Write what you hear!</CardTitle>
-                        <Fab className="btn-hearing" mini onClick={this.getSynthSpeech}>hearing</Fab>
+                        <Fab className={classList.join(" ")} mini >hearing</Fab>
                         <div className="the-line"></div>
                         <div className="answer">
                             <TextField 
@@ -465,8 +493,8 @@ class Game extends React.Component{
                     <CardSupportingText>
                     </CardSupportingText>
                     <CardActions>
-                        <CardAction onClick={this.checkAnswer}>{language.game[siteLang].btn_check}</CardAction>
-                        <CardAction onClick={this.wrongAnswer}>{language.game[siteLang].btn_skip}</CardAction>
+                        <CardAction onClick={()=>this.checkAnswer()}>{language.game[siteLang].btn_check}</CardAction>
+                        <CardAction onClick={()=>this.wrongAnswer()}>{language.game[siteLang].btn_skip}</CardAction>
                     </CardActions>
                 </Card>
             </div>

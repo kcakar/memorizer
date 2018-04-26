@@ -132,9 +132,7 @@ class Memorizer extends React.Component {
         let words={...this.state.words};
         if(stat<0)
         {
-            console.log(words[wordIndex])
             words[wordIndex].wrongAnswer=words[wordIndex].wrongAnswer+1;
-            console.log(words[wordIndex].wrongAnswer)
         }
         else{
             words[wordIndex].rightAnswer=words[wordIndex].rightAnswer+1;
@@ -299,7 +297,7 @@ class Memorizer extends React.Component {
     addFromFile(categoryFile)
     {
         let categories = this.state.categories;
-        let categoryName="İspanyolca - "+('0' + (Object.keys(categories).length+1)).slice(-2);
+        let categoryName="es-ES - "+('0' + (Object.keys(categories).length+1)).slice(-2);
         
         categories[categoryName]={
             key:Object.keys(categories).length+1,

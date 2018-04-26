@@ -14,8 +14,8 @@ const images={
     rightImages:[right1,right2,right3],
     wrongImages:[wrong1,wrong2,wrong3],
     flags:{
-        "İngilizce":flag_english,
-        "İspanyolca":flag_spanish
+        "en-US":flag_english,
+        "es-ES":flag_spanish
     }
 }
 

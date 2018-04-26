@@ -12,7 +12,7 @@ const interests = [
         image:interests0,
     },
     {
-        name:"İspanyolca",
+        name:"es-ES",
         image:interests1,
     },
     {

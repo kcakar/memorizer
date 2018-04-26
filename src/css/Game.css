@@ -175,17 +175,10 @@ section.game{
     top:0;
     right: 0;
   }
-
   section.game .btn-hearing {
-    animation: colorchange 1s;
+    transition: 0.2s linear background;
   }
 
-
-@keyframes colorchange {
-  0% {
+  section.game .btn-hearing.highlight {
     background: green;
   }
-  100% {
-    background: #1c2387;
-  }
-}

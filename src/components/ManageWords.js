@@ -22,6 +22,7 @@ class ManageWords extends React.Component{
         this.showAddWords=this.showAddWords.bind(this);
         this.filterWordsByCategory=this.filterWordsByCategory.bind(this);
         this.setGameSettings=this.setGameSettings.bind(this);
+        this.addRemoveQuestionType=this.addRemoveQuestionType.bind(this);
     }
 
     showAddWords(){
@@ -56,39 +57,40 @@ class ManageWords extends React.Component{
     {
         let settings = this.props.gameSettings;
         switch (key) {
+
             case "test":
-                if(evt.target.checked)
-                {
-                    let i = settings.questionTypes.indexOf("test");
-                    if(i===-1)
-                    {
-                        settings.questionTypes.push("test");
-                    }
-                }
-                else{
-                    let i = settings.questionTypes.indexOf("test");
-                    settings.questionTypes.splice(i, 1);
-                }
+                this.addRemoveQuestionType(evt, "test");
                 break;
 
             case "written":
-                if(evt.target.checked)
-                {
-                    let i = settings.questionTypes.indexOf("written");
-                    if(i===-1)
-                    {
-                        settings.questionTypes.push("written");
-                    }
-                }
-                else{
-                    let i = settings.questionTypes.indexOf("written");
-                    settings.questionTypes.splice(i, 1);
-                }
+                this.addRemoveQuestionType(evt, "written");
                 break;
+
+            case "listening":
+                this.addRemoveQuestionType(evt, "listening");
+                break;
+
             default:
                 break;
         }
         this.props.setGameSettings(settings);
+    }
+
+    addRemoveQuestionType(evt,type)
+    {
+        let settings=this.props.gameSettings;
+        if(evt.target.checked)
+        {
+            let i = settings.questionTypes.indexOf(type);
+            if(i===-1)
+            {
+                settings.questionTypes.push(type);
+            }
+        }
+        else{
+            let i = settings.questionTypes.indexOf(type);
+            settings.questionTypes.splice(i, 1);
+        }
     }
 
     handleWordChange(e,key){
@@ -151,17 +153,20 @@ class ManageWords extends React.Component{
                             <span className="setting-title">{language.managewords[siteLang].txt_question_types}:</span>
                             <Checkbox 
                                 label={language.managewords[siteLang].txt_question_type_test} 
-                                value="Test" 
+                                value="test" 
+                                checked={this.props.gameSettings.questionTypes.indexOf("test")>-1}
                                 onChange={(evt) => {this.setGameSettings(evt,"test")}}
                             />
                             <Checkbox 
                                 label={language.managewords[siteLang].txt_question_type_written} 
-                                value="Written"
+                                value="written"
+                                checked={this.props.gameSettings.questionTypes.indexOf("written")>-1}
                                 onChange={evt => this.setGameSettings(evt,"written")}
                             />
                             <Checkbox 
                                 label={language.managewords[siteLang].txt_question_type_listening} 
-                                value="Listening"
+                                checked={this.props.gameSettings.questionTypes.indexOf("listening")>-1}
+                                value="listening"
                                 onChange={evt => this.setGameSettings(evt,"listening")}
                             />
                         </div>

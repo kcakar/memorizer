@@ -22,7 +22,7 @@ class Setup extends React.Component {
             interests:[],
             language:"Türkçe",
             siteLanguage:"tr",
-            translationLanguage: "İspanyolca"
+            translationLanguage: "es-ES"
         };
 
         this.props.saveSettings(settings);
@@ -49,7 +49,7 @@ class Setup extends React.Component {
     //     }
 
     //     settings.language="Türkçe";
-    //     settings.translationLanguage="İspanyolca";
+    //     settings.translationLanguage="es-ES";
     //     this.props.saveSettings(settings);
     //     this.props.addInterestSet(spanishCategories,spanishWords)
     // }

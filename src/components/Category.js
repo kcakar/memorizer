@@ -95,8 +95,8 @@ class Category extends React.Component{
             let word=clean($(this).find(".col_a div")[0].innerText);
             let translation=clean($(this).find(".col_b div")[0].innerText);
             json.words[word]={
-                language:"İngilizce",
-                translationLanguage:"İspanyolca",
+                language:"en-US",
+                translationLanguage:"es-ES",
                 translation:translation,
             }
         })
