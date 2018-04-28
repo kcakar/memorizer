@@ -295,14 +295,12 @@ section.category .mdc-grid-tile .mdc-grid-tile__primary-content{
 section.category .mdc-grid-tile .mdc-grid-tile__primary{
   transition: box-shadow .28s cubic-bezier(.4,0,.2,1),-webkit-box-shadow .28s cubic-bezier(.4,0,.2,1);
   will-change: box-shadow;
-  -webkit-box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 5px 8px 0 rgba(0,0,0,.14), 0 1px 14px 0 rgba(0,0,0,.12);
   box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 5px 8px 0 rgba(0,0,0,.14), 0 1px 14px 0 rgba(0,0,0,.12);
   cursor: pointer;
 }
 
 section.category .mdc-grid-tile:hover .mdc-grid-tile__primary{
-  -webkit-box-shadow: 0 7px 8px -4px  rgba(163, 49, 49, 0.2), 0 12px 17px 2px rgba(163, 49, 49,.14), 0 5px 22px 4px rgba(163, 49, 49,.12);
-  box-shadow: 0 7px 8px -4px  rgba(163, 49, 49, 0.2), 0 12px 17px 2px rgba(163, 49, 49,.14), 0 5px 22px 4px rgba(163, 49, 49,.12);
+  box-shadow: 0 7px 8px -4px   rgba(62, 43, 150, 0.54), 0 5px 8px 0 rgba(62, 43, 150, 0.54), 0 1px 14px 0 rgba(62, 43, 150, 0.54);
 }
 section.category .mdc-grid-list .mdc-grid-tile__secondary {
   left: 20px;
@@ -316,9 +314,7 @@ section.category .mdc-grid-list .mdc-grid-tile__secondary {
   padding:0;
 }
 
-section.category  .mdc-grid-tile:hover .mdc-grid-tile__secondary {
-  height: 50%;
-}
+
 
 section.category  .mdc-grid-tile .mdc-grid-tile__secondary span{
   padding: 16px;

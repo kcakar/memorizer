@@ -73,8 +73,7 @@ class Game extends React.Component{
 
         if(this.props.gameSettings.questionTypes.length===0)
         {
-            questionTypes["listening"]=0;
-            // questionTypes["test"]=0;
+            questionTypes["test"]=0;
         }
         else{
             for(let i=0;i<this.props.gameSettings.questionTypes.length;i++)
@@ -318,7 +317,7 @@ class Game extends React.Component{
                 currentQuestion:this.state.questions[progress],
             });
 
-            this.getSynthSpeech(this.state.currentQuestion);
+            this.getSynthSpeech(this.state.questions[progress]);
         }
     }
 
@@ -348,18 +347,17 @@ class Game extends React.Component{
     renderQuestion(){
         const siteLang=this.props.settings.siteLanguage;
         
+        console.log(this.state.currentQuestion.type === this.state.questionTypes.written)
+        console.log(this.state.currentQuestion.type === this.state.questionTypes.listening)
+        console.log(this.state.currentQuestion.type === this.state.questionTypes.test)
         if(this.state.currentQuestion.type === this.state.questionTypes.written)
-        {
             return this.renderWrittenQuestion(siteLang);
-        }
         else if(this.state.currentQuestion.type === this.state.questionTypes.listening)
-        {
             return this.renderListeningQuestion(siteLang);
-        }
-        else(this.state.currentQuestion.type === this.state.questionTypes.test)
-        {
+        else if(this.state.currentQuestion.type === this.state.questionTypes.test)
             return this.renderTestQuestion(siteLang);
-        }
+
+        return this.renderTestQuestion(siteLang);
     }
 
     getSynthSpeech(question)
@@ -379,7 +377,7 @@ class Game extends React.Component{
                 wantedVoices.push(voices.indexOf(voice));
             }
         });
-        if(wantedVoices.length==0)
+        if(wantedVoices.length===0)
         {
             wantedVoices.push(voices[0]);
         }
@@ -387,16 +385,19 @@ class Game extends React.Component{
         let randomVoiceIndex=Math.floor(Math.random()* wantedVoices.length);
         window.speechSynthesis.lang=question.questionLanguage;
 
-     
-        this.state.utterance = new SpeechSynthesisUtterance(question.questionWord);
-        this.state.utterance.onstart= (e=>{
+        
+        let utterance=this.state.utterance;
+
+        utterance = new SpeechSynthesisUtterance(question.questionWord);
+        utterance.onstart= (e=>{
             this.setState({isHighlight:true});
         });
-        this.state.utterance.onend= (e=>{
+        utterance.onend= (e=>{
             this.setState({isHighlight:false});
         });
-        this.state.utterance.voice = voices[randomVoiceIndex];
-        window.speechSynthesis.speak(this.state.utterance);
+        utterance.voice = voices[randomVoiceIndex];
+        this.setState({utterance});
+        window.speechSynthesis.speak(utterance);
     }
 
     renderWrittenQuestion(siteLang)
@@ -478,7 +479,7 @@ class Game extends React.Component{
                 <Card>
                     <CardPrimary>
                         <CardTitle large="true" >Write what you hear!</CardTitle>
-                        <Fab className={classList.join(" ")} mini >hearing</Fab>
+                        <Fab className={classList.join(" ")} mini onClick={e=>this.getSynthSpeech(this.state.currentQuestion)}>hearing</Fab>
                         <div className="the-line"></div>
                         <div className="answer">
                             <TextField 
@@ -505,23 +506,26 @@ class Game extends React.Component{
         const siteLang=this.props.settings.siteLanguage;
         return  (
             <section className="game">
+                <div className="continue-div">
+                    <Button unelevated onClick={this.restart}>{language.game[siteLang].end_screen_continue}</Button>
+                    <Button unelevated onClick={this.props.quitGame}>{language.game[siteLang].btn_quit_game}</Button>
+                </div>
                 <div className="summary">
-                <div className="continue-div"><Button unelevated onClick={this.restart}>{language.game[siteLang].end_screen_continue}</Button></div>
                 {
                     this.state.questions.map((question,i)=>{
-                    const color=Object.keys(colors)[this.getRandomIndex(Object.keys(colors))];
+                    {/* const color=Object.keys(colors)[this.getRandomIndex(Object.keys(colors))]; */}
                     const word=this.props.words[question.index];
                     return (
                         <div 
                             key={i} 
                             className="summary-row" 
-                            style={
-                                {backgroundColor:colors[color][this.state.colorWeight]}
-                                }
+                            // style={
+                            //     {backgroundColor:colors[color][this.state.colorWeight]}
+                            //     }
                             >
-                            <span>{question.questionAnswer}</span>
-                            <span>{question.questionWord}</span>
-                            <span>%{this.getRate(word.rightAnswer,word.wrongAnswer)}</span>
+                            <span>{question.questionAnswer.toUpperCase()}</span>
+                            {/* <span>{question.questionWord}</span> */}
+                            <span>%{this.getRate(word.rightAnswer,word.wrongAnswer)} success rate</span>
                         </div>
                     );
                 })}
