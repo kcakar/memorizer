@@ -1,13 +1,10 @@
 /*  eslint-disable no-unused-vars*/
 // login fonksiyonu her seferinde 2-3-4 kere çağrılıyor
 import React from 'react';
-
 import LanguageSwitcher from './LanguageSwitcher';
 import * as firebase from "firebase";
 import {Elevation} from "rmwc";
 import {base} from "../base.js";//this is used. grayout is a bug
-
-
 import brainIMG from "../images/brain.png";
 import language from '../data/Language';
 
@@ -16,7 +13,7 @@ class Login extends React.Component {
 
     constructor() {
         super();
-
+        console.log("lognrender")
         this.authenticate = this.authenticate.bind(this);
         this.authHandler = this.authHandler.bind(this);
         this.logout = this.logout.bind(this);
@@ -100,6 +97,7 @@ class Login extends React.Component {
             var token = result.credential.accessToken;
             // The signed-in user info.
             var user = result.user;
+            console.log(user);
             // ...
           }).catch(function(error) {
             // Handle Errors here.
@@ -114,6 +112,7 @@ class Login extends React.Component {
             console.log(error.message)
             console.log(error.email)
             console.log(error.credential)
+            alert(error.message);
           });
     }
 
@@ -128,6 +127,7 @@ class Login extends React.Component {
     }
 
     render() {
+        console.log(this.props)
         const siteLang=this.props.settings.siteLanguage;
 
         if(this.props.isLoading)
@@ -141,23 +141,21 @@ class Login extends React.Component {
         }
         else{
             return (
-                <main className="memorizer">
-                    <section className="intro">
-                        <Elevation z="7">
-                                <div className="login">
-                                    <img alt="memorizer" src={brainIMG}/>
-                                    <h2>MEMORIZER</h2>
-                                    <LanguageSwitcher siteLang={siteLang} changeLanguage={this.props.changeLanguage} />
-                                    <div className="loginButtons">
-                                        <button className="facebook" onClick={() => this.authenticate('google')}>{language.intro[siteLang].login_google}</button>
-                                        <button className="facebook" onClick={() => this.authenticate('twitter')}>{language.intro[siteLang].login_twitter}</button>
-                                        <button className="facebook" onClick={() => this.authenticate('github')}>{language.intro[siteLang].login_github}</button>
-                                        <button className="facebook" onClick={() => this.authenticate('facebook')}>{language.intro[siteLang].login_facebook}</button>
-                                    </div>
+                <section className="intro">
+                    <Elevation z="7">
+                            <div className="login">
+                                <img alt="memorizer" src={brainIMG}/>
+                                <h2>MEMORIZER</h2>
+                                <LanguageSwitcher siteLang={siteLang} changeLanguage={this.props.changeLanguage} />
+                                <div className="loginButtons">
+                                    <button className="facebook" onClick={() => this.authenticate('google')}>{language.intro[siteLang].login_google}</button>
+                                    <button className="facebook" onClick={() => this.authenticate('twitter')}>{language.intro[siteLang].login_twitter}</button>
+                                    <button className="facebook" onClick={() => this.authenticate('github')}>{language.intro[siteLang].login_github}</button>
+                                    <button className="facebook" onClick={() => this.authenticate('facebook')}>{language.intro[siteLang].login_facebook}</button>
                                 </div>
-                        </Elevation>
-                    </section>
-                </main>
+                            </div>
+                    </Elevation>
+                </section>
             );
         }
     }

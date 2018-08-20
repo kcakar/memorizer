@@ -1,6 +1,5 @@
 /*  eslint-disable no-unused-vars*/
 import React from 'react';
-
 import {Snackbar,LinearProgress,Fab,Elevation,Radio,TextField,Button,Card,CardPrimary,CardTitle,CardSubtitle,CardSupportingText,CardActions,CardAction} from 'rmwc';
 import language from '../data/Language';
 
@@ -509,7 +508,6 @@ class Game extends React.Component{
                 <div className="summary">
                 {
                     this.state.questions.map((question,i)=>{
-                    {/* const color=Object.keys(colors)[this.getRandomIndex(Object.keys(colors))]; */}
                     const word=this.props.words[question.index];
                     return (
                         <div 

@@ -1,8 +1,6 @@
 /*  eslint-disable no-unused-vars*/
 import React from 'react';
 import {Fab,Elevation} from 'rmwc';
-
-import '../css/Setup.css'
 import language from '../data/Language';
 import LanguageSwitcher from './LanguageSwitcher';
 

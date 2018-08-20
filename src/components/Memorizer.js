@@ -1,15 +1,20 @@
 /*  eslint-disable no-unused-vars*/
 import React from 'react';
-
 import Setup from './Setup';
 import ManageWords from './ManageWords';
+import Landing from './Landing';
 import Login from './Login';
 import Header from './Header';
 import Game from './Game';
 import Category from './Category';
 import language from '../data/Language';
-
+import {Router,Route,Redirect,Switch} from 'react-router-dom';
 import {spanishWords,spanishCategories} from '../data/DefaultWords.js';
+import { createBrowserHistory } from 'history';
+
+import "../css/styles.css"; 
+
+const history = createBrowserHistory();
 
 class Memorizer extends React.Component {
 
@@ -58,8 +63,6 @@ class Memorizer extends React.Component {
             words: {},
             user:{},
             categories:{},
-            isSetup: false,
-            isGame:false,
             activeCategory:"Spanish - 01",
             didLogin: false,
             userLogout:false,
@@ -68,33 +71,35 @@ class Memorizer extends React.Component {
                 questionTypes:[],
             }
         }
-        this.saveSettings = this.saveSettings.bind(this);
+        this.addCategory = this.addCategory.bind(this);
+        this.addFromFile = this.addFromFile.bind(this);
+        this.addWord = this.addWord.bind(this);
+        this.cancelLoading=this.cancelLoading.bind(this);
+        this.changeLanguage=this.changeLanguage.bind(this);
+        this.fillDefaultCategories=this.fillDefaultCategories.bind(this);
+        this.fillWordsFromLocalStorage=this.fillEverythingFromLocalStorage.bind(this);
+        this.getSettings = this.getSettings.bind(this);
+        this.handleTranslationChange=this.handleTranslationChange.bind(this);
+        this.handleWordChange=this.handleWordChange.bind(this);
         this.login = this.login.bind(this);
         this.logout = this.logout.bind(this);
-        this.updateSettings = this.updateSettings.bind(this);
-        this.userLoggedOut = this.userLoggedOut.bind(this);
-        this.addWord = this.addWord.bind(this);
+        this.quitGame=this.quitGame.bind(this);
+        this.removeCategory = this.removeCategory.bind(this);
         this.removeWord = this.removeWord.bind(this);
-        this.getSettings = this.getSettings.bind(this);
-        this.fillWordsFromLocalStorage=this.fillEverythingFromLocalStorage.bind(this);
-        this.renderHeader=this.renderHeader.bind(this);
-        this.renderSetup=this.renderSetup.bind(this);
-        this.renderManage=this.renderManage.bind(this);
+        this.renderCategory=this.renderCategory.bind(this);
         this.renderGame=this.renderGame.bind(this);
-        this.startGame=this.startGame.bind(this);
-        this.updateStatistics=this.updateStatistics.bind(this);
+        this.renderHeader=this.renderHeader.bind(this);
+        this.renderLogin=this.renderLogin.bind(this);
+        this.renderManage=this.renderManage.bind(this);
+        this.renderSetup=this.renderSetup.bind(this);
+        this.saveSettings = this.saveSettings.bind(this);
+        this.setGameSettings=this.setGameSettings.bind(this);
         this.showManageWords=this.showManageWords.bind(this);
         this.showSetup=this.showSetup.bind(this);
-        this.handleWordChange=this.handleWordChange.bind(this);
-        this.handleTranslationChange=this.handleTranslationChange.bind(this);
-        this.addCategory = this.addCategory.bind(this);
-        this.removeCategory = this.removeCategory.bind(this);
-        this.addFromFile = this.addFromFile.bind(this);
-        this.fillDefaultCategories=this.fillDefaultCategories.bind(this);
-        this.changeLanguage=this.changeLanguage.bind(this);
-        this.cancelLoading=this.cancelLoading.bind(this);
-        this.quitGame=this.quitGame.bind(this);
-        this.setGameSettings=this.setGameSettings.bind(this);
+        this.startGame=this.startGame.bind(this);
+        this.updateSettings = this.updateSettings.bind(this);
+        this.updateStatistics=this.updateStatistics.bind(this);
+        this.userLoggedOut = this.userLoggedOut.bind(this);
     }
 
 
@@ -278,6 +283,7 @@ class Memorizer extends React.Component {
         this.setState({didLogin:true});
         this.getSettings();
         this.cancelLoading();
+        history.push('/memorizer/categories')
     }
 
     userLoggedOut(){
@@ -379,9 +385,6 @@ class Memorizer extends React.Component {
     {
         const siteLang=this.state.settings.siteLanguage;
 
-        console.log(language)
-        console.log(siteLang)
-        console.log(language.settings[siteLang])
         return(
             <div>
                 {this.renderHeader()}
@@ -401,8 +404,9 @@ class Memorizer extends React.Component {
     }
 
     renderManage(){
+        console.log("rendermanage")
         return(
-            <div>
+            <main className="memorizer">
                 {this.renderHeader()}
                 <section className="page-headline">
                     <div><h2>{this.state.activeCategory}</h2></div>
@@ -422,13 +426,13 @@ class Memorizer extends React.Component {
                         category={this.state.activeCategory}
                     />
                 </section>
-            </div>
+            </main>
          );
     }
 
     renderGame(){
         return(
-            <div>
+            <main className="memorizer">
                 {this.renderHeader()}
                 <section className="content">
                     <Game 
@@ -440,14 +444,14 @@ class Memorizer extends React.Component {
                         user={this.state.user}
                         />
                 </section>
-            </div>
+            </main>
         );
     }
 
     renderCategory(){
         const siteLang=this.state.settings.siteLanguage;
         return(
-            <div>
+            <main className="memorizer">
                 {this.renderHeader()}
                 <section className="page-headline">
                     <div><h2>{language.category[siteLang].page_headline}</h2></div>
@@ -455,33 +459,31 @@ class Memorizer extends React.Component {
                 <section className="content">
                         <Category settings={this.state.settings} addFromFile={this.addFromFile} removeCategory={this.removeCategory} addCategory={this.addCategory} categories={this.state.categories} showManageWords={this.showManageWords}/>
                 </section>
-            </div>
+            </main>
         );
     }
 
-    render() {
-        if (this.state.didLogin) {
-            if(this.state.isSetup)
-            {
-                return this.renderSetup();
-            }
-            else if(this.state.activeCategory==="")
-            {
-                return this.renderCategory();
-            } 
-            else if(this.state.isGame)
-            {
-                return this.renderGame();
-            }
-            else{
-                return this.renderManage();
-            }
-        } 
-        else 
-        {
-            return <Login isLoading={this.state.isLoading} cancelLoading={this.cancelLoading} changeLanguage={this.changeLanguage} settings={this.state.settings} login={this.login} didLogin={this.state.didLogin} userLogout={this.state.userLogout} userLoggedOut={this.userLoggedOut}/>;
-        }
+    renderLogin(){
+        return (
+        <main className="memorizer">
+            <Login isLoading={this.state.isLoading} cancelLoading={this.cancelLoading} changeLanguage={this.changeLanguage} settings={this.state.settings} login={this.login} didLogin={this.state.didLogin} userLogout={this.state.userLogout} userLoggedOut={this.userLoggedOut}/>
+        </main>);
+    }
 
+    render() {
+        return(
+            <Router history={history}>
+                <Switch>
+                    <Route exact path="/" component={Landing} /> 
+                    <Route exact path="/memorizer/login" render={this.renderLogin}/>
+                    {!this.state.didLogin ? <Redirect to="/memorizer/login"/> : ""}
+                    <Route exact path="/memorizer/setup" render={this.renderSetup} />
+                    <Route exact path="/memorizer/categories" render={this.renderCategory} />
+                    <Route exact path="/memorizer/game" render={this.renderGame} />
+                    <Route exact path="/memorizer/manage" render={this.renderManage} />
+                </Switch>
+            </Router>
+            );
     }
 }
 

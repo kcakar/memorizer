@@ -1,9 +1,6 @@
 /*  eslint-disable no-unused-vars*/
 import React from 'react';
-
 import {Checkbox,Button,TextField,Elevation,Fab } from 'rmwc';
-import '../css/Table.css';
-import '../css/ManageWords.css';
 import language from '../data/Language';
 
 class ManageWords extends React.Component{
