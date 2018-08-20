@@ -28,8 +28,6 @@ class Memorizer extends React.Component {
         //     words: {},
         //     user:{},
         //     categories:{},
-        //     isSetup: false,
-        //     isGame:false,
         //     activeCategory:"",
         //     didLogin: false,
         //     userLogout:false,
@@ -45,8 +43,6 @@ class Memorizer extends React.Component {
         //     words: {},
         //     user:{},
         //     categories:{},
-        //     isSetup: false,
-        //     isGame:false,
         //     activeCategory:"Spanish - 01",
         //     didLogin: false,
         //     userLogout:false,
@@ -95,7 +91,6 @@ class Memorizer extends React.Component {
         this.saveSettings = this.saveSettings.bind(this);
         this.setGameSettings=this.setGameSettings.bind(this);
         this.showManageWords=this.showManageWords.bind(this);
-        this.showSetup=this.showSetup.bind(this);
         this.startGame=this.startGame.bind(this);
         this.updateSettings = this.updateSettings.bind(this);
         this.updateStatistics=this.updateStatistics.bind(this);
@@ -205,25 +200,11 @@ class Memorizer extends React.Component {
     }
 
     startGame(){
-        this.setState({isGame:true});
+        //this.setState({isGame:true});
     }
 
     quitGame(){
-        this.setState({isGame:false});
-    }
-
-    showManageWords(key){
-        if(key && key!==undefined && typeof(key)==="string")
-        {
-            this.setState({isSetup:false, isGame:false,activeCategory:key});
-        }
-        else{
-            this.setState({isSetup:false,isGame:false,activeCategory:""});
-        }
-    }
-
-    showSetup(){
-        this.setState({isGame:false,isSetup:true})
+        //this.setState({isGame:false});
     }
 
     getSettings()
@@ -233,7 +214,7 @@ class Memorizer extends React.Component {
             //daha önce login olmuş
             this.saveSettings(JSON.parse(settings));
             this.setState({
-                isSetup: false,
+                //isSetup: false,
             })
         }
         else {
@@ -375,9 +356,39 @@ class Memorizer extends React.Component {
         this.setState({gameSettings:settings});
     }
 
+    showManageWords(key){
+        if(key && key!==undefined && typeof(key)==="string")
+        {
+            this.setState({activeCategory:key});
+            history.push('/memorizer/manage');
+        }
+        else{
+            this.setState({activeCategory:""});
+        }
+    }
+
+    showSetup(){
+        history.push('/memorizer/setup');
+    }
+
+    showCategories(){
+        history.push('/memorizer/categories');
+    }
+
+    showLanding(){
+        history.push('/');
+    }
+
     renderHeader(){
         return(
-            <Header settings={this.state.settings} user={this.state.user} logout={this.logout} didLogin={this.state.didLogin} showManageWords={this.showManageWords} showSetup={this.showSetup}/>
+            <Header settings={this.state.settings} 
+            user={this.state.user} 
+            logout={this.logout} 
+            didLogin={this.state.didLogin} 
+            showCategories={this.showCategories} 
+            showSetup={this.showSetup}
+            showLanding={this.showLanding}
+            />
         )
     }
 

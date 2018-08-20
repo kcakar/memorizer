@@ -24,6 +24,7 @@ class Category extends React.Component{
         this.removeCategory=this.removeCategory.bind(this);
 
     }
+
     showAddCategory(){
         this.setState({addCategory:!this.state.addCategory});
     }
@@ -74,8 +75,6 @@ class Category extends React.Component{
             });
         }
     }
-
-
 
     getWords()
     {
@@ -180,13 +179,13 @@ class Category extends React.Component{
        const categoryKeys=Object.keys(this.props.categories);
        return(
             <section className="category">
-                    <input multiple ref={input=>this.fileInput=input} onChange={this.readFile} type="file" accept=".json"/>
-                    <Fab mini onClick={()=>this.upload()}>backup</Fab>
-                    <Fab mini onClick={this.showAddCategory}>add</Fab>
-                    <div className={this.state.addCategory?"addCategory visible":"addCategory"}>
-                        {this.renderAddCategoryForm()}
-                    </div>
-                    {categoryKeys.length > 0 ? this.renderCategoryList(categoryKeys) : this.renderNewStart()}
+                <input multiple ref={input=>this.fileInput=input} onChange={this.readFile} type="file" accept=".json"/>
+                <Fab mini onClick={()=>this.upload()}>backup</Fab>
+                <Fab mini onClick={this.showAddCategory}>add</Fab>
+                <div className={this.state.addCategory?"addCategory visible":"addCategory"}>
+                    {this.renderAddCategoryForm()}
+                </div>
+                {categoryKeys.length > 0 ? this.renderCategoryList(categoryKeys) : this.renderNewStart()}
             </section>
        );
     }

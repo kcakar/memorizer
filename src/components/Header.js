@@ -21,7 +21,7 @@ class Header extends React.Component{
                     </li>
                     <ul>
                         <li><Button dense onClick={this.props.logout}>{language.header[siteLang].btn_logout}</Button></li>
-                        <li><Button dense onClick={this.props.showManageWords}>{language.header[siteLang].btn_categories}</Button></li>
+                        <li><Button dense onClick={this.props.showCategories}>{language.header[siteLang].btn_categories}</Button></li>
                     </ul>
                 </ul>
                 <li className="nav-settings" onClick={this.props.showSetup}>
@@ -37,9 +37,9 @@ class Header extends React.Component{
         <header>
             <div className="top-line"></div>
             <nav>
-                <div className="brand" onClick={this.props.showManageWords}>
+                <div className="brand" onClick={this.props.showLanding}>
                     <figure></figure>
-                    <span>Memorizer!</span>
+                    <span>Memorizer</span>
                 </div>
                 {this.props.didLogin ? this.renderUserSection():""}
             </nav>
