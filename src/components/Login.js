@@ -1,17 +1,15 @@
 /*  eslint-disable no-unused-vars*/
 // login fonksiyonu her seferinde 2-3-4 kere çağrılıyor
 import React from 'react';
-import { render } from 'react-dom';
 
 import LanguageSwitcher from './LanguageSwitcher';
-import base from '../base';
 import * as firebase from "firebase";
 import {Elevation} from "rmwc";
+import {base} from "../base.js";//this is used. grayout is a bug
 
 
 import brainIMG from "../images/brain.png";
-import '../css/Intro.css';
-import language from '../Language';
+import language from '../data/Language';
 
 
 class Login extends React.Component {
@@ -41,7 +39,6 @@ class Login extends React.Component {
             }
           });
     }
-
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.userLogout) {
@@ -130,8 +127,6 @@ class Login extends React.Component {
         this.props.userLoggedOut();
     }
 
-
-
     render() {
         const siteLang=this.props.settings.siteLanguage;
 
@@ -146,21 +141,23 @@ class Login extends React.Component {
         }
         else{
             return (
-                <section className="intro">
-                    <Elevation z="7">
-                            <div className="login">
-                                <img alt="memorizer" src={brainIMG}/>
-                                <h2>MEMORIZER!</h2>
-                                <LanguageSwitcher siteLang={siteLang} changeLanguage={this.props.changeLanguage} />
-                                <div className="loginButtons">
-                                    <button className="facebook" onClick={() => this.authenticate('google')}>{language.intro[siteLang].login_google}</button>
-                                    <button className="facebook" onClick={() => this.authenticate('twitter')}>{language.intro[siteLang].login_twitter}</button>
-                                    <button className="facebook" onClick={() => this.authenticate('github')}>{language.intro[siteLang].login_github}</button>
-                                    <button className="facebook" onClick={() => this.authenticate('facebook')}>{language.intro[siteLang].login_facebook}</button>
+                <main className="memorizer">
+                    <section className="intro">
+                        <Elevation z="7">
+                                <div className="login">
+                                    <img alt="memorizer" src={brainIMG}/>
+                                    <h2>MEMORIZER</h2>
+                                    <LanguageSwitcher siteLang={siteLang} changeLanguage={this.props.changeLanguage} />
+                                    <div className="loginButtons">
+                                        <button className="facebook" onClick={() => this.authenticate('google')}>{language.intro[siteLang].login_google}</button>
+                                        <button className="facebook" onClick={() => this.authenticate('twitter')}>{language.intro[siteLang].login_twitter}</button>
+                                        <button className="facebook" onClick={() => this.authenticate('github')}>{language.intro[siteLang].login_github}</button>
+                                        <button className="facebook" onClick={() => this.authenticate('facebook')}>{language.intro[siteLang].login_facebook}</button>
+                                    </div>
                                 </div>
-                            </div>
-                    </Elevation>
-                </section>
+                        </Elevation>
+                    </section>
+                </main>
             );
         }
     }

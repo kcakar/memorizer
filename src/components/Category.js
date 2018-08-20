@@ -1,14 +1,13 @@
 /*  eslint-disable no-unused-vars*/
 import React from 'react';
-import {render} from 'react-dom';
-import {Elevation,TextField,Button,Fab,GridList,GridTile,GridTilePrimary,GridTilePrimaryContent,GridTileSecondary,GridTileTitle} from 'rmwc';
+import {TextField,Button,Fab,GridList,GridTile,GridTilePrimary,GridTilePrimaryContent,GridTileSecondary,GridTileTitle} from 'rmwc';
 import atomIMG from '../images/atom.png';
 import piIMG from '../images/pi.png';
 import dnaIMG from '../images/dna.png';
 import rocketIMG from '../images/rocket.png';
 import angularIMG from '../images/angular.png';
-import language from '../Language';
-import images from '../images';
+import language from '../data/Language';
+import images from '../data/images';
 
 class Category extends React.Component{
     constructor(){

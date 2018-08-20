@@ -1,6 +1,5 @@
 /*  eslint-disable no-unused-vars*/
 import React from 'react';
-import {render} from 'react-dom';
 
 import Setup from './Setup';
 import ManageWords from './ManageWords';
@@ -8,12 +7,9 @@ import Login from './Login';
 import Header from './Header';
 import Game from './Game';
 import Category from './Category';
-import base from '../base';
-import language from '../Language';
+import language from '../data/Language';
 
-import {TextField,Button,Card,CardMedia,CardPrimary,CardTitle,CardSubtitle,CardSupportingText,CardActions,CardAction} from 'rmwc';
-
-import {spanishWords,spanishCategories} from '../DefaultWords.js';
+import {spanishWords,spanishCategories} from '../data/DefaultWords.js';
 
 class Memorizer extends React.Component {
 

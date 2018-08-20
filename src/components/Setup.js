@@ -1,11 +1,9 @@
 /*  eslint-disable no-unused-vars*/
 import React from 'react';
-import { render } from 'react-dom';
-import {Fab,Elevation,GridList,GridTile,GridTilePrimary,GridTilePrimaryContent,GridTileSecondary,GridTileTitle} from 'rmwc';
+import {Fab,Elevation} from 'rmwc';
 
-import interests from '../interests.js';
 import '../css/Setup.css'
-import language from '../Language';
+import language from '../data/Language';
 import LanguageSwitcher from './LanguageSwitcher';
 
 

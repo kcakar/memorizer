@@ -1,10 +1,8 @@
 /*  eslint-disable no-unused-vars*/
 
 import React from "react";
-import {render} from "react-dom";
-
 import {Button,Fab} from "rmwc"
-import language from '../Language';
+import language from '../data/Language';
 
 
 

@@ -1,12 +1,8 @@
 /*  eslint-disable no-unused-vars*/
 import React from 'react';
-import {render} from 'react-dom';
 
-import {Snackbar,LinearProgress,Fab,Elevation,Radio,Theme,TextField,Button,Card,CardMedia,CardPrimary,CardTitle,CardSubtitle,CardSupportingText,CardActions,CardAction} from 'rmwc';
-import colors from '../colors';
-import images from '../images';
-import language from '../Language';
-import '../css/Game.css';
+import {Snackbar,LinearProgress,Fab,Elevation,Radio,TextField,Button,Card,CardPrimary,CardTitle,CardSubtitle,CardSupportingText,CardActions,CardAction} from 'rmwc';
+import language from '../data/Language';
 
 
 // const questionTypes={
