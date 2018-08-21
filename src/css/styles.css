@@ -224,7 +224,8 @@ nav {
     width: 60px;
     height: 60px;
     border-radius: 30px;
-    margin-top: 10px; }
+    margin-top: 10px;
+    border: 1px solid rgba(5, 61, 167, 0.356); }
   nav .user-info {
     font-size: 18px;
     text-align: right;
@@ -237,7 +238,8 @@ nav {
     right: 5px;
     width: 25px;
     height: 25px;
-    background-color: #1b2288; }
+    background-color: #1b2288;
+    box-shadow: inherit; }
   nav .nav-settings .btn-settings.mdc-fab i {
     font-size: 18px; }
   nav .mdc-button.mdc-ripple-upgraded {
@@ -673,96 +675,118 @@ section.category {
     right: 10px; }
 
 section.game {
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-flow: column;
-  flex-flow: column;
   font-size: 19px;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   padding-bottom: 20px;
   position: relative;
   min-height: 500px;
-  min-width: 500px;
-  margin-top: 50px; }
+  min-width: 500px; }
+  @media only screen and (max-width: 530px) {
+    section.game {
+      display: initial; } }
   section.game .question {
     background-color: white;
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
     position: relative;
-    min-width: 500px; }
-  @media only screen and (max-width: 500px) {
-    section.game .question {
-      min-width: initial; } }
-  @media only screen and (max-width: 530px) {
-    section.game section.game {
-      display: initial; }
-    section.game .question {
-      margin-top: 20px;
-      align-self: flex-start;
-      width: 100%; }
-    section.game section.content .status-bar .mdc-linear-progress {
-      width: 90%; } }
-  section.game .question .mdc-card {
+    max-width: 500px; }
+    @media only screen and (max-width: 500px) {
+      section.game .question {
+        min-width: initial; } }
+    @media only screen and (max-width: 530px) {
+      section.game .question {
+        margin-top: 20px;
+        align-self: flex-start;
+        width: 100%; } }
+    section.game .question.listening, section.game .question.written {
+      min-width: 500px; }
+      @media only screen and (max-width: 530px) {
+        section.game .question.listening, section.game .question.written {
+          min-width: initial;
+          width: 100%; } }
+  section.game .status-bar {
+    margin-bottom: 50px;
+    width: 100%;
+    max-width: 80vw;
+    margin: 0 auto;
+    margin-bottom: 20px; }
+    @media only screen and (max-width: 530px) {
+      section.game .status-bar {
+        width: 80%; } }
+  section.game .mdc-linear-progress {
+    width: 100%;
+    box-sizing: border-box; }
+  section.game .mdc-card {
     padding: 20px; }
-  section.game .question .mdc-card__title.mdc-card__title--large {
+    @media only screen and (max-width: 530px) {
+      section.game .mdc-card {
+        padding-left: 0;
+        padding-right: 0; } }
+  section.game .mdc-card__title.mdc-card__title--large {
     font-weight: bold;
     padding-bottom: 10px; }
-  section.game .question .mdc-card__subtitle {
+    @media only screen and (max-width: 530px) {
+      section.game .mdc-card__title.mdc-card__title--large {
+        font-size: 1em;
+        line-height: 1.2em; } }
+  section.game .mdc-card__subtitle {
     border-top: 1px dashed darkgray;
     font-size: 20px;
     padding-top: 20px; }
-  section.game .question .the-line {
+    @media only screen and (max-width: 530px) {
+      section.game .mdc-card__subtitle {
+        font-size: 1em;
+        line-height: 1.2em;
+        padding: 10px 0 10px 0; } }
+  section.game .the-line {
     border-top: 3px solid #3c31a3;
     position: relative;
     margin-top: 30px;
     margin-bottom: 20px;
     width: calc(100% + 80px);
     left: -40px; }
-  section.game .question.test .answer .mdc-form-field {
+    @media only screen and (max-width: 530px) {
+      section.game .the-line {
+        margin-top: 10px;
+        margin-bottom: 10px; } }
+  section.game .answer .mdc-form-field {
     width: 100%;
     padding-top: 10px; }
-  section.game .question.test .answer {
-    width: 100%; }
-  section.game .question .answer {
-    padding-top: 5px; }
-  section.game .question .answer .error {
+    @media only screen and (max-width: 530px) {
+      section.game .answer .mdc-form-field {
+        padding-top: 0; } }
+  section.game .error {
     border-bottom: 2px solid rgba(212, 3, 3, 0.81); }
-  section.game .question .answer .error .mdc-text-field__bottom-line {
+  section.game .error .mdc-text-field__bottom-line {
     display: none; }
-  section.game .question .answer .error .mdc-text-field__input {
+  section.game .error .mdc-text-field__input {
     color: #c30000eb; }
   section.game .succeed {
     background-color: #9ff16469; }
+    @media only screen and (max-width: 530px) {
+      section.game .succeed {
+        margin-top: 40px; } }
   section.game .failure {
     background-color: #f1696469; }
+    @media only screen and (max-width: 530px) {
+      section.game .failure {
+        margin-top: 40px; } }
   section.game .mdc-card__media {
     background: url(../images/right1.jpg) no-repeat;
     background-size: cover;
     background-position: center top;
     width: 300px;
     height: 255px; }
-  @media only screen and (max-width: 530px) {
-    section.game .succeed, section.game .failure {
-      margin-top: 40px; }
-    section.game .mdc-card__media {
-      width: 100%; } }
+    @media only screen and (max-width: 530px) {
+      section.game .mdc-card__media {
+        width: 100%; } }
   section.game .summary {
-    width: 100%;
-    flex: 1;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center; }
-  section.game .summary .summary-row {
+    flex-wrap: wrap; }
+  section.game .summary-row {
+    box-sizing: border-box;
     display: flex;
     align-content: center;
     vertical-align: middle;
@@ -777,32 +801,51 @@ section.game {
     font-family: 'Lato', sans-serif;
     font-weight: 600;
     justify-content: center;
-    background-color: white; }
-  @media only screen and (max-width: 530px) {
-    section.game .summary .summary-row {
-      width: 100%; } }
-  section.game .summary .summary-row span:nth-of-type(1) {
-    text-align: center;
-    font-size: 54px; }
-  section.game .summary .summary-row span:nth-of-type(2) {
-    text-align: center;
-    font-size: 20px; }
-  section.game .summary .summary-row span:nth-of-type(3) {
-    flex-basis: auto; }
+    background-color: white;
+    color: #534e5a; }
+    @media only screen and (max-width: 530px) {
+      section.game .summary-row {
+        width: 100%;
+        min-height: 300px; } }
+    section.game .summary-row span:nth-of-type(1) {
+      text-align: center;
+      font-size: 54px; }
+      @media only screen and (max-width: 530px) {
+        section.game .summary-row span:nth-of-type(1) {
+          font-size: 1.6em;
+          margin-bottom: 10px; } }
+    section.game .summary-row span:nth-of-type(2) {
+      text-align: center;
+      font-size: 20px; }
+    section.game .summary-row span:nth-of-type(3) {
+      flex-basis: auto; }
   section.game .continue-div {
     width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
     text-align: center;
-    padding: 10px; }
-  section.game .continue-div button {
-    margin-right: 10px; }
-  section.game .question .btn-quit-game {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    @media only screen and (max-width: 530px) {
+      section.game .continue-div {
+        flex-wrap: wrap;
+        padding: 0;
+        padding-top: 10px; }
+        section.game .continue-div button {
+          padding: 0;
+          margin: 0;
+          width: 100%;
+          margin-bottom: 10px; } }
+  section.game .btn-quit-game {
     position: absolute;
     top: 0;
     right: 0; }
   section.game .btn-hearing {
     transition: 0.2s linear background; }
-  section.game .btn-hearing.highlight {
-    background: green; }
+    section.game .btn-hearing.highlight {
+      background: green; }
 
 section.manageWords .mdc-fab {
   position: absolute;

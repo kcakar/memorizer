@@ -3,6 +3,7 @@
 $main-color:#211062;
 $section-height:1000px;
 $main-font-color:#ffffff;
+$black-font-color:#534e5a;
 
 :root {
   --mdc-theme-secondary: #1c2387!important;
@@ -321,12 +322,13 @@ nav{
     height:60px;
     border-radius: 30px;
     margin-top:10px;
+    border: 1px solid rgba(5, 61, 167, 0.356);
   }
   
   .user-info{
     font-size: 18px;
     text-align: right;
-    color:#534e5a;
+    color:$black-font-color;
   }
   
   .nav-settings{
@@ -340,6 +342,7 @@ nav{
     width: 25px;
     height: 25px;
     background-color: rgb(27, 34, 136);
+    box-shadow: inherit;
   }
   
   .nav-settings .btn-settings.mdc-fab i{
@@ -943,198 +946,232 @@ section.category{
 }
 
 section.game{
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-flow: column;
-  flex-flow: column;
   font-size: 19px;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   padding-bottom: 20px;
   position: relative;
   min-height: 500px;
   min-width: 500px;
-  margin-top:50px;
 
-  .question{
-    background-color: white;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    min-width: 500px;
-}
-
-@media only screen and (max-width: 500px) {
-  .question{
-    min-width: initial;
-  }
-}
-
-@media only screen and (max-width: 530px) {
-  section.game{
+  @media only screen and (max-width: 530px) {
     display: initial;
   }
+
   .question{
-    margin-top: 20px;
-    align-self: flex-start;
+      background-color: white;
+      justify-content: center;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      max-width: 500px;
+      
+      @media only screen and (max-width: 500px) {
+        min-width: initial;
+      }
+
+      @media only screen and (max-width: 530px) {
+        margin-top: 20px;
+        align-self: flex-start;
+        width:100%;
+      }
+
+      &.listening,&.written{
+        min-width:500px;
+        @media only screen and (max-width: 530px) {
+          min-width: initial;
+          width:100%;
+        }
+      }
+  }
+
+  .status-bar{
+    margin-bottom:50px;
     width:100%;
+    max-width:80vw;
+    margin:0 auto;
+    margin-bottom:20px;
+
+    @media only screen and (max-width: 530px) {
+      width:80%;
+    }
   }
 
-  section.content .status-bar .mdc-linear-progress{
-    width:90%;
-  }
-}
-
-.question .mdc-card{
-  padding: 20px;
-}
-
-.question .mdc-card__title.mdc-card__title--large{
-  font-weight: bold;
-  padding-bottom: 10px;
-}
-
-.question .mdc-card__subtitle{
-  border-top: 1px dashed darkgray;
-  font-size:20px;
-  padding-top:20px;
-}
-
-.question .the-line{
-  border-top: 3px solid rgb(60, 49, 163);
-  position: relative;
-  margin-top:30px;
-  margin-bottom:20px;
-  width:calc(100% + 80px);
-  left:-40px;
-}
-
-.question.test .answer .mdc-form-field{
-  width: 100%;
-  padding-top: 10px;
-}
-
-.question.test .answer{
-  width: 100%;
-}
-
-.question .answer{
-  padding-top:5px;
-}
-
-.question .answer .error{
-  border-bottom: 2px solid rgba(212, 3, 3, 0.81);
-}
-
-.question .answer .error .mdc-text-field__bottom-line{
-  display: none;
-}
-
-.question .answer .error .mdc-text-field__input{
-  color: #c30000eb;
-}
-
-.succeed{
-  background-color: #9ff16469;
-}
-
-.failure{
-  background-color: #f1696469;
-}
-
-.mdc-card__media{
-  background: url(../images/right1.jpg) no-repeat;
-  background-size: cover;
-  background-position: center top;
-  width: 300px;
-  height: 255px;
-}
-@media only screen and (max-width: 530px) {
-  .succeed,.failure{
-    margin-top:40px;
-  }
-  .mdc-card__media{
+  .mdc-linear-progress{
     width:100%;
+    box-sizing: border-box;
   }
-}
 
-.summary{
-  width:100%;
-  flex: 1;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+  .mdc-card{
+    padding: 20px;
+    @media only screen and (max-width: 530px) {
+      padding-left:0;
+      padding-right:0;
+    }
+  }
 
-.summary .summary-row{
-  display: flex;
-  align-content: center;
-  vertical-align: middle;
-  min-height: 400px;
-  width:calc(50% - 40px);
-  margin: 20px;
-  text-align: center;
-  flex-direction: column;
-  padding: 20px;
-  border:1px solid rgba(0, 0, 0, 0.212);
-  border-radius:5px;
-  font-family: 'Lato', sans-serif;
-  font-weight: 600;
-  justify-content: center;
-  background-color: white;
+  .mdc-card__title.mdc-card__title--large{
+    font-weight: bold;
+    padding-bottom: 10px;
+    @media only screen and (max-width: 530px) {
+      font-size:1em;
+      line-height: 1.2em;
+    }
+  }
 
-}
-@media only screen and (max-width: 530px) {
-  .summary .summary-row{
+  .mdc-card__subtitle{
+    border-top: 1px dashed darkgray;
+    font-size:20px;
+    padding-top:20px;
+    @media only screen and (max-width: 530px) {
+      font-size:1em;
+      line-height: 1.2em;
+      padding:10px 0 10px 0;
+    }
+  }
+
+  .the-line{
+    border-top: 3px solid rgb(60, 49, 163);
+    position: relative;
+    margin-top:30px;
+    margin-bottom:20px;
+    width:calc(100% + 80px);
+    left:-40px;
+    @media only screen and (max-width: 530px) {
+      margin-top:10px;
+      margin-bottom:10px;
+    }
+  }
+
+  .answer .mdc-form-field{
     width: 100%;
+    padding-top: 10px;
+    @media only screen and (max-width: 530px) {
+      padding-top:0;
+    }
   }
-}
 
-.summary .summary-row span:nth-of-type(1){
-  text-align: center;
-  font-size:54px;
-}
+  .error{
+    border-bottom: 2px solid rgba(212, 3, 3, 0.81);
+  }
 
-.summary .summary-row span:nth-of-type(2){
-  text-align: center;
-  font-size:20px;
-}
+  .error .mdc-text-field__bottom-line{
+    display: none;
+  }
 
-.summary .summary-row span:nth-of-type(3){
-  flex-basis: auto;
-}
+  .error .mdc-text-field__input{
+    color: #c30000eb;
+  }
 
-.continue-div{
-  width:100%;
-  text-align: center;
-  padding: 10px;
-}
+  .succeed{
+    background-color: #9ff16469;
+    @media only screen and (max-width: 530px) {
+      margin-top:40px;
+    }
+  }
 
-.continue-div button{
-  margin-right:10px;
-}
+  .failure{
+    background-color: #f1696469;
+    @media only screen and (max-width: 530px) {
+      margin-top:40px;
+    }
+  }
 
-.question .btn-quit-game{
-  position: absolute;
-  top:0;
-  right: 0;
-}
-.btn-hearing {
-  transition: 0.2s linear background;
-}
+  .mdc-card__media{
+    background: url(../images/right1.jpg) no-repeat;
+    background-size: cover;
+    background-position: center top;
+    width: 300px;
+    height: 255px;
+    @media only screen and (max-width: 530px) {
+      width:100%;
+    }
+  }
 
-.btn-hearing.highlight {
-  background: green;
-}
+  .summary{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .summary-row{
+    box-sizing: border-box;
+    display: flex;
+    align-content: center;
+    vertical-align: middle;
+    min-height: 400px;
+    width:calc(50% - 40px);
+    margin: 20px;
+    text-align: center;
+    flex-direction: column;
+    padding: 20px;
+    border:1px solid rgba(0, 0, 0, 0.212);
+    border-radius:5px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    justify-content: center;
+    background-color: white;
+    color:$black-font-color;
+    
+    @media only screen and (max-width: 530px) {
+      width: 100%;
+      min-height:300px;
+    }
+
+    & span:nth-of-type(1){
+      text-align: center;
+      font-size:54px;
+      @media only screen and (max-width: 530px) {
+        font-size:1.6em;
+        margin-bottom:10px;
+      }
+    }
+  
+    & span:nth-of-type(2){
+      text-align: center;
+      font-size:20px;
+    }
+  
+    & span:nth-of-type(3){
+      flex-basis: auto;
+    }
+  }
+
+  .continue-div{
+    width:100%;
+    max-width:420px;
+    margin:0 auto;
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media only screen and (max-width: 530px) {
+      flex-wrap: wrap;
+      padding:0;
+      padding-top:10px;
+
+      & button{
+        padding:0;
+        margin:0;
+        width:100%;
+        margin-bottom:10px;
+      }
+    }
+  }
+
+  .btn-quit-game{
+    position: absolute;
+    top:0;
+    right: 0;
+  }
+
+  .btn-hearing {
+    transition: 0.2s linear background;
+
+    &.highlight {
+      background: green;
+    }
+  }
 }
 
 section.manageWords{
@@ -1278,7 +1315,7 @@ section.manageWords{
   .setting-title{
     width:100%;
     display: block;
-    color:#534e5a;
+    color:$black-font-color;
     margin-bottom:5px;
   }
 
@@ -1289,7 +1326,7 @@ section.manageWords{
   
   .gameSettings h2{
     margin-bottom: 20px;
-    color:#534e5a;
+    color:$black-font-color;
   }
 }
 

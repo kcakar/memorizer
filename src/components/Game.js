@@ -398,7 +398,7 @@ class Game extends React.Component{
     renderWrittenQuestion(siteLang)
     {
         return(
-            <div className="question">
+            <div className="question written">
                 <Button className="btn-quit-game" onClick={this.props.quitGame}>{language.game[siteLang].btn_quit_game}</Button>
                 <Card>
                     <CardPrimary>
@@ -417,8 +417,6 @@ class Game extends React.Component{
                             />
                         </div>
                     </CardPrimary>
-                    <CardSupportingText>
-                    </CardSupportingText>
                     <CardActions>
                         <CardAction onClick={()=>this.checkAnswer()}>{language.game[siteLang].btn_check}</CardAction>
                         <CardAction onClick={()=>this.wrongAnswer()}>{language.game[siteLang].btn_skip}</CardAction>
@@ -469,8 +467,8 @@ class Game extends React.Component{
         }
 
         return(
-            <div className="question">
-                <Button onClick={this.props.quitGame}>{language.game[siteLang].btn_quit_game}</Button>
+            <div className="question listening">
+                <Button className="btn-quit-game" onClick={this.props.quitGame}>{language.game[siteLang].btn_quit_game}</Button>
                 <Card>
                     <CardPrimary>
                         <CardTitle large="true" >Write what you hear!</CardTitle>
@@ -486,8 +484,6 @@ class Game extends React.Component{
                             />
                         </div>
                     </CardPrimary>
-                    <CardSupportingText>
-                    </CardSupportingText>
                     <CardActions>
                         <CardAction onClick={()=>this.checkAnswer()}>{language.game[siteLang].btn_check}</CardAction>
                         <CardAction onClick={()=>this.wrongAnswer()}>{language.game[siteLang].btn_skip}</CardAction>
@@ -546,11 +542,9 @@ class Game extends React.Component{
         else{
             return(
                 <div>
-                    {this.renderStatusBar()}
                     <section className="game">
-                        <Elevation z={5}>
-                            {this.renderQuestion()}
-                        </Elevation>
+                        {this.renderStatusBar()}
+                        {this.renderQuestion()}
                     </section>
                     {this.renderSnackbar()}
                 </div>
