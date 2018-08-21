@@ -7,6 +7,7 @@ import Login from './Login';
 import Header from './Header';
 import Game from './Game';
 import Category from './Category';
+import ScrollToTop from './ScrollToTop';
 import language from '../data/Language';
 import {Router,Route,Redirect,Switch} from 'react-router-dom';
 import {spanishWords,spanishCategories} from '../data/DefaultWords.js';
@@ -20,36 +21,6 @@ class Memorizer extends React.Component {
 
     constructor() {
         super();
-        // this.state = {
-        //     settings: {
-        //         interests:[],
-        //         siteLanguage:"en"
-        //     },
-        //     words: {},
-        //     user:{},
-        //     categories:{},
-        //     activeCategory:"",
-        //     didLogin: false,
-        //     userLogout:false,
-        //     isLoading:true
-        // }
-
-        //manage words
-        // this.state = {
-        //     settings: {
-        //         interests:[],
-        //         siteLanguage:"en"
-        //     },
-        //     words: {},
-        //     user:{},
-        //     categories:{},
-        //     activeCategory:"Spanish - 01",
-        //     didLogin: false,
-        //     userLogout:false,
-        //     isLoading:true
-        // }
-
-
         //game screen
         this.state = {
             settings: {
@@ -59,7 +30,7 @@ class Memorizer extends React.Component {
             words: {},
             user:{},
             categories:{},
-            activeCategory:"Spanish - 01",
+            activeCategory:"",
             didLogin: false,
             userLogout:false,
             isLoading:true,
@@ -197,14 +168,6 @@ class Memorizer extends React.Component {
         let words=this.state.words;
         words[key].translation=newTranslation;
         this.setState({words});
-    }
-
-    startGame(){
-        //this.setState({isGame:true});
-    }
-
-    quitGame(){
-        //this.setState({isGame:false});
     }
 
     getSettings()
@@ -356,11 +319,32 @@ class Memorizer extends React.Component {
         this.setState({gameSettings:settings});
     }
 
+    toSeoUrl(url) {
+        return url.toString()               // Convert to string
+            .normalize('NFD')               // Change diacritics
+            .replace(/[\u0300-\u036f]/g,'') // Remove illegal characters
+            .replace(/\s+/g,'-')            // Change whitespace to dashes
+            .toLowerCase()                  // Change to lowercase
+            .replace(/&/g,'-and-')          // Replace ampersand
+            .replace(/[^a-z0-9\-]/g,'')     // Remove anything that is not a letter, number or dash
+            .replace(/-+/g,'-')             // Remove duplicate dashes
+            .replace(/^-*/,'')              // Remove starting dashes
+            .replace(/-*$/,'');             // Remove trailing dashes
+    }
+
+    startGame(){
+        history.push('/memorizer/game/');
+    }
+
+    quitGame(){
+        this.showManageWords(this.state.activeCategory);
+    }
+
     showManageWords(key){
         if(key && key!==undefined && typeof(key)==="string")
         {
             this.setState({activeCategory:key});
-            history.push('/memorizer/manage');
+            history.push('/memorizer/categories/'+this.toSeoUrl(key));
         }
         else{
             this.setState({activeCategory:""});
@@ -468,7 +452,7 @@ class Memorizer extends React.Component {
                     <div><h2>{language.category[siteLang].page_headline}</h2></div>
                 </section>
                 <section className="content">
-                        <Category settings={this.state.settings} addFromFile={this.addFromFile} removeCategory={this.removeCategory} addCategory={this.addCategory} categories={this.state.categories} showManageWords={this.showManageWords}/>
+                    <Category settings={this.state.settings} addFromFile={this.addFromFile} removeCategory={this.removeCategory} addCategory={this.addCategory} categories={this.state.categories} showManageWords={this.showManageWords}/>
                 </section>
             </main>
         );
@@ -484,15 +468,17 @@ class Memorizer extends React.Component {
     render() {
         return(
             <Router history={history}>
-                <Switch>
-                    <Route exact path="/" component={Landing} /> 
-                    <Route exact path="/memorizer/login" render={this.renderLogin}/>
-                    {!this.state.didLogin ? <Redirect to="/memorizer/login"/> : ""}
-                    <Route exact path="/memorizer/setup" render={this.renderSetup} />
-                    <Route exact path="/memorizer/categories" render={this.renderCategory} />
-                    <Route exact path="/memorizer/game" render={this.renderGame} />
-                    <Route exact path="/memorizer/manage" render={this.renderManage} />
-                </Switch>
+                <ScrollToTop>
+                    <Switch>
+                        <Route exact path="/" component={Landing} /> 
+                        <Route exact path="/memorizer/login" render={this.renderLogin}/>
+                        {!this.state.didLogin ? <Redirect to="/memorizer/login"/> : ""}
+                        <Route exact path="/memorizer/setup" render={this.renderSetup} />
+                        <Route exact path="/memorizer/categories" render={this.renderCategory} />
+                        <Route exact path="/memorizer/categories/:category" render={this.renderManage} />
+                        <Route exact path="/memorizer/game" render={this.renderGame} />
+                    </Switch>
+                </ScrollToTop>
             </Router>
             );
     }

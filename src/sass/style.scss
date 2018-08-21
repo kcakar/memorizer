@@ -82,7 +82,7 @@ table {
 
   td,
   th {
-    padding: 0 28px 5px 28px;
+    padding: 0 0px 5px 35px;
     text-align: left;
   }
 
@@ -93,12 +93,20 @@ table {
 
   td:first-of-type,
   th:first-of-type {
-    padding-left: 24px;
-  }
+    padding: 0;
+    padding-right:10px;
+    margin:0;
+  
+    @media only screen and (max-width: 480px) {
+      padding-right:0;
+    }}
 
   td:last-of-type,
   th:last-of-type {
-    padding-right: 24px;
+    padding-left: 0;
+    padding-right:0;
+    margin:0;
+    text-align: center;
   }
 
   td {
@@ -124,7 +132,8 @@ table {
     height: 56px;
     font-size: 13px;
     color: rgba(0, 0, 0, 0.54);
-    padding: 0 28px 18px 28px;
+    padding: 0 0px 5px 35px;
+    line-height:35px;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     font-weight: 400;
@@ -138,6 +147,7 @@ table {
     color: inherit;
     font-weight: 700;
   }
+  
 
   th.mdl-data-table__header--sorted-ascending,
   th.mdl-data-table__header--sorted-descending {
@@ -478,6 +488,7 @@ nav{
     margin:0 auto;
     top: 70px;
     z-index: -1;
+    pointer-events: none;
 
     @media only screen and (max-width: 1200px){
       width: 1040px;
@@ -696,7 +707,6 @@ section.category{
   .addCategory{
     background: rgb(255, 255, 255);
     width:100%;
-    padding:10px;
     padding-top:0px;
     padding-bottom:0px;
     border-top:0px;
@@ -749,7 +759,6 @@ section.category{
   }
 
   .mdc-grid-tile{
-      margin-top:30px;
       width:calc(33.333333% - 20px);
       padding: 0 20px;
       margin:15px 10px;
@@ -1147,10 +1156,9 @@ section.manageWords{
     }
   }
   
-  .addWords,section.category .addCategory{
+  .addWords{
     background: rgb(255, 255, 255);
     width:100%;
-    padding:10px;
     padding-top:0px;
     padding-bottom:0px;
     border-top:0px;
@@ -1161,44 +1169,38 @@ section.manageWords{
     overflow: hidden;
   }
   
-  .addWords.visible,section.category .addCategory.visible{
-    height: 80px;
+  .addWords.visible{
+    height: 95px;
+    @media only screen and (max-width: 600px) {
+      height: 160px;
+    }
   }
   
-  .addWords form,section.category .addCategory form{
-      max-width:600px;
+  .addWords form{
+      max-width:450px;
       margin:auto;
       display: flex;
       justify-content: space-between;
-      margin-top:7px;
+      margin-top:15px;
+      @media only screen and (max-width: 600px) {
+        margin:10px;
+        flex-direction: column;
+      }
   }
   
   @media only screen and (max-width: 600px) {
-    .addWords.visible{
-      height: 160px;
-    }
-  
-    section.category .addCategory.visible{
-      height: 220px;
-    }
-  
-    .addWords form,section.category .addCategory form{
-      margin:10px;
-      flex-direction: column;
-    }
-    
-    .addWords form *,section.category .addCategory form *{
+    .addWords form *{
       margin:5px;
       flex-basis: 100%;
     }
   }
   
-  .addWords form .mdc-text-field,section.category .addCategory form .mdc-text-field{
+  .addWords form .mdc-text-field{
     margin-top:0;
     margin-bottom:0;
   }
   
-  .addWords form button,section.category .addCategory form button{
+  .addWords form button{
     align-self:flex-end;
   }
   
@@ -1231,6 +1233,9 @@ section.manageWords{
     top:13px;
     width: 25px;
     height: 25px;
+    @media only screen and (max-width: 600px) {
+      left:2px;
+    }
   }
   
   .words tr > td .material-icons  {
@@ -1241,7 +1246,7 @@ section.manageWords{
   }
   
   .words tr > td .mdc-text-field {
-    margin-left:35px;
+    margin-left:0px;
     width: 70%;
     min-width: 200px;
   }
@@ -1260,26 +1265,31 @@ section.manageWords{
     margin-bottom:30px;
     position: relative;
     background-color: white;
-    padding:50px;
+    padding:25px;
+    box-sizing:border-box;
   }
   
-  .gameSettings .setting-group .setting-title{
+  .setting-group{
+    box-sizing: border-box;
+    padding:15px;
+    border:1px solid rgba(136, 95, 212, 0.473);
+  }
+
+  .setting-title{
     width:100%;
     display: block;
+    color:#534e5a;
+    margin-bottom:5px;
   }
-  
-  .gameSettings .setting-group .mdc-form-field{
+
+  .mdc-form-field{
     position: relative;
     left: -10px; 
   }
   
-  .gameSettings .setting-group .slider-container{
-    max-width: 250px;
-  }
-  
-  
   .gameSettings h2{
     margin-bottom: 20px;
+    color:#534e5a;
   }
 }
 

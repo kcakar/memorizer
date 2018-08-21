@@ -107,6 +107,8 @@ class ManageWords extends React.Component{
             <tr key={wordInfo.key}>
                 <td>
                     <Fab mini onClick={()=>this.removeWord(word)}>remove</Fab>
+                </td>
+                <td>
                     <TextField onChange={(e)=>this.handleWordChange(e,word)} value={word} />
                 </td>
                 <td>
@@ -174,6 +176,7 @@ class ManageWords extends React.Component{
                         <table className="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
                             <thead>
                                 <tr>
+                                    <th></th>
                                     <th className="mdl-data-table__cell--non-numeric">{language.managewords[siteLang].table_words}</th>
                                     <th>{language.managewords[siteLang].table_meaning}</th>
                                     <th>{language.managewords[siteLang].table_performance}</th>
