@@ -35,8 +35,6 @@ class Landing extends React.Component{
         this.step=this.step.bind(this);
     }
 
-
-
     componentDidMount(){
         emptyPaperTemplate=document.getElementById("kagit-bos-1");
         filledPaperTemplate=document.getElementById("kagit-dolu-1");
@@ -196,7 +194,6 @@ class Landing extends React.Component{
                     <Link to="/memorizer/login" className="hero__btn-start">Start now</Link>
                     
                 </div>
-        
                 <div className="hero__canvas">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1640 1251" preserveAspectRatio="xMidYMid meet">
                         <defs>

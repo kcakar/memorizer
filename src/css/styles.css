@@ -405,30 +405,56 @@ nav {
   background-color: #211062; }
 
 section.loading {
-  position: fixed;
-  height: 100vh;
+  overflow: hidden;
   width: 100vw;
-  background-color: #643c98;
-  opacity: 1; }
-  section.loading .spinner {
-    width: 90vw;
-    height: 90vh;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  flex-direction: column; }
+  section.loading svg {
+    width: 250px;
+    height: 313px;
+    display: block;
+    position: relative; }
+  section.loading #lightning1 {
+    transform: translate(60px, -40px);
+    animation: lightning1Frames ease-in-out 3s;
+    animation-iteration-count: infinite; }
+  section.loading #lightning2 {
+    transform: translate(120px, -40px);
+    animation: lightning2Frames ease-in-out 3s;
+    animation-iteration-count: infinite; }
+  section.loading #lightning3 {
+    transform: translate(170px, -40px);
+    animation: lightning3Frames ease-in-out 3s;
+    animation-iteration-count: infinite; }
+  section.loading .lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 64px;
+    height: 64px; }
+  section.loading .lds-ellipsis div {
     position: absolute;
-    top: calc(50% - 45vh);
-    left: calc(50% - 45vw); }
-  section.loading .double-bounce1, section.loading .double-bounce2 {
-    width: 100%;
-    height: 100%;
+    top: 27px;
+    width: 11px;
+    height: 11px;
     border-radius: 50%;
-    background-color: #333;
-    opacity: 0.6;
-    position: absolute;
-    left: 0;
-    -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
-    animation: sk-bounce 2.0s infinite ease-in-out; }
-  section.loading .double-bounce2 {
-    -webkit-animation-delay: -1.0s;
-    animation-delay: -1.0s; }
+    background: #f3f70b;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0); }
+    section.loading .lds-ellipsis div:nth-child(1) {
+      left: 6px;
+      animation: lds-ellipsis1 0.6s infinite; }
+    section.loading .lds-ellipsis div:nth-child(2) {
+      left: 6px;
+      animation: lds-ellipsis2 0.6s infinite; }
+    section.loading .lds-ellipsis div:nth-child(3) {
+      left: 26px;
+      animation: lds-ellipsis2 0.6s infinite; }
+    section.loading .lds-ellipsis div:nth-child(4) {
+      left: 45px;
+      animation: lds-ellipsis3 0.6s infinite; }
 
 section.intro {
   width: 500px;
@@ -1056,6 +1082,30 @@ section.setup {
   100% {
     transform: translate(810px, 30px); } }
 
+@keyframes lightning1Frames {
+  0% {
+    transform: translate(60px, -70px); }
+  50% {
+    transform: translate(60px, 0px); }
+  100% {
+    transform: translate(60px, -70px); } }
+
+@keyframes lightning2Frames {
+  0% {
+    transform: translate(120px, -70px); }
+  50% {
+    transform: translate(120px, 0px); }
+  100% {
+    transform: translate(120px, -70px); } }
+
+@keyframes lightning3Frames {
+  0% {
+    transform: translate(170px, -70px); }
+  50% {
+    transform: translate(170px, 0px); }
+  100% {
+    transform: translate(170px, -70px); } }
+
 @keyframes brand {
   from {
     filter: sepia(0);
@@ -1071,3 +1121,21 @@ section.setup {
   50% {
     transform: scale(1);
     -webkit-transform: scale(1); } }
+
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0); }
+  100% {
+    transform: scale(1); } }
+
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1); }
+  100% {
+    transform: scale(0); } }
+
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0); }
+  100% {
+    transform: translate(19px, 0); } }
