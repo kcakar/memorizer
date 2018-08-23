@@ -31,7 +31,6 @@ class Landing extends React.Component{
         }
 
         this.paperFactory=this.paperFactory.bind(this);
-        this.handleVisibilityChange=this.handleVisibilityChange.bind(this);
         this.step=this.step.bind(this);
     }
 
@@ -41,21 +40,11 @@ class Landing extends React.Component{
         platform = document.getElementById("carpet");
         lightning = document.getElementById("simsek3");
         window.requestAnimationFrame(this.step);
-        window.onresize=this.ResetFactory;
-        document.addEventListener("visibilitychange",this.handleVisibilityChange);   
         this.paperFactory();
     }
 
     componentWillUnmount(){
-        window.onresize=null;
         stopAnimation=true;
-        document.removeEventListener("visibilityChange",this.handleVisibilityChange,true);
-    }
-
-    handleVisibilityChange(){
-        if (document.hidden){
-            this.ResetFactory();
-        } 
     }
 
     step(timestamp) {

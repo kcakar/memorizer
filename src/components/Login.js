@@ -7,7 +7,7 @@ import {Elevation} from "rmwc";
 import {base} from "../base.js";//this is used. grayout is a bug
 import brainIMG from "../images/brain.png";
 import language from '../data/Language';
-
+import Authentication from "./Authentication";
 
 class Login extends React.Component {
 
@@ -17,24 +17,32 @@ class Login extends React.Component {
         this.authenticate = this.authenticate.bind(this);
         this.authHandler = this.authHandler.bind(this);
         this.logout = this.logout.bind(this);
+        this.cancelLoading=this.cancelLoading.bind(this);
         
         this.state = {
             uid: null,
-            owner: null
+            owner: null,
+            isLoading:true
         }
-
     }
 
     componentDidMount() {
+        console.log(this.state.isLoading)
         let component=this;
         firebase.auth().onAuthStateChanged(function(user, error) {
             if (user) {
                 component.authHandler(null, { user });
             }
             else{
-                component.props.cancelLoading();
+                console.log("else")
+                component.cancelLoading();
             }
           });
+        //Authentication.bindFirebaseEvent();
+    }
+
+    cancelLoading(){
+        this.setState({isLoading:false});
     }
 
     componentWillReceiveProps(nextProps) {
@@ -126,13 +134,11 @@ class Login extends React.Component {
     }
 
     render() {
-        console.log(this.props)
         const siteLang=this.props.settings.siteLanguage;
-
-        if(this.props.isLoading)
+        if(this.state.isLoading)
         {
           return(
-            <section className="loading">
+            <section className="loading fade-enter fade-enter-active">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 150" preserveAspectRatio="xMidYMid meet">
                     <defs>
                         <linearGradient id="a" x1="100%" x2="-8.891%" y1="50%" y2="40.121%">
@@ -175,7 +181,7 @@ class Login extends React.Component {
                             <path fill="#FFE46E" d="M1.555 18.776l6.065-2.483a2 2 0 0 1 2.059.332l1.14.977-1.776 8.625-.188 1.268-7.667-5.214a2 2 0 0 1 .367-3.505z"/>
                             <path fill="#FFEC9B" d="M14.859 3.507l5.26-2.96a2 2 0 0 1 1.949-.006l5.372 2.974a2 2 0 0 1 .019 3.489l-5.303 3.01a2 2 0 0 1-1.975 0L14.852 6.99a2 2 0 0 1 .007-3.482z"/>
                         </g>
-                        <image id="beyin" width="250" height="150" xlinkHref={require('../images/beyin.png')}/>
+                        <image id="brain" width="250" height="150" xlinkHref={require('../images/beyin.png')}/>
                         <g id="lightning2">
                             <path fill="#FFE36E" d="M.354 4.643l-.186-.437A1 1 0 0 1 .536 2.98l2.788-1.847a1 1 0 0 1 1.06-.028L7.4 2.884a1 1 0 0 1 .114 1.644L4.486 6.934l-2.37-.712A2.786 2.786 0 0 1 .354 4.643z"/>
                             <path fill="url(#e)" d="M3.907 4.428l.014-.01 2.455-1.493a1 1 0 0 1 1.52.854v13.683l3.04-1.922-1.017 29.698-3.451 1.615-.103-2.702v2.873L3.914 25.705l-2.9 3.869L.07 3.878a1 1 0 0 1 1.527-.886l2.31 1.436z"/>
@@ -183,7 +189,7 @@ class Login extends React.Component {
                         </g>
                     </g>
                 </svg>
-                <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+                <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
             </section>);
         }
         else{

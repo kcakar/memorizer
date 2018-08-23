@@ -551,6 +551,7 @@ nav{
     .empty-paper.appear{
         opacity: 1; 
     }
+
   }
 }
 
@@ -572,12 +573,18 @@ section.loading{
   justify-content: center;
   pointer-events: none;
   flex-direction: column;
+  animation: fade-in 200ms;
   
   svg{
     width:250px;
     height:313px;
     display: block;
     position: relative;
+  }
+
+  #brain{
+    animation:brain ease-in-out 3s;
+    animation-iteration-count: infinite;
   }
 
   #lightning1{
@@ -1445,13 +1452,17 @@ section.setup{
 // ANIMATIONS
 @keyframes brainFrames{
   0% {
-      transform:  translate(737px, 78px)  ;
+      transform:  translate(737px, 78px);
+  }
+
+  40%{
+      transform:  translate(737px, 128px) ; 
   }
   50% {
-      transform:  translate(737px, 128px)  ; 
+      transform:  translate(737px, 128px) ; 
   }
   100% {
-      transform:  translate(737px, 78px)  ;
+      transform:  translate(737px, 78px);
   }
 }
 
@@ -1542,6 +1553,15 @@ section.setup{
   }
 }
 
+@keyframes brain {
+  0%,100% { 
+    transform: scale(1.0,1);
+  } 
+  50% { 
+    transform: scale(1.0,0.9);
+  }
+}
+
 @keyframes lds-ellipsis1 {
   0% {
     transform: scale(0);
@@ -1564,5 +1584,15 @@ section.setup{
   }
   100% {
     transform: translate(19px, 0);
+  }
+}
+
+@keyframes fade-in{
+  0% {
+    opacity:0;
+  }
+
+  100%{
+    opacity:1;
   }
 }

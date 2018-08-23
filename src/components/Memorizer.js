@@ -1,5 +1,8 @@
 /*  eslint-disable no-unused-vars*/
 import React from 'react';
+import {Router,Route,Redirect,Switch} from 'react-router-dom';
+import {TransitionGroup,CSSTransition} from 'react-transition-group'
+
 import Setup from './Setup';
 import ManageWords from './ManageWords';
 import Landing from './Landing';
@@ -9,7 +12,6 @@ import Game from './Game';
 import Category from './Category';
 import ScrollToTop from './ScrollToTop';
 import language from '../data/Language';
-import {Router,Route,Redirect,Switch} from 'react-router-dom';
 import {spanishWords,spanishCategories} from '../data/DefaultWords.js';
 import { createBrowserHistory } from 'history';
 
@@ -33,7 +35,7 @@ class Memorizer extends React.Component {
             activeCategory:"",
             didLogin: false,
             userLogout:false,
-            isLoading:true,
+            isLoading:false,
             gameSettings:{
                 questionTypes:[],
             }
@@ -41,7 +43,6 @@ class Memorizer extends React.Component {
         this.addCategory = this.addCategory.bind(this);
         this.addFromFile = this.addFromFile.bind(this);
         this.addWord = this.addWord.bind(this);
-        this.cancelLoading=this.cancelLoading.bind(this);
         this.changeLanguage=this.changeLanguage.bind(this);
         this.fillDefaultCategories=this.fillDefaultCategories.bind(this);
         this.fillWordsFromLocalStorage=this.fillEverythingFromLocalStorage.bind(this);
@@ -217,16 +218,11 @@ class Memorizer extends React.Component {
         }
     }
 
-    cancelLoading(){
-        this.setState({isLoading:false});
-    }
-
     login(user)
     {
         this.setState({user});
         this.setState({didLogin:true});
         this.getSettings();
-        this.cancelLoading();
         history.push('/memorizer/categories')
     }
 
@@ -340,6 +336,10 @@ class Memorizer extends React.Component {
         this.showManageWords(this.state.activeCategory);
     }
 
+    cancelLoading(){
+        this.setState({isLoading:false});
+    }
+
     showManageWords(key){
         if(key && key!==undefined && typeof(key)==="string")
         {
@@ -360,7 +360,7 @@ class Memorizer extends React.Component {
     }
 
     showLanding(){
-        history.push('/');
+        history.push('/memorizer');
     }
 
     renderHeader(){
@@ -461,16 +461,18 @@ class Memorizer extends React.Component {
     renderLogin(){
         return (
         <main className="memorizer">
-            <Login isLoading={this.state.isLoading} cancelLoading={this.cancelLoading} changeLanguage={this.changeLanguage} settings={this.state.settings} login={this.login} didLogin={this.state.didLogin} userLogout={this.state.userLogout} userLoggedOut={this.userLoggedOut}/>
+            <Login changeLanguage={this.changeLanguage} settings={this.state.settings} login={this.login} didLogin={this.state.didLogin} userLogout={this.state.userLogout} userLoggedOut={this.userLoggedOut}/>
         </main>);
     }
 
     render() {
+        console.log(history.location.pathname)
         return(
             <Router history={history}>
                 <ScrollToTop>
                     <Switch>
-                        <Route exact path="/" component={Landing} /> 
+                        <Redirect exact path="/" to={"/memorizer"} /> 
+                        <Route exact path="/memorizer/" component={Landing} /> 
                         <Route exact path="/memorizer/login" render={this.renderLogin}/>
                         {!this.state.didLogin ? <Redirect to="/memorizer/login"/> : ""}
                         <Route exact path="/memorizer/setup" render={this.renderSetup} />
