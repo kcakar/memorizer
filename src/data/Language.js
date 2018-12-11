@@ -15,17 +15,17 @@ const language = {
     },
     header:{
         tr:{
-            btn_categories:"KATEGORILER",
+            btn_categories:"Çalışma setleri",
             btn_logout:"ÇIKIŞ YAP"
         },
         en:{
-            btn_categories:"CATEGORIES",
+            btn_categories:"Work sets",
             btn_logout:"LOGOUT"
         }
     },
     category:{
         tr:{
-            page_headline:"Kategoriler",
+            page_headline:"Çalışma setleri",
             txt_add_word:"Kategori ismi",
             txt_add_meaning:"Açıklama",
             txt_add_image:"Resim linki",
@@ -33,7 +33,7 @@ const language = {
             txt_new_start:"Yeni bir kategori ekleyerek öğrenmeye başlayabilirsin!"
         },
         en:{
-            page_headline:"Categories",
+            page_headline:"Work sets",
             txt_add_word:"Category name",
             txt_add_meaning:"Description",
             txt_add_image:"Image URL",

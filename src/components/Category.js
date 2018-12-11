@@ -141,12 +141,12 @@ class Category extends React.Component{
                             <GridTilePrimary>
                                 <GridTilePrimaryContent>
                                     <div className="background" style={{backgroundImage: "url(" + category.imageURL + ")"}} >
-                                        {/* <img className="background" alt="" src={category.imageURL}/> */}
                                     </div>
                                 </GridTilePrimaryContent>
                             </GridTilePrimary>
                             <GridTileSecondary >
                                 <GridTileTitle>{key}</GridTileTitle>
+                                <img className="creator-image" alt={category.createdBy} src={category.creatorAvatar}/>
                                 <img className="source-language" alt="" src={images.flags[category.sourceLanguage]}/>
                                 <img className="target-language" alt="" src={images.flags[category.targetLanguage]}/>
                                 <div className="description">{category.description}</div>

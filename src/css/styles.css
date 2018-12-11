@@ -16,7 +16,6 @@ body, #hero, section.intro {
   margin-right: auto; }
 
 body {
-  width: 100vw;
   background-color: #211062;
   color: #ffffff;
   margin-left: auto;
@@ -221,6 +220,7 @@ nav {
     filter: sepia(0.4);
     -webkit-filter: sepia(0.8); }
   nav ul img {
+    display: block;
     width: 60px;
     height: 60px;
     border-radius: 30px;
@@ -692,13 +692,15 @@ section.category {
     position: relative;
     top: 20px;
     color: white; }
-  section.category .source-language, section.category .target-language {
+  section.category .source-language, section.category .target-language, section.category .creator-image {
     position: absolute;
     top: 10px;
     width: 30px;
     height: 30px;
     border-radius: 25px;
     z-index: 5; }
+  section.category .creator-image {
+    right: 80px; }
   section.category .source-language {
     right: 45px; }
   section.category .target-language {
