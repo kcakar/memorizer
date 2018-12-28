@@ -153,7 +153,6 @@ class WorkSet extends React.Component{
                             <GridTilePrimary>
                                 <GridTilePrimaryContent>
                                     <div className="background" style={{backgroundImage: "url(" + workSet.imageURL + ")"}} >
-                                        {/* <img className="background" alt="" src={workSet.imageURL}/> */}
                                     </div>
                                 </GridTilePrimaryContent>
                             </GridTilePrimary>

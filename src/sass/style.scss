@@ -26,7 +26,6 @@ $black-font-color:#534e5a;
 
 body {
     @extend %font-rules;
-    width:100vw;
     background-color:$main-color;
     color: $main-font-color;
     margin-left: auto;
@@ -318,6 +317,7 @@ nav{
   }
   
   ul img{
+    display: block;
     width:60px;
     height:60px;
     border-radius: 30px;
@@ -1023,7 +1023,7 @@ section.category{
     color:rgb(255, 255, 255);
   }
 
-  .source-language,.target-language{
+  .source-language,.target-language,.creator-image{
     position: absolute;
     top:10px;
     width:30px;
@@ -1032,6 +1032,9 @@ section.category{
     z-index: 5;
   }
 
+  .creator-image{
+    right: 80px;
+  }
   .source-language{
     right: 45px;
   }

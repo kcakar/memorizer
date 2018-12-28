@@ -15,26 +15,26 @@ const language = {
     },
     header:{
         tr:{
-            btn_worksets:"Çalışma Setleri",
+            btn_categories:"Çalışma setleri",
             btn_logout:"ÇIKIŞ YAP"
         },
         en:{
-            btn_worksets:"Work Sets",
+            btn_categories:"Work sets",
             btn_logout:"LOGOUT"
         }
     },
     workSet:{
         tr:{
-            page_headline:"Çalışma Setleri",
-            txt_add_word:"Çalışma seti ismi",
+            page_headline:"Çalışma setleri",
+            txt_add_word:"Kategori ismi",
             txt_add_meaning:"Açıklama",
             txt_add_image:"Resim linki",
             btn_add:"Ekle",
             txt_new_start:"Yeni bir çalışma seti ekleyerek öğrenmeye başlayabilirsin!"
         },
         en:{
-            page_headline:"Work Sets",
-            txt_add_word:"Work set name",
+            page_headline:"Work sets",
+            txt_add_word:"Category name",
             txt_add_meaning:"Description",
             txt_add_image:"Image URL",
             btn_add:"Add",
