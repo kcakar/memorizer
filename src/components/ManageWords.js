@@ -16,7 +16,7 @@ class ManageWords extends React.Component{
         this.handleWordChange=this.handleWordChange.bind(this);
         this.removeWord=this.removeWord.bind(this);
         this.showAddWords=this.showAddWords.bind(this);
-        this.filterWordsByCategory=this.filterWordsByCategory.bind(this);
+        this.filterWordsByWorkSet=this.filterWordsByWorkSet.bind(this);
         this.setGameSettings=this.setGameSettings.bind(this);
         this.addRemoveQuestionType=this.addRemoveQuestionType.bind(this);
     }
@@ -97,22 +97,22 @@ class ManageWords extends React.Component{
         this.props.handleTranslationChange(key,e.target.value);
     }
 
-    filterWordsByCategory(category)
+    filterWordsByWorkSet(workSet)
     {
-        return Object.keys(this.props.words).filter(key=> this.props.words[key].category === category);
+        return Object.keys(this.props.words).filter(key=> this.props.words[key].workSet === workSet);
     }
 
-    renderWordRow(wordInfo,word){
+    renderWordRow(wordInfo,key){
         return(
-            <tr key={wordInfo.key}>
+            <tr key={key}>
                 <td>
-                    <Fab mini onClick={()=>this.removeWord(word)}>remove</Fab>
+                    <Fab mini onClick={()=>this.removeWord(key)}>remove</Fab>
                 </td>
                 <td>
-                    <TextField onChange={(e)=>this.handleWordChange(e,word)} value={word} />
+                    <TextField onChange={(e)=>this.handleWordChange(e,key)} value={wordInfo.question} />
                 </td>
                 <td>
-                    <TextField onChange={(e)=>this.handleTranslationChange(e,word)} value={wordInfo.translation} />
+                    <TextField onChange={(e)=>this.handleTranslationChange(e,key)} value={wordInfo.answer} />
                 </td>
                 <td><span className="right">{wordInfo.rightAnswer}</span> - <span className="wrong">{wordInfo.wrongAnswer}</span></td>
             </tr>
@@ -133,7 +133,7 @@ class ManageWords extends React.Component{
 
     render(){
         const siteLang=this.props.settings.siteLanguage;
-        let filteredKeys=this.filterWordsByCategory(this.props.category);
+        let filteredKeys=this.filterWordsByWorkSet(this.props.workSet);
         return(
            <section className="manageWords">
                 <Fab mini onClick={this.showAddWords}>add</Fab>

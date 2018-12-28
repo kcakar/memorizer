@@ -9,10 +9,11 @@ import Landing from './Landing';
 import Login from './Login';
 import Header from './Header';
 import Game from './Game';
-import Category from './Category';
+import WorkSet from './WorkSet';
 import ScrollToTop from './ScrollToTop';
 import language from '../data/Language';
-import {spanishWords,spanishCategories} from '../data/DefaultWords.js';
+// import {spanishWords,spanishCategories} from '../data/DefaultWords.js';
+import {defaultWorkSets,defaultWords} from '../data/DefaultWorkSets.js';
 import { createBrowserHistory } from 'history';
 
 import "../css/styles.css"; 
@@ -31,8 +32,8 @@ class Memorizer extends React.Component {
             },
             words: {},
             user:{},
-            categories:{},
-            activeCategory:"",
+            workSets:{},
+            activeWorkSet:"",
             didLogin: false,
             userLogout:false,
             isLoading:false,
@@ -40,11 +41,11 @@ class Memorizer extends React.Component {
                 questionTypes:[],
             }
         }
-        this.addCategory = this.addCategory.bind(this);
+        this.addWorkSet = this.addWorkSet.bind(this);
         this.addFromFile = this.addFromFile.bind(this);
         this.addWord = this.addWord.bind(this);
         this.changeLanguage=this.changeLanguage.bind(this);
-        this.fillDefaultCategories=this.fillDefaultCategories.bind(this);
+        this.fillDefaultWorkSets=this.fillDefaultWorkSets.bind(this);
         this.fillWordsFromLocalStorage=this.fillEverythingFromLocalStorage.bind(this);
         this.getSettings = this.getSettings.bind(this);
         this.handleTranslationChange=this.handleTranslationChange.bind(this);
@@ -52,9 +53,9 @@ class Memorizer extends React.Component {
         this.login = this.login.bind(this);
         this.logout = this.logout.bind(this);
         this.quitGame=this.quitGame.bind(this);
-        this.removeCategory = this.removeCategory.bind(this);
+        this.removeWorkSet = this.removeWorkSet.bind(this);
         this.removeWord = this.removeWord.bind(this);
-        this.renderCategory=this.renderCategory.bind(this);
+        this.renderWorkSets=this.renderWorkSets.bind(this);
         this.renderGame=this.renderGame.bind(this);
         this.renderHeader=this.renderHeader.bind(this);
         this.renderLogin=this.renderLogin.bind(this);
@@ -77,7 +78,7 @@ class Memorizer extends React.Component {
         }
         if (nextState.user.userName && nextState.user.userName !== undefined )
         {
-            this.updateEverythingLocalStorage(nextState.user.userName,nextState.words,nextState.categories)
+            this.updateEverythingLocalStorage(nextState.user.userName,nextState.words,nextState.workSets)
         }
     }
 
@@ -86,13 +87,13 @@ class Memorizer extends React.Component {
         localStorage.setItem(`${this.state.user.userName}-settings`, JSON.stringify(settings));
     }
 
-    updateEverythingLocalStorage(username,words,categories)
+    updateEverythingLocalStorage(username,words,workSets)
     {
         if (words && words!==undefined && Object.keys(words).length>0) {
             localStorage.setItem(`${username}-words`, JSON.stringify(words));
         }
-        if (categories && categories!==undefined && Object.keys(categories).length>0) {
-            localStorage.setItem(`${username}-categories`, JSON.stringify(categories));
+        if (workSets && workSets!==undefined && Object.keys(workSets).length>0) {
+            localStorage.setItem(`${username}-workSets`, JSON.stringify(workSets));
         }
     }
 
@@ -115,7 +116,7 @@ class Memorizer extends React.Component {
         words[word.wordTranslation]={
             key:Object.keys(words).length+1,
             language:this.state.settings.UserLanguage,
-            category:this.state.activeCategory,
+            workSet:this.state.activeWorkSet,
             translationLanguage: this.state.settings.LearningLanguage,
             translation:word.word,
             rightAnswer:0,
@@ -129,32 +130,34 @@ class Memorizer extends React.Component {
         this.setState({words});
     }
 
-    addCategory(category)
+    addWorkSet(workSet)
     {
-        let categories = this.state.categories;
+        let workSets = this.state.workSets;
 
-        categories[category.name]={
-            key:Object.keys(categories).length+1,
+        workSets[Object.keys(workSets).length+1]={
+            name:workSet.name,
             wordCount:0,
-            description:category.description,
-            imageURL:category.imageURL,
-            createdBy:this.state.user.userName
+            description:workSet.description,
+            imageURL:workSet.imageURL,
+            createdBy:this.state.user.userName,
+            questionLanguage:"en-US",
+            answerLanguage:"es-ES"
         }
-        this.setState({categories});
+        this.setState({workSets});
     }
 
-    removeCategory(category)
+    removeWorkSet(workSets)
     {
-        console.log(category)
-        console.log(category)
-        console.log("category")
+        console.log(workSets)
+        console.log(workSets)
+        console.log("workSets")
         
-        if(Object.keys(category).length===0)
+        if(Object.keys(workSets).length===0)
         {
             console.log("sıfır")
-            localStorage.setItem(`${this.state.user.userName}-categories`, JSON.stringify(category));
+            localStorage.setItem(`${this.state.user.userName}-workSets`, JSON.stringify(workSets));
         }
-        this.setState({category});
+        this.setState({workSets});
     }
 
     handleWordChange(key,newWord){
@@ -183,7 +186,7 @@ class Memorizer extends React.Component {
         }
         else {
             //ilk kez login
-            this.fillDefaultCategories();
+            this.fillDefaultWorkSets();
         }
 
         this.fillEverythingFromLocalStorage();
@@ -211,10 +214,10 @@ class Memorizer extends React.Component {
         {
             this.setState({words});
         }
-        let categories=JSON.parse(localStorage.getItem(`${this.state.user.userName}-categories`));
-        if(categories && categories!==undefined)
+        let workSets=JSON.parse(localStorage.getItem(`${this.state.user.userName}-workSets`));
+        if(workSets && workSets!==undefined)
         {
-            this.setState({categories});
+            this.setState({workSets});
         }
     }
 
@@ -236,30 +239,30 @@ class Memorizer extends React.Component {
         this.setState({userLogout:true});
     }
 
-    addFromFile(categoryFile)
+    addFromFile(workSetFile)
     {
-        let categories = this.state.categories;
-        let categoryName="es-ES - "+('0' + (Object.keys(categories).length+1)).slice(-2);
+        let workSets = this.state.workSets;
+        let workSetName="es-ES - "+('0' + (Object.keys(workSets).length+1)).slice(-2);
         
-        categories[categoryName]={
-            key:Object.keys(categories).length+1,
-            wordCount:Object.keys(categoryFile.words).length,
+        workSets[Object.keys(workSets).length+1]={
+            name:workSetName,
+            wordCount:Object.keys(workSetFile.words).length,
             description:"",
             imageURL:"https://upload.wikimedia.org/wikipedia/commons/7/76/Flag_map_of_Greater_Spain.png",
             createdBy:this.state.user.userName
         }
-        this.setState({categories});
+        this.setState({workSets});
 
 
         let words = this.state.words;
         
-        Object.keys(categoryFile.words).map((key)=>{
-            let word=categoryFile.words[key];
+        Object.keys(workSetFile.words).map((key)=>{
+            let word=workSetFile.words[key];
 
             words[key]={
                 key:Object.keys(words).length+1,
                 language:word.language,
-                category:categoryName,
+                workSet:workSetName,
                 translationLanguage: word.translationLanguage,
                 translation:word.translation,
                 rightAnswer:0,
@@ -270,22 +273,22 @@ class Memorizer extends React.Component {
         this.setState({words});
     }
 
-    fillDefaultCategories()
+    fillDefaultWorkSets()
     {
-        let categories=this.state.categories;
+        let workSets=this.state.workSets;
         let words=this.state.words;
 
-        Object.keys(spanishCategories).map((key)=>{
-            categories[key]=spanishCategories[key];
+        Object.keys(defaultWorkSets).map((key)=>{
+            workSets[key]=defaultWorkSets[key];
             return false;
         });
 
-        Object.keys(spanishWords).map((key)=>{
-            words[key]=spanishWords[key];
+        Object.keys(defaultWords).map((key)=>{
+            words[key]=defaultWords[key];
             return false;
         });
 
-        this.setState({categories,words});
+        this.setState({workSets,words});
     }
 
     changeLanguage(lang)
@@ -296,11 +299,11 @@ class Memorizer extends React.Component {
         this.setState({settings});
     }
 
-    filterWordsByCategory()
+    filterWordsByWorkSet()
     {
         let filteredWords={};
         Object.keys(this.state.words).map(key=>{
-            if(this.state.words[key].category===this.state.activeCategory)
+            if(this.state.words[key].workSet===this.state.activeWorkSet)
             {
                 filteredWords[key]=this.state.words[key];
             }
@@ -333,7 +336,7 @@ class Memorizer extends React.Component {
     }
 
     quitGame(){
-        this.showManageWords(this.state.activeCategory);
+        this.showManageWords(this.state.activeWorkSet);
     }
 
     cancelLoading(){
@@ -343,11 +346,11 @@ class Memorizer extends React.Component {
     showManageWords(key){
         if(key && key!==undefined && typeof(key)==="string")
         {
-            this.setState({activeCategory:key});
+            this.setState({activeWorkSet:key});
             history.push('/memorizer/categories/'+this.toSeoUrl(key));
         }
         else{
-            this.setState({activeCategory:""});
+            this.setState({activeWorkSet:""});
         }
     }
 
@@ -355,7 +358,7 @@ class Memorizer extends React.Component {
         history.push('/memorizer/setup');
     }
 
-    showCategories(){
+    showWorkSets(){
         history.push('/memorizer/categories');
     }
 
@@ -369,7 +372,7 @@ class Memorizer extends React.Component {
             user={this.state.user} 
             logout={this.logout} 
             didLogin={this.state.didLogin} 
-            showCategories={this.showCategories} 
+            showWorkSets={this.showWorkSets} 
             showSetup={this.showSetup}
             showLanding={this.showLanding}
             />
@@ -404,7 +407,7 @@ class Memorizer extends React.Component {
             <main className="memorizer">
                 {this.renderHeader()}
                 <section className="page-headline">
-                    <div><h2>{this.state.activeCategory}</h2></div>
+                    <div><h2>{defaultWorkSets[this.state.activeWorkSet].name}</h2></div>
                 </section>
                 <section className="content">
                     <ManageWords 
@@ -413,12 +416,12 @@ class Memorizer extends React.Component {
                         startGame={this.startGame} 
                         settings={this.state.settings} 
                         user={this.state.user} 
-                        words={this.filterWordsByCategory()} 
+                        words={this.filterWordsByWorkSet()} 
                         addWord={this.addWord} 
                         removeWord={this.removeWord}
                         handleWordChange={this.handleWordChange}
                         handleTranslationChange={this.handleTranslationChange}
-                        category={this.state.activeCategory}
+                        workSet={this.state.activeWorkSet}
                     />
                 </section>
             </main>
@@ -435,7 +438,7 @@ class Memorizer extends React.Component {
                         quitGame={this.quitGame} 
                         settings={this.state.settings} 
                         updateStatistics={this.updateStatistics} 
-                        words={this.filterWordsByCategory()} 
+                        words={this.filterWordsByWorkSet()} 
                         user={this.state.user}
                         />
                 </section>
@@ -443,16 +446,16 @@ class Memorizer extends React.Component {
         );
     }
 
-    renderCategory(){
+    renderWorkSets(){
         const siteLang=this.state.settings.siteLanguage;
         return(
             <main className="memorizer">
                 {this.renderHeader()}
                 <section className="page-headline">
-                    <div><h2>{language.category[siteLang].page_headline}</h2></div>
+                    <div><h2>{language.workSet[siteLang].page_headline}</h2></div>
                 </section>
                 <section className="content">
-                    <Category settings={this.state.settings} addFromFile={this.addFromFile} removeCategory={this.removeCategory} addCategory={this.addCategory} categories={this.state.categories} showManageWords={this.showManageWords}/>
+                    <WorkSet settings={this.state.settings} addFromFile={this.addFromFile} removeWorkSet={this.removeWorkSet} addWorkSet={this.addWorkSet} workSets={this.state.workSets} showManageWords={this.showManageWords}/>
                 </section>
             </main>
         );
@@ -476,8 +479,8 @@ class Memorizer extends React.Component {
                         <Route exact path="/memorizer/login" render={this.renderLogin}/>
                         {!this.state.didLogin ? <Redirect to="/memorizer/login"/> : ""}
                         <Route exact path="/memorizer/setup" render={this.renderSetup} />
-                        <Route exact path="/memorizer/categories" render={this.renderCategory} />
-                        <Route exact path="/memorizer/categories/:category" render={this.renderManage} />
+                        <Route exact path="/memorizer/categories" render={this.renderWorkSets} />
+                        <Route exact path="/memorizer/categories/:workSet" render={this.renderManage} />
                         <Route exact path="/memorizer/game" render={this.renderGame} />
                     </Switch>
                 </ScrollToTop>

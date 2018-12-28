@@ -750,7 +750,7 @@ section.category{
   margin-bottom:30px;
   position: relative;
 
-  .addCategory{
+  .addWorkSet{
     background: rgb(255, 255, 255);
     width:100%;
     padding-top:0px;
@@ -767,7 +767,7 @@ section.category{
     }
   }
   
-  .addCategory form{
+  .addWorkSet form{
       max-width:600px;
       margin:auto;
       display: flex;
@@ -776,32 +776,75 @@ section.category{
   }
   
   @media only screen and (max-width: 600px) {
-    .addCategory.visible{
+    .addWorkSet.visible{
       height: 220px;
     }
   
-    .addCategory form{
+    .addWorkSet form{
       margin:10px;
       flex-direction: column;
     }
     
-    .addCategory form *{
+    .addWorkSet form *{
       margin:5px;
       flex-basis: 100%;
     }
   }
   
-  .addCategory form .mdc-text-field{
+  .addWorkSet form .mdc-text-field{
     margin-top:0;
     margin-bottom:0;
   }
   
-  .addCategory form button{
+  .addWorkSet form button{
     align-self:flex-end;
   }
 
   input[type=file]{
     display: none;
+  }
+
+
+  .filter-container{
+    height:0;
+    will-change: height;
+    transition-property: height, padding-bottom;
+    transition-duration: 1s;
+    overflow: hidden;
+
+    &.visible{
+      height: 100px;
+    }
+  }
+
+  .filter{
+    padding:20px;
+    background-color:white;
+
+    h2{
+      color:black;
+      margin-bottom: 10px;
+    }
+
+    .filter__controls{
+      flex-grow: 1;
+      display: flex;
+      max-width: 600px;
+      margin: 0 auto;
+    }    
+
+    fieldset{
+      box-sizing: border-box;
+      border:none;
+    }
+
+    .mdc-text-field{
+      margin-top:8px;
+    }
+
+    .filter__find{
+      margin-top:26px;
+    }
   }
 
   .mdc-grid-tile{
@@ -883,6 +926,16 @@ section.category{
     &:nth-of-type(2){
       right: 50px;
       background-color: #689f38;
+    }
+
+    &:nth-of-type(3){
+      right: 100px;
+      background-color: #d46c43;
+    }
+
+    &:nth-of-type(4){
+      right: 150px;
+      background-color: #a10707;
     }
   }
 

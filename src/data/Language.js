@@ -15,30 +15,30 @@ const language = {
     },
     header:{
         tr:{
-            btn_categories:"KATEGORILER",
+            btn_worksets:"Çalışma Setleri",
             btn_logout:"ÇIKIŞ YAP"
         },
         en:{
-            btn_categories:"CATEGORIES",
+            btn_worksets:"Work Sets",
             btn_logout:"LOGOUT"
         }
     },
-    category:{
+    workSet:{
         tr:{
-            page_headline:"Kategoriler",
-            txt_add_word:"Kategori ismi",
+            page_headline:"Çalışma Setleri",
+            txt_add_word:"Çalışma seti ismi",
             txt_add_meaning:"Açıklama",
             txt_add_image:"Resim linki",
             btn_add:"Ekle",
-            txt_new_start:"Yeni bir kategori ekleyerek öğrenmeye başlayabilirsin!"
+            txt_new_start:"Yeni bir çalışma seti ekleyerek öğrenmeye başlayabilirsin!"
         },
         en:{
-            page_headline:"Categories",
-            txt_add_word:"Category name",
+            page_headline:"Work Sets",
+            txt_add_word:"Work set name",
             txt_add_meaning:"Description",
             txt_add_image:"Image URL",
             btn_add:"Add",
-            txt_new_start:"You can start learning by adding a new category!"
+            txt_new_start:"You can start learning by adding a new work set!"
         }
     },
     managewords:{

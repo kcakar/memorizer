@@ -21,7 +21,7 @@ class Header extends React.Component{
                     </li>
                     <ul>
                         <li><Button dense onClick={this.props.logout}>{language.header[siteLang].btn_logout}</Button></li>
-                        <li><Button dense onClick={this.props.showCategories}>{language.header[siteLang].btn_categories}</Button></li>
+                        <li><Button dense onClick={this.props.showWorkSets}>{language.header[siteLang].btn_worksets}</Button></li>
                     </ul>
                 </ul>
                 <li className="nav-settings" onClick={this.props.showSetup}>

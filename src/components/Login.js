@@ -13,7 +13,6 @@ class Login extends React.Component {
 
     constructor() {
         super();
-        console.log("lognrender")
         this.authenticate = this.authenticate.bind(this);
         this.authHandler = this.authHandler.bind(this);
         this.logout = this.logout.bind(this);
@@ -22,23 +21,32 @@ class Login extends React.Component {
         this.state = {
             uid: null,
             owner: null,
-            isLoading:true
+            isLoading:true,
+            isDebug:true
         }
     }
 
     componentDidMount() {
         console.log(this.state.isLoading)
         let component=this;
-        firebase.auth().onAuthStateChanged(function(user, error) {
-            if (user) {
-                component.authHandler(null, { user });
-            }
-            else{
-                console.log("else")
-                component.cancelLoading();
-            }
-          });
-        //Authentication.bindFirebaseEvent();
+
+        if(!this.state.isDebug)
+        {
+            firebase.auth().onAuthStateChanged(function(user, error) {
+                if (user) {
+                    component.authHandler(null, { user });
+                }
+                else{
+                    console.log("else")
+                    component.cancelLoading();
+                }
+            });
+            //Authentication.bindFirebaseEvent();
+        }
+        else{
+            this.props.login({uid: "kfccF86VRYUqA0bkLgwrDiMTo1u1", userName: "Keremcan Çakar", photoURL: "https://avatars3.githubusercontent.com/u/11277098?v=4"} );
+            component.cancelLoading();
+        }
     }
 
     cancelLoading(){
@@ -74,7 +82,8 @@ class Login extends React.Component {
                 userName: authData.user.displayName,
                 photoURL: authData.user.photoURL
             }
-
+            console.log("user")
+            console.log(user)
             this.props.login(user);
         });
     }

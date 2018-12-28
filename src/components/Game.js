@@ -141,7 +141,7 @@ class Game extends React.Component{
 
         for(let i=0;i<objKeys.length;i++){
             let word={...obj[objKeys[i]]};
-            word.word=objKeys[i];
+            word.index=objKeys[i];
             arr.push(word);
         }
         return arr;
@@ -161,7 +161,6 @@ class Game extends React.Component{
 
     getChoices(gameWords,question,gameWord){
         let choices=[];
-        
         let words=[...gameWords];
         words.splice(words.indexOf(gameWord),1);
         //fill the options
@@ -169,23 +168,26 @@ class Game extends React.Component{
         {
             const index=this.getRandomIndex(words);
             const word=words[index];
+            console.log(index)
+            console.log(words[index])
             if(question.direction===questionDirection.reversed)
             {
-                choices.push(words[index].word);
+                choices.push(words[index].answer);
             }
             else{
-                choices.push(words[index].translation);
+                choices.push(words[index].question);
             }
             words.splice(index,1);
         }
 
         //add the right answer
         const answerIndex=this.getRandomIndex(Array(choices.length+1).fill());
-        choices.splice(answerIndex, 0, question.questionAnswer);
+        choices.splice(answerIndex, 0, question.answer);
         return choices;
     }
 
     createQuestion(gameWord,gameWords) {
+        console.log(gameWords)
         let question = {};
         question.type=this.getRandomQuestionType();
 
@@ -199,25 +201,25 @@ class Game extends React.Component{
         {
             question.direction=questionDirection.straight;
             question.questionLanguage = gameWord.translationLanguage;
-            question.questionWord = gameWord.word;
+            question.question = gameWord.question;
 
             if(question.type === this.state.questionTypes.listening)
             {
-                question.questionAnswer = gameWord.word;
+                question.answer = gameWord.question;
             }
             else{
-                question.questionAnswer = gameWord.translation;
+                question.answer = gameWord.answer;
             }
             question.questionRate = gameWord.rate;
-            question.index = gameWord.word;
+            question.index = gameWord.index;
         }
         else {
             question.direction=questionDirection.reversed;
             question.questionLanguage=gameWord.language;
-            question.questionWord=gameWord.translation;
-            question.questionAnswer=gameWord.word;
+            question.question=gameWord.answer;
+            question.answer=gameWord.question;
             question.questionRate=gameWord.rate;
-            question.index=gameWord.word;
+            question.index=gameWord.index;
         }
         
         if(question.type === this.state.questionTypes.test)
@@ -248,7 +250,7 @@ class Game extends React.Component{
 
     handleAnswer(input){
         const answer=input.value;
-        if(answer.toLowerCase() === this.state.currentQuestion.questionAnswer.toLowerCase())
+        if(answer.toLowerCase() === this.state.currentQuestion.answer.toLowerCase())
         {
             this.rightAnswer(input);
         }
@@ -262,7 +264,7 @@ class Game extends React.Component{
         const answer=this.state.answer;
         if(answer !== undefined && answer && answer.length>0)
         {
-            if(answer.toLowerCase() === this.state.currentQuestion.questionAnswer.toLowerCase())
+            if(answer.toLowerCase() === this.state.currentQuestion.answer.toLowerCase())
             {
                 this.setState({isError:false});
                 this.props.updateStatistics(this.state.currentQuestion.index,1);
@@ -383,7 +385,7 @@ class Game extends React.Component{
         
         let utterance=this.state.utterance;
 
-        utterance = new SpeechSynthesisUtterance(question.questionWord);
+        utterance = new SpeechSynthesisUtterance(question.question);
         utterance.onstart= (e=>{
             this.setState({isHighlight:true});
         });
@@ -404,7 +406,7 @@ class Game extends React.Component{
                     <CardPrimary>
                         <CardTitle large="true" >{language.game[siteLang].written_question}</CardTitle>
                         <CardSubtitle large="true" >
-                            {this.state.currentQuestion.questionWord}
+                            {this.state.currentQuestion.question}
                         </CardSubtitle>
                         <div className="the-line"></div>
                         <div className="answer">
@@ -435,7 +437,7 @@ class Game extends React.Component{
                     <CardPrimary>
                         <CardTitle large="true" >{language.game[siteLang].test_question}</CardTitle>
                         <CardSubtitle large="true" >
-                            {this.state.currentQuestion.questionWord}
+                            {this.state.currentQuestion.question}
                         </CardSubtitle>
                         <div className="the-line"></div>
                         <div className="answer options">
@@ -513,8 +515,8 @@ class Game extends React.Component{
                             //     {backgroundColor:colors[color][this.state.colorWeight]}
                             //     }
                             >
-                            <span>{question.questionAnswer.toUpperCase()}</span>
-                            {/* <span>{question.questionWord}</span> */}
+                            <span>{question.answer.toUpperCase()}</span>
+                            {/* <span>{question.question}</span> */}
                             <span>%{this.getRate(word.rightAnswer,word.wrongAnswer)} success rate</span>
                         </div>
                     );
