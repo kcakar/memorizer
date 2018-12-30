@@ -9,7 +9,7 @@ import angularIMG from '../images/angular.png';
 import language from '../data/Language';
 import images from '../data/images';
 
-class WorkSet extends React.Component{
+class YourSpace extends React.Component{
     constructor(){
         super();
 
@@ -23,21 +23,12 @@ class WorkSet extends React.Component{
         this.addWorkSet=this.addWorkSet.bind(this);
         this.readFile=this.readFile.bind(this);
         this.removeWorkSet=this.removeWorkSet.bind(this);
-        this.showFilter=this.showFilter.bind(this);
-
     }
 
     showAddWorkSet(){
         this.setState({
                 addWorkSet:!this.state.addWorkSet,
                 filter:!this.state.addWorkSet?false:this.state.filter
-            });
-    }
-
-    showFilter(){
-        this.setState({
-                filter:!this.state.filter,
-                addWorkSet:!this.state.filter?false:this.state.addWorkSet
             });
     }
 
@@ -185,26 +176,6 @@ class WorkSet extends React.Component{
                 </div>
         )
     }
-
-    renderFilterSection()
-    {
-        return(
-            <aside className="filter">
-                <div className="filter__controls">
-                    <fieldset>
-                        <TextField outlined label="Subject..." />
-                    </fieldset>
-                    <fieldset>
-                        <Select placeholder="Any!" label="Language" enhanced options={['Cookies', 'Pizza', 'Icecream']}/>
-                    </fieldset>
-                    <fieldset>
-                        <Select placeholder="Anyone!" label="Created by" enhanced options={['Cookies', 'Pizza', 'Icecream']}/>
-                    </fieldset>
-                    <Button className="filter__find" raised >Find</Button>
-                </div>
-            </aside>
-        );
-    }
     
     render(){
        const workSetKeys=Object.keys(this.props.workSets);
@@ -213,14 +184,8 @@ class WorkSet extends React.Component{
                 <input multiple ref={input=>this.fileInput=input} onChange={this.readFile} type="file" accept=".json"/>
                 <Fab mini onClick={()=>this.upload()}>backup</Fab>
                 <Fab mini onClick={this.showAddWorkSet}>add</Fab>
-                <Fab mini onClick={this.showFilter}>search</Fab>
-                <Fab mini>account_box</Fab>
                 <div className={this.state.addWorkSet?"addWorkSet visible":"addWorkSet"}>
                     {this.renderAddWorkSetForm()}
-                </div>
-
-                <div className={this.state.filter?"filter-container visible":"filter-container"}>
-                    {this.renderFilterSection()}
                 </div>
                 {workSetKeys.length > 0 ? this.renderWorkSetList(workSetKeys) : this.renderNewStart()}
             </section>
@@ -228,4 +193,4 @@ class WorkSet extends React.Component{
     }
 }
 
-export default WorkSet;
+export default YourSpace;

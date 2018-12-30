@@ -15,17 +15,17 @@ const language = {
     },
     header:{
         tr:{
-            btn_categories:"Çalışma setleri",
+            btn_worksets:"Keşfet",
             btn_logout:"ÇIKIŞ YAP"
         },
         en:{
-            btn_categories:"Work sets",
+            btn_worksets:"Discover",
             btn_logout:"LOGOUT"
         }
     },
     workSet:{
         tr:{
-            page_headline:"Çalışma setleri",
+            page_headline:"Keşfet",
             txt_add_word:"Kategori ismi",
             txt_add_meaning:"Açıklama",
             txt_add_image:"Resim linki",
@@ -33,7 +33,7 @@ const language = {
             txt_new_start:"Yeni bir çalışma seti ekleyerek öğrenmeye başlayabilirsin!"
         },
         en:{
-            page_headline:"Work sets",
+            page_headline:"Discover",
             txt_add_word:"Category name",
             txt_add_meaning:"Description",
             txt_add_image:"Image URL",

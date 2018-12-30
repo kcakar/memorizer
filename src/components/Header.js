@@ -14,25 +14,25 @@ class Header extends React.Component{
     renderUserSection(){
         const siteLang=this.props.settings.siteLanguage;
         return(
-            <ul>
-                <ul>
-                    <li className="user-info">
+            <li className="navigation__user">
+                <div className="container">
+                    <div className="user-info">
                         <span>{this.props.user.userName}</span>
-                    </li>
-                    <ul>
-                        <li><Button dense onClick={this.props.logout}>{language.header[siteLang].btn_logout}</Button></li>
-                        <li><Button dense onClick={this.props.showWorkSets}>{language.header[siteLang].btn_worksets}</Button></li>
-                    </ul>
-                </ul>
-                <li className="nav-settings" onClick={this.props.showSetup}>
+                    </div>
+                    <div className="buttons">
+                        <Button dense onClick={this.props.logout}>{language.header[siteLang].btn_logout}</Button>
+                    </div>
+                </div>
+                <div className="nav-settings" onClick={this.props.showSetup}>
                     <img src={this.props.user.photoURL} alt=""/>
                     <Fab className="btn-settings" mini>settings</Fab>
-                </li>
-            </ul>
+                </div>
+            </li>
         );
     }
 
     render(){
+        const siteLang=this.props.settings.siteLanguage;
         return (
         <header>
             <div className="top-line"></div>
@@ -41,7 +41,11 @@ class Header extends React.Component{
                     <figure></figure>
                     <span>Memorizer</span>
                 </div>
-                {this.props.didLogin ? this.renderUserSection():""}
+                <ul className="navigation">
+                    <li onClick={this.props.showYourSpace}>Your Space</li>
+                    <li onClick={this.props.showWorkSets}>{language.header[siteLang].btn_worksets}</li>
+                    {this.props.didLogin ? this.renderUserSection():""}
+                </ul>
             </nav>
         </header>
         );

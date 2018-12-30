@@ -9,7 +9,8 @@ import Landing from './Landing';
 import Login from './Login';
 import Header from './Header';
 import Game from './Game';
-import WorkSet from './WorkSet';
+import Discover from './Discover';
+import YourSpace from './YourSpace';
 import ScrollToTop from './ScrollToTop';
 import language from '../data/Language';
 // import {spanishWords,spanishCategories} from '../data/DefaultWords.js';
@@ -55,12 +56,13 @@ class Memorizer extends React.Component {
         this.quitGame=this.quitGame.bind(this);
         this.removeWorkSet = this.removeWorkSet.bind(this);
         this.removeWord = this.removeWord.bind(this);
-        this.renderWorkSets=this.renderWorkSets.bind(this);
+        this.renderDiscover=this.renderDiscover.bind(this);
         this.renderGame=this.renderGame.bind(this);
         this.renderHeader=this.renderHeader.bind(this);
         this.renderLogin=this.renderLogin.bind(this);
         this.renderManage=this.renderManage.bind(this);
         this.renderSetup=this.renderSetup.bind(this);
+        this.renderYourSpace=this.renderYourSpace.bind(this);
         this.saveSettings = this.saveSettings.bind(this);
         this.setGameSettings=this.setGameSettings.bind(this);
         this.showManageWords=this.showManageWords.bind(this);
@@ -68,6 +70,7 @@ class Memorizer extends React.Component {
         this.updateSettings = this.updateSettings.bind(this);
         this.updateStatistics=this.updateStatistics.bind(this);
         this.userLoggedOut = this.userLoggedOut.bind(this);
+        this.showYourSpace = this.showYourSpace.bind(this);
     }
 
 
@@ -226,7 +229,7 @@ class Memorizer extends React.Component {
         this.setState({user});
         this.setState({didLogin:true});
         this.getSettings();
-        history.push('/memorizer/categories')
+        history.push('/memorizer/yourspace')
     }
 
     userLoggedOut(){
@@ -347,7 +350,7 @@ class Memorizer extends React.Component {
         if(key && key!==undefined && typeof(key)==="string")
         {
             this.setState({activeWorkSet:key});
-            history.push('/memorizer/categories/'+this.toSeoUrl(key));
+            history.push('/memorizer/discover/'+this.toSeoUrl(key));
         }
         else{
             this.setState({activeWorkSet:""});
@@ -359,11 +362,15 @@ class Memorizer extends React.Component {
     }
 
     showWorkSets(){
-        history.push('/memorizer/categories');
+        history.push('/memorizer/discover');
     }
 
     showLanding(){
         history.push('/memorizer');
+    }
+
+    showYourSpace(){
+        history.push('/memorizer/yourspace');
     }
 
     renderHeader(){
@@ -375,6 +382,7 @@ class Memorizer extends React.Component {
             showWorkSets={this.showWorkSets} 
             showSetup={this.showSetup}
             showLanding={this.showLanding}
+            showYourSpace={this.showYourSpace}
             />
         )
     }
@@ -446,7 +454,7 @@ class Memorizer extends React.Component {
         );
     }
 
-    renderWorkSets(){
+    renderDiscover(){
         const siteLang=this.state.settings.siteLanguage;
         return(
             <main className="memorizer">
@@ -455,7 +463,22 @@ class Memorizer extends React.Component {
                     <div><h2>{language.workSet[siteLang].page_headline}</h2></div>
                 </section>
                 <section className="content">
-                    <WorkSet settings={this.state.settings} addFromFile={this.addFromFile} removeWorkSet={this.removeWorkSet} addWorkSet={this.addWorkSet} workSets={this.state.workSets} showManageWords={this.showManageWords}/>
+                    <Discover settings={this.state.settings} addFromFile={this.addFromFile} removeWorkSet={this.removeWorkSet} addWorkSet={this.addWorkSet} workSets={this.state.workSets} showManageWords={this.showManageWords}/>
+                </section>
+            </main>
+        );
+    }
+
+    renderYourSpace(){
+        const siteLang=this.state.settings.siteLanguage;
+        return(
+            <main className="memorizer">
+                {this.renderHeader()}
+                <section className="page-headline">
+                    <div><h2>Your Space</h2></div>
+                </section>
+                <section className="content">
+                    <YourSpace settings={this.state.settings} addFromFile={this.addFromFile} removeWorkSet={this.removeWorkSet} addWorkSet={this.addWorkSet} workSets={this.state.workSets} showManageWords={this.showManageWords}/>
                 </section>
             </main>
         );
@@ -479,9 +502,10 @@ class Memorizer extends React.Component {
                         <Route exact path="/memorizer/login" render={this.renderLogin}/>
                         {!this.state.didLogin ? <Redirect to="/memorizer/login"/> : ""}
                         <Route exact path="/memorizer/setup" render={this.renderSetup} />
-                        <Route exact path="/memorizer/categories" render={this.renderWorkSets} />
-                        <Route exact path="/memorizer/categories/:workSet" render={this.renderManage} />
+                        <Route exact path="/memorizer/discover" render={this.renderDiscover} />
+                        <Route exact path="/memorizer/discover/:workSet" render={this.renderManage} />
                         <Route exact path="/memorizer/game" render={this.renderGame} />
+                        <Route exact path="/memorizer/yourspace" render={this.renderYourSpace} />
                     </Switch>
                 </ScrollToTop>
             </Router>

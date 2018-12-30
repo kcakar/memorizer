@@ -64,10 +64,10 @@ table tbody tr {
   will-change: background-color;
 }
 table tbody tr.selected {
-  background-color: #f5f5f5;
+  background-color: #fff;
 }
 table tbody tr:hover {
-  background-color: #eee;
+  background-color: #fff;
 }
 table td,
 table th {
@@ -181,18 +181,26 @@ header {
   background-color: #ffffff;
 }
 
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 nav {
   position: relative;
   padding: 10px;
   margin: auto;
   max-width: 978px;
+  display: flex;
 }
 nav .brand {
+  display: inline-block;
   font-size: 35px;
   font-weight: bold;
   line-height: 70px;
   color: #534e5a;
-  width: 300px;
+  width: 260px;
   height: 70px;
   cursor: pointer;
   transition-property: color, font-size;
@@ -201,16 +209,6 @@ nav .brand {
 }
 nav .brand:hover {
   color: black;
-}
-@media only screen and (max-width: 530px) {
-  nav .brand {
-    font-size: 25px;
-  }
-}
-@media only screen and (max-width: 480px) {
-  nav .brand {
-    display: none;
-  }
 }
 nav .brand figure {
   background-image: url(../images/brain.png);
@@ -229,20 +227,47 @@ nav .brand:hover figure {
   filter: sepia(1);
   filter: invert(50%);
 }
-nav ul {
-  list-style: none;
+@media only screen and (max-width: 530px) {
+  nav .brand {
+    font-size: 25px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  nav .brand {
+    display: none;
+  }
+}
+nav .navigation {
+  color: #534e5a;
+  flex-grow: 1;
+}
+nav .navigation li {
+  display: inline-block;
+  margin: 15px 8px;
+  background-color: rgba(63, 81, 181, 0.842);
+  color: #ffffff;
+  border-radius: 20px;
+  padding: 12px;
+  font-size: 15px;
+}
+nav .navigation li:hover {
+  background-color: #3f51b5;
+  cursor: pointer;
+}
+nav li.navigation__user {
+  position: absolute;
+  top: 5px;
   margin: 0;
   padding: 0;
-}
-nav > ul {
-  position: absolute;
-  display: flex;
-  float: right;
-  width: 330px;
-  top: 5px;
   right: 1px;
+  display: flex;
+  background-color: initial;
 }
-nav > ul > ul {
+nav li.navigation__user:hover {
+  background-color: initial;
+  cursor: initial;
+}
+nav li.navigation__user .container {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -251,44 +276,42 @@ nav > ul > ul {
   text-align: right;
   white-space: nowrap;
 }
-nav > ul > ul > ul {
+nav li.navigation__user .container .user-info {
+  font-size: 18px;
+  text-align: right;
+  color: #534e5a;
+}
+nav li.navigation__user .container .buttons {
   display: initial;
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
 }
-nav > ul > ul > ul li {
-  float: right;
+nav li.navigation__user .container .buttons button {
+  padding: 5px 15px 5px 15px;
+  margin-right: -5px;
 }
-nav > ul > li:last-of-type {
+nav li.navigation__user .nav-settings {
+  position: relative;
   cursor: pointer;
   padding-right: 10px;
 }
-nav > ul > li:last-of-type img {
-  transition-property: -moz-filter, -ms-filter, -o-filter, -webkit-filter, filter;
-  transition-duration: 0.3s;
-  will-change: filter;
-}
-nav > ul > li:last-of-type img:hover {
-  filter: sepia(0.4);
-  -webkit-filter: sepia(0.8);
-}
-nav ul img {
+nav li.navigation__user .nav-settings img {
+  display: block;
   width: 60px;
   height: 60px;
   border-radius: 30px;
   margin-top: 10px;
   border: 1px solid rgba(5, 61, 167, 0.356);
+  transition-property: -moz-filter, -ms-filter, -o-filter, -webkit-filter, filter;
+  transition-duration: 0.3s;
+  will-change: filter;
 }
-nav .user-info {
-  font-size: 18px;
-  text-align: right;
-  color: #534e5a;
+nav li.navigation__user .nav-settings img:hover {
+  filter: sepia(0.4);
+  -webkit-filter: sepia(0.8);
 }
-nav .nav-settings {
-  position: relative;
-}
-nav .nav-settings .btn-settings.mdc-fab {
+nav li.navigation__user .nav-settings .btn-settings.mdc-fab {
   position: absolute;
   bottom: 0;
   right: 5px;
@@ -297,10 +320,10 @@ nav .nav-settings .btn-settings.mdc-fab {
   background-color: #1b2288;
   box-shadow: inherit;
 }
-nav .nav-settings .btn-settings.mdc-fab i {
+nav li.navigation__user .nav-settings .btn-settings.mdc-fab i {
   font-size: 18px;
 }
-nav .mdc-button.mdc-ripple-upgraded {
+nav li.navigation__user .nav-settings .mdc-button.mdc-ripple-upgraded {
   padding-right: 5px;
   padding-left: 5px;
 }
@@ -899,13 +922,16 @@ section.category .new span {
   top: 20px;
   color: white;
 }
-section.category .source-language, section.category .target-language {
+section.category .source-language, section.category .target-language, section.category .creator-image {
   position: absolute;
   top: 10px;
   width: 30px;
   height: 30px;
   border-radius: 25px;
   z-index: 5;
+}
+section.category .creator-image {
+  right: 80px;
 }
 section.category .source-language {
   right: 45px;
