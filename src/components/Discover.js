@@ -8,15 +8,22 @@ import rocketIMG from '../images/rocket.png';
 import angularIMG from '../images/angular.png';
 import language from '../data/Language';
 import images from '../data/images';
+import {defaultWorkSets,defaultWords} from '../data/DefaultWorkSets.js';
 
 class Discover extends React.Component{
     constructor(){
         super();
         this.state={
-            filter:false
+            filter:false,
+            workSets:{}
         }
         this.renderWorkSetList=this.renderWorkSetList.bind(this);
         this.showFilter=this.showFilter.bind(this);
+    }
+
+    componentDidMount(){
+        //pull-data-here
+        this.setState({workSets:defaultWorkSets});
     }
 
     showFilter(){
@@ -33,7 +40,7 @@ class Discover extends React.Component{
                 {
                     workSetKeys.map((key, i) => 
                     {
-                        let workSet=this.props.workSets[key];
+                        let workSet=this.state.workSets[key];
                         return (
                             <GridTile key={i} onClick={()=>this.props.showManageWords(key)}>
                                 <GridTilePrimary>
@@ -93,7 +100,7 @@ class Discover extends React.Component{
     }
     
     render(){
-       const workSetKeys=Object.keys(this.props.workSets);
+       const workSetKeys=Object.keys(this.state.workSets);
        return(
             <section className="category">
                 <Fab mini onClick={this.showFilter}>search</Fab>

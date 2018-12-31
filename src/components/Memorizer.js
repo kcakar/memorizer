@@ -46,7 +46,7 @@ class Memorizer extends React.Component {
         this.addFromFile = this.addFromFile.bind(this);
         this.addWord = this.addWord.bind(this);
         this.changeLanguage=this.changeLanguage.bind(this);
-        this.fillDefaultWorkSets=this.fillDefaultWorkSets.bind(this);
+        //this.fillDefaultWorkSets=this.fillDefaultWorkSets.bind(this);
         this.fillWordsFromLocalStorage=this.fillEverythingFromLocalStorage.bind(this);
         this.getSettings = this.getSettings.bind(this);
         this.handleTranslationChange=this.handleTranslationChange.bind(this);
@@ -185,7 +185,7 @@ class Memorizer extends React.Component {
         else {
             //ilk kez login
             this.saveSettings({},user);
-            this.fillDefaultWorkSets();
+            //this.fillDefaultWorkSets();
         }
 
         this.fillEverythingFromLocalStorage(user);
@@ -275,24 +275,24 @@ class Memorizer extends React.Component {
         this.setState({words});
     }
 
-    fillDefaultWorkSets()
-    {
-        console.log("fillDefaultWorkSets")
-        let workSets=this.state.workSets;
-        let words=this.state.words;
+    // fillDefaultWorkSets()
+    // {
+    //     console.log("fillDefaultWorkSets")
+    //     let workSets=this.state.workSets;
+    //     let words=this.state.words;
 
-        Object.keys(defaultWorkSets).map((key)=>{
-            workSets[key]=defaultWorkSets[key];
-            return false;
-        });
+    //     Object.keys(defaultWorkSets).map((key)=>{
+    //         workSets[key]=defaultWorkSets[key];
+    //         return false;
+    //     });
 
-        Object.keys(defaultWords).map((key)=>{
-            words[key]=defaultWords[key];
-            return false;
-        });
+    //     Object.keys(defaultWords).map((key)=>{
+    //         words[key]=defaultWords[key];
+    //         return false;
+    //     });
 
-        this.setState({workSets,words});
-    }
+    //     this.setState({workSets,words});
+    // }
 
     changeLanguage(lang)
     {
@@ -463,7 +463,7 @@ class Memorizer extends React.Component {
                     <div><h2>{language.workSet[siteLang].page_headline}</h2></div>
                 </section>
                 <section className="content">
-                    <Discover settings={this.state.settings} addFromFile={this.addFromFile} removeWorkSet={this.removeWorkSet} addWorkSet={this.addWorkSet} workSets={this.state.workSets} showManageWords={this.showManageWords}/>
+                    <Discover settings={this.state.settings} addFromFile={this.addFromFile} removeWorkSet={this.removeWorkSet} addWorkSet={this.addWorkSet} showManageWords={this.showManageWords}/>
                 </section>
             </main>
         );

@@ -30,7 +30,7 @@ const language = {
             txt_add_meaning:"Açıklama",
             txt_add_image:"Resim linki",
             btn_add:"Ekle",
-            txt_new_start:"Yeni bir çalışma seti ekleyerek öğrenmeye başlayabilirsin!"
+            txt_new_start:"Yeni bir çalışma seti ekleyerek veya keşfet kısmından başkalarından çalışma setleri alarak öğrenmeye başlayabilirsin"
         },
         en:{
             page_headline:"Discover",
@@ -38,7 +38,7 @@ const language = {
             txt_add_meaning:"Description",
             txt_add_image:"Image URL",
             btn_add:"Add",
-            txt_new_start:"You can start learning by adding a new work set!"
+            txt_new_start:"You can start learning by adding a new work set or using discovery to check others worksets"
         }
     },
     managewords:{

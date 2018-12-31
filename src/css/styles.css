@@ -947,6 +947,10 @@ section.your-space .your-space__info {
   border-bottom-right-radius: 10px;
   padding: 30px 20px 20px 20px;
 }
+section.your-space .new {
+  position: initial;
+  margin: 20px auto;
+}
 
 section.game {
   align-items: center;
