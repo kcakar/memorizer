@@ -5,16 +5,23 @@
   "homepage": "https://kcakar.github.io/memorizer/",
   "dependencies": {
     "cryptiles": "^4.1.3",
+    "deep-extend": "^0.6.0",
     "firebase": "^4.8.1",
     "gh-pages": "^1.1.0",
+    "hoek": "^6.1.2",
+    "lodash": "^4.17.11",
     "macaddress": "^0.2.9",
     "material-components-web": "^0.27.0",
+    "merge": "^1.2.1",
+    "protobufjs": "^6.8.8",
+    "randomatic": "^3.1.1",
     "re-base": "^3.2.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.0.17",
-    "rmwc": "0.0.1-rc12"
+    "rmwc": "0.0.1-rc12",
+    "url-parse": "^1.4.4"
   },
   "scripts": {
     "predeploy": "npm run build",
