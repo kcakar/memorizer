@@ -1078,6 +1078,16 @@ section.category{
   }
 }
 
+section.your-space{
+  .your-space__info{
+    background-color:rgb(255, 255, 255);
+    color:$black-font-color;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding:30px 20px 20px 20px;
+  }
+}
+
 section.game{
   align-items: center;
   font-size: 19px;

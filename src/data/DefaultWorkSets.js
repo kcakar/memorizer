@@ -59,5 +59,6 @@ let spanishCategories={
 
 module.exports = {
     defaultWorkSets:workSets,
-    defaultWords:words
+    defaultWords:words,
+    spanishCategories:spanishCategories
   }

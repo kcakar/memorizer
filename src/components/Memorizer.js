@@ -73,7 +73,6 @@ class Memorizer extends React.Component {
         this.showYourSpace = this.showYourSpace.bind(this);
     }
 
-
     componentWillUpdate(nextProps,nextState){
         if(!nextState.words)
         {
@@ -85,9 +84,9 @@ class Memorizer extends React.Component {
         }
     }
 
-    updateSettings(settings)
+    updateSettings(settings,user)
     {
-        localStorage.setItem(`${this.state.user.userName}-settings`, JSON.stringify(settings));
+        localStorage.setItem(`${user.userName}-settings`, JSON.stringify(settings));
     }
 
     updateEverythingLocalStorage(username,words,workSets)
@@ -116,20 +115,20 @@ class Memorizer extends React.Component {
     {
         let words = this.state.words;
 
-        words[word.wordTranslation]={
-            key:Object.keys(words).length+1,
-            language:this.state.settings.UserLanguage,
+        words[Object.keys(words).length+1]={
+            question:word.word,
+            answer:word.wordTranslation,
             workSet:this.state.activeWorkSet,
-            translationLanguage: this.state.settings.LearningLanguage,
-            translation:word.word,
             rightAnswer:0,
             wrongAnswer:0,
         }
         this.setState({words});
     }
 
-    removeWord(words)
+    removeWord(word)
     {
+        let words=this.state.words;
+        delete words[word];
         this.setState({words});
     }
 
@@ -146,18 +145,14 @@ class Memorizer extends React.Component {
             questionLanguage:"en-US",
             answerLanguage:"es-ES"
         }
+        console.log(workSets)
         this.setState({workSets});
     }
 
     removeWorkSet(workSets)
     {
-        console.log(workSets)
-        console.log(workSets)
-        console.log("workSets")
-        
         if(Object.keys(workSets).length===0)
         {
-            console.log("sıfır")
             localStorage.setItem(`${this.state.user.userName}-workSets`, JSON.stringify(workSets));
         }
         this.setState({workSets});
@@ -177,25 +172,27 @@ class Memorizer extends React.Component {
         this.setState({words});
     }
 
-    getSettings()
+    getSettings(user)
     {
-        let settings = localStorage.getItem(`${this.state.user.userName}-settings`);
-        if (settings && this.state.user.userName !== undefined ) {
+        let settings = localStorage.getItem(`${user.userName}-settings`);
+        if (settings && user.userName !== undefined ) {
             //daha önce login olmuş
-            this.saveSettings(JSON.parse(settings));
+            this.saveSettings(JSON.parse(settings),user);
             this.setState({
                 //isSetup: false,
             })
         }
         else {
             //ilk kez login
+            this.saveSettings({},user);
             this.fillDefaultWorkSets();
         }
 
-        this.fillEverythingFromLocalStorage();
+        this.fillEverythingFromLocalStorage(user);
     }
 
-    saveSettings(settings) {
+    saveSettings(settings,user) {
+        console.log("saveSettings")
         if(!settings.siteLanguage)
         {
             settings.siteLanguage="en";
@@ -207,17 +204,19 @@ class Memorizer extends React.Component {
         }
         this.setState({settings});
         // this.setState({isSetup: false});
-        this.updateSettings(settings);
+        console.log(user)
+        
+        this.updateSettings(settings,user);
     }
 
-    fillEverythingFromLocalStorage()
+    fillEverythingFromLocalStorage(user)
     {
-        let words=JSON.parse(localStorage.getItem(`${this.state.user.userName}-words`));
+        let words=JSON.parse(localStorage.getItem(`${user.userName}-words`));
         if(words && words!==undefined)
         {
             this.setState({words});
         }
-        let workSets=JSON.parse(localStorage.getItem(`${this.state.user.userName}-workSets`));
+        let workSets=JSON.parse(localStorage.getItem(`${user.userName}-workSets`));
         if(workSets && workSets!==undefined)
         {
             this.setState({workSets});
@@ -228,7 +227,7 @@ class Memorizer extends React.Component {
     {
         this.setState({user});
         this.setState({didLogin:true});
-        this.getSettings();
+        this.getSettings(user);
         history.push('/memorizer/yourspace')
     }
 
@@ -278,6 +277,7 @@ class Memorizer extends React.Component {
 
     fillDefaultWorkSets()
     {
+        console.log("fillDefaultWorkSets")
         let workSets=this.state.workSets;
         let words=this.state.words;
 
@@ -328,7 +328,7 @@ class Memorizer extends React.Component {
             .replace(/\s+/g,'-')            // Change whitespace to dashes
             .toLowerCase()                  // Change to lowercase
             .replace(/&/g,'-and-')          // Replace ampersand
-            .replace(/[^a-z0-9\-]/g,'')     // Remove anything that is not a letter, number or dash
+            .replace(/[^a-z0-9-]/g,'')     // Remove anything that is not a letter, number or dash
             .replace(/-+/g,'-')             // Remove duplicate dashes
             .replace(/^-*/,'')              // Remove starting dashes
             .replace(/-*$/,'');             // Remove trailing dashes
@@ -350,7 +350,7 @@ class Memorizer extends React.Component {
         if(key && key!==undefined && typeof(key)==="string")
         {
             this.setState({activeWorkSet:key});
-            history.push('/memorizer/discover/'+this.toSeoUrl(key));
+            history.push('/memorizer/yourspace/'+this.toSeoUrl(key));
         }
         else{
             this.setState({activeWorkSet:""});
@@ -415,7 +415,7 @@ class Memorizer extends React.Component {
             <main className="memorizer">
                 {this.renderHeader()}
                 <section className="page-headline">
-                    <div><h2>{defaultWorkSets[this.state.activeWorkSet].name}</h2></div>
+                    <div><h2>{this.state.workSets[this.state.activeWorkSet].name}</h2></div>
                 </section>
                 <section className="content">
                     <ManageWords 
@@ -478,7 +478,7 @@ class Memorizer extends React.Component {
                     <div><h2>Your Space</h2></div>
                 </section>
                 <section className="content">
-                    <YourSpace settings={this.state.settings} addFromFile={this.addFromFile} removeWorkSet={this.removeWorkSet} addWorkSet={this.addWorkSet} workSets={this.state.workSets} showManageWords={this.showManageWords}/>
+                    <YourSpace settings={this.state.settings} user={this.state.user} addFromFile={this.addFromFile} removeWorkSet={this.removeWorkSet} addWorkSet={this.addWorkSet} workSets={this.state.workSets} showManageWords={this.showManageWords}/>
                 </section>
             </main>
         );
@@ -506,6 +506,7 @@ class Memorizer extends React.Component {
                         <Route exact path="/memorizer/discover/:workSet" render={this.renderManage} />
                         <Route exact path="/memorizer/game" render={this.renderGame} />
                         <Route exact path="/memorizer/yourspace" render={this.renderYourSpace} />
+                        <Route exact path="/memorizer/yourspace/:workSet" render={this.renderManage} />
                     </Switch>
                 </ScrollToTop>
             </Router>

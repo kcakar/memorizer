@@ -180,12 +180,15 @@ class YourSpace extends React.Component{
     render(){
        const workSetKeys=Object.keys(this.props.workSets);
        return(
-            <section className="category">
+            <section className="your-space category">
                 <input multiple ref={input=>this.fileInput=input} onChange={this.readFile} type="file" accept=".json"/>
                 <Fab mini onClick={()=>this.upload()}>backup</Fab>
                 <Fab mini onClick={this.showAddWorkSet}>add</Fab>
                 <div className={this.state.addWorkSet?"addWorkSet visible":"addWorkSet"}>
                     {this.renderAddWorkSetForm()}
+                </div>
+                <div className="your-space__info">
+                    <h2>This is your space {this.props.user.userName}! <br/>You can import words from your kindle, manage worksets and study.</h2>
                 </div>
                 {workSetKeys.length > 0 ? this.renderWorkSetList(workSetKeys) : this.renderNewStart()}
             </section>

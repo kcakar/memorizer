@@ -46,7 +46,8 @@ class ManageWords extends React.Component{
     removeWord(word){
         let words=this.props.words;
         delete words[word];
-        this.props.removeWord(words);
+
+        this.props.removeWord(word);
     }
 
     setGameSettings(evt,key)

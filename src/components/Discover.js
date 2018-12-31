@@ -78,13 +78,13 @@ class Discover extends React.Component{
             <aside className="filter">
                 <div className="filter__controls">
                     <fieldset>
-                        <TextField outlined label="Subject..." />
+                        <TextField label="Subject..." />
                     </fieldset>
                     <fieldset>
-                        <Select placeholder="Any!" label="Language" enhanced options={['Cookies', 'Pizza', 'Icecream']}/>
+                        <Select placeholder="Any!" label="Language" options={['Cookies', 'Pizza', 'Icecream']}/>
                     </fieldset>
                     <fieldset>
-                        <Select placeholder="Anyone!" label="Created by" enhanced options={['Cookies', 'Pizza', 'Icecream']}/>
+                        <Select placeholder="Anyone!" label="Created by" options={['Cookies', 'Pizza', 'Icecream']}/>
                     </fieldset>
                     <Button className="filter__find" raised >Find</Button>
                 </div>

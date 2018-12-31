@@ -34,7 +34,7 @@ const language = {
         },
         en:{
             page_headline:"Discover",
-            txt_add_word:"Category name",
+            txt_add_word:"Workset name",
             txt_add_meaning:"Description",
             txt_add_image:"Image URL",
             btn_add:"Add",
