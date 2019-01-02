@@ -394,7 +394,7 @@ nav{
   height: 40px;
   border-bottom: 2px solid $header-nav-background-color;
   line-height: 40px;
-  font-size:20px;
+  font-size:1em;
   margin: auto;
   width:100%;
   
@@ -402,6 +402,11 @@ nav{
     max-width: 978px;
     margin: auto;
     padding-left: 10px;
+  }
+
+  .created-by{
+    font-size:14px;
+    font-weight: 400;
   }
 }
 
@@ -1083,9 +1088,13 @@ section.category{
     background-color: rgba(93, 39, 138, 0.849);
     width: 100%;
     padding:5px 0 5px;
+    display:flex;
 
     span{
       font-size: 13px;
+      display: block;
+      padding:0 0 0 10px;
+      line-height:30px;
     }
 
     img{

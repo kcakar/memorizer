@@ -115,7 +115,9 @@ class ManageWords extends React.Component{
                 <td>
                     <TextField onChange={(e)=>this.handleTranslationChange(e,key)} value={wordInfo.answer} />
                 </td>
-                <td><span className="right">{wordInfo.rightAnswer}</span> - <span className="wrong">{wordInfo.wrongAnswer}</span></td>
+                {this.props.isDiscover?"": <td><span className="right">{wordInfo.rightAnswer}</span> - <span className="wrong">{wordInfo.wrongAnswer}</span></td>}
+
+                
             </tr>
         )
     }
@@ -137,9 +139,9 @@ class ManageWords extends React.Component{
         let filteredKeys=this.filterWordsByWorkSet(this.props.workSet);
         return(
            <section className="manageWords">
-                <Fab mini onClick={this.showAddWords}>add</Fab>
+                {this.props.isDiscover?"":<Fab mini onClick={this.showAddWords}>add</Fab>}
                 <Fab mini onClick={this.props.startGame}>play_arrow</Fab>
-                <Fab mini onClick={this.props.startGame}>trending_up</Fab>
+                {this.props.isDiscover?"": <Fab mini onClick={this.props.startGame}>trending_up</Fab>}
 
                 <div className={this.state.addWord?"addWords visible":"addWords"}>
                     {this.renderAddWordForm()}
@@ -180,7 +182,8 @@ class ManageWords extends React.Component{
                                     <th></th>
                                     <th className="mdl-data-table__cell--non-numeric">{language.managewords[siteLang].table_words}</th>
                                     <th>{language.managewords[siteLang].table_meaning}</th>
-                                    <th>{language.managewords[siteLang].table_performance}</th>
+                                    {this.props.isDiscover?"": <th>{language.managewords[siteLang].table_performance}</th>}
+                                    
                                 </tr>
                             </thead>
                             <tbody>

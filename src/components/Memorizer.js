@@ -42,11 +42,11 @@ class Memorizer extends React.Component {
                 questionTypes:[],
             }
         }
-        this.addWorkSet = this.addWorkSet.bind(this);
+        //this.fillDefaultWorkSets=this.fillDefaultWorkSets.bind(this);
         this.addFromFile = this.addFromFile.bind(this);
         this.addWord = this.addWord.bind(this);
+        this.addWorkSet = this.addWorkSet.bind(this);
         this.changeLanguage=this.changeLanguage.bind(this);
-        //this.fillDefaultWorkSets=this.fillDefaultWorkSets.bind(this);
         this.fillWordsFromLocalStorage=this.fillEverythingFromLocalStorage.bind(this);
         this.getSettings = this.getSettings.bind(this);
         this.handleTranslationChange=this.handleTranslationChange.bind(this);
@@ -54,23 +54,25 @@ class Memorizer extends React.Component {
         this.login = this.login.bind(this);
         this.logout = this.logout.bind(this);
         this.quitGame=this.quitGame.bind(this);
-        this.removeWorkSet = this.removeWorkSet.bind(this);
         this.removeWord = this.removeWord.bind(this);
+        this.removeWorkSet = this.removeWorkSet.bind(this);
         this.renderDiscover=this.renderDiscover.bind(this);
         this.renderGame=this.renderGame.bind(this);
         this.renderHeader=this.renderHeader.bind(this);
         this.renderLogin=this.renderLogin.bind(this);
         this.renderManage=this.renderManage.bind(this);
+        this.renderManageDiscover=this.renderManageDiscover.bind(this);
         this.renderSetup=this.renderSetup.bind(this);
         this.renderYourSpace=this.renderYourSpace.bind(this);
         this.saveSettings = this.saveSettings.bind(this);
         this.setGameSettings=this.setGameSettings.bind(this);
         this.showManageWords=this.showManageWords.bind(this);
+        this.showManageWordsDiscover=this.showManageWordsDiscover.bind(this);
+        this.showYourSpace = this.showYourSpace.bind(this);
         this.startGame=this.startGame.bind(this);
         this.updateSettings = this.updateSettings.bind(this);
         this.updateStatistics=this.updateStatistics.bind(this);
         this.userLoggedOut = this.userLoggedOut.bind(this);
-        this.showYourSpace = this.showYourSpace.bind(this);
     }
 
     componentWillUpdate(nextProps,nextState){
@@ -357,6 +359,17 @@ class Memorizer extends React.Component {
         }
     }
 
+    showManageWordsDiscover(key){
+        if(key && key!==undefined && typeof(key)==="string")
+        {
+            this.setState({activeWorkSet:key});
+            history.push('/memorizer/discover/'+this.toSeoUrl(key));
+        }
+        else{
+            this.setState({activeWorkSet:""});
+        }
+    }
+    
     showSetup(){
         history.push('/memorizer/setup');
     }
@@ -411,6 +424,8 @@ class Memorizer extends React.Component {
 
     renderManage(){
         console.log("rendermanage")
+        //pull-data-here pull below one
+        //pull{this.state.workSets[this.state.activeWorkSet].name}
         return(
             <main className="memorizer">
                 {this.renderHeader()}
@@ -430,6 +445,34 @@ class Memorizer extends React.Component {
                         handleWordChange={this.handleWordChange}
                         handleTranslationChange={this.handleTranslationChange}
                         workSet={this.state.activeWorkSet}
+                        isDiscover={false}
+                    />
+                </section>
+            </main>
+         );
+    }
+
+    renderManageDiscover(){
+        return(
+            <main className="memorizer">
+                {this.renderHeader()}
+                <section className="page-headline">
+                    <div><h2>{defaultWorkSets[this.state.activeWorkSet].name}  <span className="created-by">- {defaultWorkSets[this.state.activeWorkSet].createdBy}</span></h2></div>
+                </section>
+                <section className="content">
+                    <ManageWords 
+                        setGameSettings={this.setGameSettings} 
+                        gameSettings={this.state.gameSettings} 
+                        startGame={this.startGame} 
+                        settings={this.state.settings} 
+                        user={this.state.user} 
+                        addWord={this.addWord} 
+                        removeWord={this.removeWord}
+                        handleWordChange={this.handleWordChange}
+                        handleTranslationChange={this.handleTranslationChange}
+                        workSet={this.state.activeWorkSet}
+                        words={defaultWords} 
+                        isDiscover={true}
                     />
                 </section>
             </main>
@@ -463,7 +506,7 @@ class Memorizer extends React.Component {
                     <div><h2>{language.workSet[siteLang].page_headline}</h2></div>
                 </section>
                 <section className="content">
-                    <Discover settings={this.state.settings} addFromFile={this.addFromFile} removeWorkSet={this.removeWorkSet} addWorkSet={this.addWorkSet} showManageWords={this.showManageWords}/>
+                    <Discover settings={this.state.settings} addFromFile={this.addFromFile} removeWorkSet={this.removeWorkSet} addWorkSet={this.addWorkSet} showManageWordsDiscover={this.showManageWordsDiscover}/>
                 </section>
             </main>
         );
@@ -503,7 +546,7 @@ class Memorizer extends React.Component {
                         {!this.state.didLogin ? <Redirect to="/memorizer/login"/> : ""}
                         <Route exact path="/memorizer/setup" render={this.renderSetup} />
                         <Route exact path="/memorizer/discover" render={this.renderDiscover} />
-                        <Route exact path="/memorizer/discover/:workSet" render={this.renderManage} />
+                        <Route exact path="/memorizer/discover/:workSet" render={this.renderManageDiscover} />
                         <Route exact path="/memorizer/game" render={this.renderGame} />
                         <Route exact path="/memorizer/yourspace" render={this.renderYourSpace} />
                         <Route exact path="/memorizer/yourspace/:workSet" render={this.renderManage} />

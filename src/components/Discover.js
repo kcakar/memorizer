@@ -42,7 +42,7 @@ class Discover extends React.Component{
                     {
                         let workSet=this.state.workSets[key];
                         return (
-                            <GridTile key={i} onClick={()=>this.props.showManageWords(key)}>
+                            <GridTile key={i} onClick={()=>this.props.showManageWordsDiscover(key)}>
                                 <GridTilePrimary>
                                     <GridTilePrimaryContent>
                                         <div className="background" style={{backgroundImage: "url(" + workSet.imageURL + ")"}} >
