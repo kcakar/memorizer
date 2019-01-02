@@ -55,6 +55,10 @@ class Discover extends React.Component{
                                     <img className="target-language" alt="" src={images.flags[workSet.answerLanguage]}/>
                                     <div className="description">{workSet.description}</div>
                                 </GridTileSecondary>
+                                <div className="created-by">
+                                    <img src={workSet.creatorPhotoURL} alt=""/>
+                                    <span>Keremcan Çakar</span>
+                                </div>
                             </GridTile>
                     )}
                 )}

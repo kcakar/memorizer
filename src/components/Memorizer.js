@@ -228,7 +228,7 @@ class Memorizer extends React.Component {
         this.setState({user});
         this.setState({didLogin:true});
         this.getSettings(user);
-        history.push('/memorizer/yourspace')
+        history.push('/memorizer/discover')
     }
 
     userLoggedOut(){

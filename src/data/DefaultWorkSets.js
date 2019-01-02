@@ -11,6 +11,7 @@ let workSets = {
         "Views":0,
         "Claps":0,
         "Words taken":0,
+        "creatorPhotoURL":"https://avatars3.githubusercontent.com/u/11277098?v=4",
         "Tags":["language","spanish","english","vocabulary"]
     },
 }
@@ -54,7 +55,7 @@ let words={
 }
 
 let spanishCategories={
-    "Spanish - 01":{"targetLanguage":"en-US","sourceLanguage":"es-ES","key":1,"wordCount":14,"description":"Daily words","imageURL": "https://lh5.googleusercontent.com/proxy/lTlcDTGsbjdFntmmmKR8cT903AQ0CbcC3VAKXLbRN-1zDoFY8ZcT1fy8gDDHyUeb5jxIJ23jCbqGLO1EmWYIqLPxtwddZiTjpdhaEmzLKqh_eRNgkVohqim8W1CFzOYVI8iawt9nsNgECWw=w1064-h400-n-k-no","createdBy":"Keremcan Çakar"},
+    "Spanish - 01":{"targetLanguage":"en-US","sourceLanguage":"es-ES","key":1,"wordCount":14,"description":"Daily words","imageURL": "https://lh5.googleusercontent.com/proxy/lTlcDTGsbjdFntmmmKR8cT903AQ0CbcC3VAKXLbRN-1zDoFY8ZcT1fy8gDDHyUeb5jxIJ23jCbqGLO1EmWYIqLPxtwddZiTjpdhaEmzLKqh_eRNgkVohqim8W1CFzOYVI8iawt9nsNgECWw=w1064-h400-n-k-no","createdBy":"Keremcan Çakar","creatorPhotoURL":"https://avatars3.githubusercontent.com/u/11277098?v=4"},
 };
 
 module.exports = {
