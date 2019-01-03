@@ -54,7 +54,7 @@ class Setup extends React.Component {
         const siteLang=this.props.settings.siteLanguage;
         return (
             <section className="setup">
-                <Fab mini onClick={()=>this.saveSettings()}>save</Fab>
+                <Fab size={"small"} onClick={()=>this.saveSettings()}>save</Fab>
                 <Paper z={3}>
                     <div className="settings">
                         <LanguageSwitcher siteLang={siteLang} changeLanguage={this.props.changeLanguage} />

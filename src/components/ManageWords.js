@@ -125,7 +125,7 @@ class ManageWords extends React.Component{
             <tr key={key}>
                 <td>
                     
-                  {this.props.isDiscover? <Fab mini onClick={()=>this.addWordToUser(key)}>star</Fab> : <Fab mini onClick={()=>this.removeWord(key)}>remove</Fab>}
+                  {this.props.isDiscover? <Fab size={"small"} onClick={()=>this.addWordToUser(key)}>star</Fab> : <Fab size={"small"} onClick={()=>this.removeWord(key)}>remove</Fab>}
 
                 </td>
                 <td>
@@ -146,9 +146,9 @@ class ManageWords extends React.Component{
         let filteredKeys=this.filterWordsByWorkSet(this.props.workSet);
         return(
            <section className="manageWords">
-                {this.props.isDiscover?"":<Fab mini onClick={this.showAddWords}>add</Fab>}
-                <Fab mini onClick={this.props.startGame}>play_arrow</Fab>
-                {this.props.isDiscover?"": <Fab mini onClick={this.props.startGame}>trending_up</Fab>}
+                {this.props.isDiscover?"":<Fab size={"small"} onClick={this.showAddWords}>add</Fab>}
+                <Fab size={"small"} onClick={this.props.startGame}>play_arrow</Fab>
+                {this.props.isDiscover?"": <Fab size={"small"} onClick={this.props.startGame}>trending_up</Fab>}
 
                 <div className={this.state.addWord?"addWords visible":"addWords"}>
                     {this.renderAddWordForm()}

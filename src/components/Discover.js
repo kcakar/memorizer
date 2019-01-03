@@ -1,6 +1,7 @@
 /*  eslint-disable no-unused-vars*/
 import React from 'react';
 import {TextField,Select,Button,Fab,GridList,GridListTile,GridListTileBar} from '@material-ui/core/';
+import {Search,Settings} from '@material-ui/icons/';
 import IconButton from '@material-ui/core/IconButton';
 
 import atomIMG from '../images/atom.png';
@@ -9,8 +10,7 @@ import dnaIMG from '../images/dna.png';
 import rocketIMG from '../images/rocket.png';
 import angularIMG from '../images/angular.png';
 import language from '../data/Language';
-import images from '../data/images';
-import {defaultWorkSets,defaultWords} from '../data/DefaultWorkSets.js';
+import {defaultWorkSets} from '../data/DefaultWorkSets.js';
 
 class Discover extends React.Component{
     constructor(){
@@ -109,7 +109,7 @@ class Discover extends React.Component{
        const workSetKeys=Object.keys(this.state.workSets);
        return(
             <section className="category">
-                <Fab mini onClick={this.showFilter}>search</Fab>
+                <Fab size={"small"} onClick={this.showFilter}><Search/></Fab>
                 <div className={this.state.filter?"filter-container visible":"filter-container"}>
                     {this.renderFilterSection()}
                 </div>

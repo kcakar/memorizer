@@ -187,8 +187,8 @@ class YourSpace extends React.Component{
        return(
             <section className="your-space category">
                 <input multiple ref={input=>this.fileInput=input} onChange={this.readFile} type="file" accept=".json"/>
-                <Fab mini onClick={()=>this.upload()}>backup</Fab>
-                <Fab mini onClick={this.showAddWorkSet}>add</Fab>
+                <Fab size={"small"} onClick={()=>this.upload()}>backup</Fab>
+                <Fab size={"small"} onClick={this.showAddWorkSet}>add</Fab>
                 <div className={this.state.addWorkSet?"addWorkSet visible":"addWorkSet"}>
                     {this.renderAddWorkSetForm()}
                 </div>
