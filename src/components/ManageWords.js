@@ -13,6 +13,7 @@ class ManageWords extends React.Component{
         }
 
         this.addWord=this.addWord.bind(this);
+        this.addWordToUser=this.addWordToUser.bind(this);
         this.handleWordChange=this.handleWordChange.bind(this);
         this.removeWord=this.removeWord.bind(this);
         this.showAddWords=this.showAddWords.bind(this);
@@ -103,23 +104,8 @@ class ManageWords extends React.Component{
         return Object.keys(this.props.words).filter(key=> this.props.words[key].workSet === workSet);
     }
 
-    renderWordRow(wordInfo,key){
-        return(
-            <tr key={key}>
-                <td>
-                    <Fab mini onClick={()=>this.removeWord(key)}>remove</Fab>
-                </td>
-                <td>
-                    <TextField onChange={(e)=>this.handleWordChange(e,key)} value={wordInfo.question} />
-                </td>
-                <td>
-                    <TextField onChange={(e)=>this.handleTranslationChange(e,key)} value={wordInfo.answer} />
-                </td>
-                {this.props.isDiscover?"": <td><span className="right">{wordInfo.rightAnswer}</span> - <span className="wrong">{wordInfo.wrongAnswer}</span></td>}
+    addWordToUser(key){
 
-                
-            </tr>
-        )
     }
 
     renderAddWordForm()
@@ -131,6 +117,27 @@ class ManageWords extends React.Component{
                 <TextField inputRef={input => this.addMeaningInput=input} label={language.managewords[siteLang].txt_add_meaning} />
                 <Button raised onClick={e=>this.addWord(e)}>{language.managewords[siteLang].btn_add}</Button>
             </form>
+        )
+    }
+
+    renderWordRow(wordInfo,key){
+        return(
+            <tr key={key}>
+                <td>
+                    
+                  {this.props.isDiscover? <Fab mini onClick={()=>this.addWordToUser(key)}>star</Fab> : <Fab mini onClick={()=>this.removeWord(key)}>remove</Fab>}
+
+                </td>
+                <td>
+                    <TextField onChange={(e)=>this.handleWordChange(e,key)} value={wordInfo.question} />
+                </td>
+                <td>
+                    <TextField onChange={(e)=>this.handleTranslationChange(e,key)} value={wordInfo.answer} />
+                </td>
+                {this.props.isDiscover?"": <td><span className="right">{wordInfo.rightAnswer}</span> - <span className="wrong">{wordInfo.wrongAnswer}</span></td>}
+
+                
+            </tr>
         )
     }
 
@@ -183,7 +190,6 @@ class ManageWords extends React.Component{
                                     <th className="mdl-data-table__cell--non-numeric">{language.managewords[siteLang].table_words}</th>
                                     <th>{language.managewords[siteLang].table_meaning}</th>
                                     {this.props.isDiscover?"": <th>{language.managewords[siteLang].table_performance}</th>}
-                                    
                                 </tr>
                             </thead>
                             <tbody>
