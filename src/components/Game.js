@@ -1,6 +1,11 @@
 /*  eslint-disable no-unused-vars*/
 import React from 'react';
-import {Snackbar,LinearProgress,Fab,Elevation,Radio,TextField,Button,Card,CardPrimary,CardTitle,CardSubtitle,CardSupportingText,CardActions,CardAction} from 'rmwc';
+import {Snackbar,LinearProgress,Fab,Radio,TextField,Button,CardPrimary,CardTitle,CardSubtitle,CardSupportingText,CardActions} from '@material-ui/core/';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
+
 import language from '../data/Language';
 
 
@@ -403,11 +408,15 @@ class Game extends React.Component{
             <div className="question written">
                 <Button className="btn-quit-game" onClick={this.props.quitGame}>{language.game[siteLang].btn_quit_game}</Button>
                 <Card>
-                    <CardPrimary>
-                        <CardTitle large="true" >{language.game[siteLang].written_question}</CardTitle>
-                        <CardSubtitle large="true" >
-                            {this.state.currentQuestion.question}
-                        </CardSubtitle>
+                    <CardActionArea>
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="h2">
+                                {language.game[siteLang].written_question}
+                            </Typography>
+                            <Typography component="p">
+                                 {this.state.currentQuestion.question}
+                            </Typography>
+                        </CardContent>
                         <div className="the-line"></div>
                         <div className="answer">
                             <TextField 
@@ -418,10 +427,14 @@ class Game extends React.Component{
                                 onChange={(e)=>this.handleAnswer(e.target)}
                             />
                         </div>
-                    </CardPrimary>
+                    </CardActionArea>
                     <CardActions>
-                        <CardAction onClick={()=>this.checkAnswer()}>{language.game[siteLang].btn_check}</CardAction>
-                        <CardAction onClick={()=>this.wrongAnswer()}>{language.game[siteLang].btn_skip}</CardAction>
+                        <Button size="small" color="primary" onClick={()=>this.checkAnswer()}>
+                            {language.game[siteLang].btn_check}
+                        </Button>
+                        <Button size="small" color="primary" onClick={()=>this.wrongAnswer()}>
+                            {language.game[siteLang].btn_skip}
+                        </Button>
                     </CardActions>
                 </Card>
             </div>
@@ -434,11 +447,15 @@ class Game extends React.Component{
             <div className="question test">
                 <Button className="btn-quit-game" onClick={this.props.quitGame}>{language.game[siteLang].btn_quit_game}</Button>
                 <Card>
-                    <CardPrimary>
-                        <CardTitle large="true" >{language.game[siteLang].test_question}</CardTitle>
-                        <CardSubtitle large="true" >
-                            {this.state.currentQuestion.question}
-                        </CardSubtitle>
+                    <CardActionArea>
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="h2">
+                                {language.game[siteLang].test_question}
+                            </Typography>
+                            <Typography component="p">
+                                 {this.state.currentQuestion.question}
+                            </Typography>
+                        </CardContent>
                         <div className="the-line"></div>
                         <div className="answer options">
                             {
@@ -453,9 +470,7 @@ class Game extends React.Component{
                                     />)
                             })}
                         </div>
-                    </CardPrimary>
-                    <CardSupportingText>
-                    </CardSupportingText>
+                    </CardActionArea>
                 </Card>
             </div>
         )
@@ -471,10 +486,15 @@ class Game extends React.Component{
         return(
             <div className="question listening">
                 <Button className="btn-quit-game" onClick={this.props.quitGame}>{language.game[siteLang].btn_quit_game}</Button>
+
                 <Card>
-                    <CardPrimary>
-                        <CardTitle large="true" >Write what you hear!</CardTitle>
-                        <Fab className={classList.join(" ")} mini onClick={e=>this.getSynthSpeech(this.state.currentQuestion)}>hearing</Fab>
+                    <CardActionArea>
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="h2">
+                                Write what you hear!
+                            </Typography>
+                            <Fab className={classList.join(" ")} mini onClick={e=>this.getSynthSpeech(this.state.currentQuestion)}>hearing</Fab>
+                        </CardContent>
                         <div className="the-line"></div>
                         <div className="answer">
                             <TextField 
@@ -485,10 +505,14 @@ class Game extends React.Component{
                                 onChange={(e)=>this.handleAnswer(e.target)}
                             />
                         </div>
-                    </CardPrimary>
+                    </CardActionArea>
                     <CardActions>
-                        <CardAction onClick={()=>this.checkAnswer()}>{language.game[siteLang].btn_check}</CardAction>
-                        <CardAction onClick={()=>this.wrongAnswer()}>{language.game[siteLang].btn_skip}</CardAction>
+                        <Button size="small" color="primary" onClick={()=>this.checkAnswer()}>
+                            {language.game[siteLang].btn_check}
+                        </Button>
+                        <Button size="small" color="primary" onClick={()=>this.wrongAnswer()}>
+                            {language.game[siteLang].btn_skip}
+                        </Button>
                     </CardActions>
                 </Card>
             </div>

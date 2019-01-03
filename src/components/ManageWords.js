@@ -1,6 +1,6 @@
 /*  eslint-disable no-unused-vars*/
 import React from 'react';
-import {Checkbox,Button,TextField,Elevation,Fab } from 'rmwc';
+import {Checkbox,Button,TextField,Paper,Fab } from '@material-ui/core/';
 import language from '../data/Language';
 
 class ManageWords extends React.Component{
@@ -154,7 +154,7 @@ class ManageWords extends React.Component{
                     {this.renderAddWordForm()}
                 </div>
 
-                <Elevation z={3}>
+                <Paper z={3}>
                     <div className="gameSettings">
                         <h2>Game Setting</h2>
                         <div className="setting-group">
@@ -179,9 +179,9 @@ class ManageWords extends React.Component{
                             />
                         </div>
                     </div>
-                </Elevation>
+                </Paper>
 
-                <Elevation z={3}>
+                <Paper z={3}>
                     <div className="words">
                         <table className="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
                             <thead>
@@ -197,7 +197,7 @@ class ManageWords extends React.Component{
                             </tbody>
                         </table>
                     </div>
-                </Elevation>
+                </Paper>
 
            </section>
         );

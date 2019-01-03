@@ -1,6 +1,8 @@
 /*  eslint-disable no-unused-vars*/
 import React from 'react';
-import {TextField,Select,Button,Fab,GridList,GridTile,GridTilePrimary,GridTilePrimaryContent,GridTileSecondary,GridTileTitle} from 'rmwc';
+import {TextField,Select,Button,Fab,GridList,GridListTile,GridTilePrimary,GridTilePrimaryContent,GridListTileBar,GridTileTitle} from '@material-ui/core/';
+import IconButton from '@material-ui/core/IconButton';
+
 import atomIMG from '../images/atom.png';
 import piIMG from '../images/pi.png';
 import dnaIMG from '../images/dna.png';
@@ -133,27 +135,30 @@ class YourSpace extends React.Component{
     renderWorkSetList(workSetKeys){
         workSetKeys=workSetKeys.sort();
         return(
-            <GridList tileAspect="1x1">
+            <GridList>
                 {
                     workSetKeys.map((key, i) => 
                     {
-                        let workSet=this.props.workSets[key];
+                        let workSet=this.state.workSets[key];
                         return (
-                        <GridTile key={i} onClick={()=>this.props.showManageWords(key)}>
-                            <Fab className="remove" mini onClick={(e,workSet)=>this.removeWorkSet(e,key)}>remove</Fab>
-                            <GridTilePrimary>
-                                <GridTilePrimaryContent>
-                                    <div className="background" style={{backgroundImage: "url(" + workSet.imageURL + ")"}} >
-                                    </div>
-                                </GridTilePrimaryContent>
-                            </GridTilePrimary>
-                            <GridTileSecondary >
-                                <GridTileTitle>{workSet.name}</GridTileTitle>
-                                <img className="source-language" alt="" src={images.flags[workSet.questionLanguage]}/>
-                                <img className="target-language" alt="" src={images.flags[workSet.answerLanguage]}/>
-                                <div className="description">{workSet.description}</div>
-                            </GridTileSecondary>
-                        </GridTile>
+                            <GridListTile key={i} onClick={()=>this.props.showManageWordsDiscover(key)}>
+                                <img src={workSet.imageURL} alt={workSet.name} />
+                                <GridListTileBar 
+                                    title={workSet.name}
+                                         actionIcon={
+                                        <IconButton>
+                                        </IconButton>
+                                    }
+                                />
+                                    {/* <img className="source-language" alt="" src={images.flags[workSet.questionLanguage]}/>
+                                    <img className="target-language" alt="" src={images.flags[workSet.answerLanguage]}/>
+                                    <div className="description">{workSet.description}</div> */}
+
+                                {/* <div className="created-by">
+                                    <img src={workSet.creatorPhotoURL} alt=""/>
+                                    <span>Keremcan Çakar</span>
+                                </div> */}
+                            </GridListTile>
                     )}
                 )}
             </GridList>

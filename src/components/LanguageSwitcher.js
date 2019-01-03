@@ -1,6 +1,6 @@
 /*  eslint-disable no-unused-vars*/
 import React from "react";
-import {Radio} from "rmwc";
+import {Radio} from "@material-ui/core/";
 
 class LanguageSwitcher extends React.Component{
 

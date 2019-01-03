@@ -1,6 +1,6 @@
 /*  eslint-disable no-unused-vars*/
 import React from 'react';
-import {Fab,Elevation} from 'rmwc';
+import {Fab,Paper} from '@material-ui/core/';
 import language from '../data/Language';
 import LanguageSwitcher from './LanguageSwitcher';
 
@@ -55,7 +55,7 @@ class Setup extends React.Component {
         return (
             <section className="setup">
                 <Fab mini onClick={()=>this.saveSettings()}>save</Fab>
-                <Elevation z={3}>
+                <Paper z={3}>
                     <div className="settings">
                         <LanguageSwitcher siteLang={siteLang} changeLanguage={this.props.changeLanguage} />
                         { <h2>{language.settings[siteLang].choose_interest}</h2> }
@@ -65,23 +65,23 @@ class Setup extends React.Component {
                                     interests.map((interest, i) =>{
                                         const hasInterest=this.hasInterest(interest);
                                         return (
-                                        <GridTile onClick={()=>this.switchInterest(interest,hasInterest)} key={i} className={hasInterest?"active":""}>
+                                        <GridListTile onClick={()=>this.switchInterest(interest,hasInterest)} key={i} className={hasInterest?"active":""}>
                                             <GridTilePrimary>
                                                 <GridTilePrimaryContent>
                                                     <img src={interest.image} alt="test" />
                                                 </GridTilePrimaryContent>
                                             </GridTilePrimary>
-                                            <GridTileSecondary>
+                                            <GridListTileBar>
                                                 <GridTileTitle>{interest.name}</GridTileTitle>
-                                            </GridTileSecondary>
-                                        </GridTile>
+                                            </GridListTileBar>
+                                        </GridListTile>
                                     );})
                                 
                                 }
                             </GridList>
                         </div> */}
                     </div>
-                </Elevation>
+                </Paper>
             </section>
         );
     }

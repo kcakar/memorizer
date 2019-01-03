@@ -3,7 +3,7 @@
 import React from 'react';
 import LanguageSwitcher from './LanguageSwitcher';
 import * as firebase from "firebase";
-import {Elevation} from "rmwc";
+import {Paper} from "@material-ui/core/";
 import {base} from "../base.js";//this is used. grayout is a bug
 import brainIMG from "../images/brain.png";
 import language from '../data/Language';
@@ -204,7 +204,7 @@ class Login extends React.Component {
         else{
             return (
                 <section className="intro">
-                    <Elevation z="7">
+                    <Paper z="7">
                             <div className="login">
                                 <img alt="memorizer" src={brainIMG}/>
                                 <h2>MEMORIZER</h2>
@@ -216,7 +216,7 @@ class Login extends React.Component {
                                     <button className="facebook" onClick={() => this.authenticate('facebook')}>{language.intro[siteLang].login_facebook}</button>
                                 </div>
                             </div>
-                    </Elevation>
+                    </Paper>
                 </section>
             );
         }
