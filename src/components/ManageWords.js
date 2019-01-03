@@ -12,7 +12,7 @@ class ManageWords extends React.Component{
             addWord:false
         }
 
-        this.addWord=this.addWord.bind(this);
+        this.addWord=this.addWord.bind(this); 
         this.addWordToUser=this.addWordToUser.bind(this);
         this.handleWordChange=this.handleWordChange.bind(this);
         this.removeWord=this.removeWord.bind(this);
